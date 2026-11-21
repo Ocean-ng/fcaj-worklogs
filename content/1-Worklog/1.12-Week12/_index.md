@@ -1,57 +1,31 @@
 ---
 title: "Week 12 Worklog"
-date: 2024-01-01
-weight: 2
+date: 2026-11-30
+weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 12 Objectives
 
-### Week 12 Objectives:
+* Conduct comprehensive End-to-End (E2E) verification of the technical Workshop (Private Connectivity to Amazon S3 from VPC and On-premises using Gateway/Interface Endpoints & Route 53 Private DNS) and project architecture.
+* Perform a final account security audit and cost review using **AWS Cost Explorer** and **AWS Trusted Advisor**, ensuring zero lingering billable resources.
+* Finalize and polish bilingual content (Vietnamese & English) across all 7 sections of the Hugo internship report: Worklog, Proposal, Blogs Posted, Events Participated, Workshop, Self-evaluation, and Feedback.
+* Verify automated CI/CD deployment via GitHub Actions and complete the FCAJ internship report submission.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks Implemented This Week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task | Start Date | Completion Date | Reference Material |
+|------|-----------|-------------|----------------|---------------|
+| Mon | **End-to-End (E2E) Workshop Verification:** <br> - Re-run the complete Workshop workflow from CloudFormation stack provisioning, S3 Gateway Endpoint, and S3 Interface Endpoint setup to Route 53 Inbound Resolver and VPC Endpoint Policy testing <br> - Validate CLI outputs (`aws s3 ls`, `dig`) and verify step-by-step screenshots | 30/11/2026 | 30/11/2026 | https://000008.awsstudygroup.com/ |
+| Tue | **Finalizing Workshop & Proposal Documentation:** <br> - Proofread and refine all 6 chapters of `5-Workshop` (Overview, Prerequisites, S3 from VPC, S3 from On-premises, VPC Endpoint Policies, Cleanup) in both Vietnamese and English <br> - Review architecture diagrams and AWS Pricing Calculator estimates in `2-Proposal` | 01/12/2026 | 01/12/2026 | https://cloudjourney.awsstudygroup.com/ |
+| Wed | **Compiling Blogs, Events & Self-Evaluation:** <br> - Finalize translated technical blog posts in `3-BlogsPosted` and AWS event summaries in `4-EventParticipated` <br> - Complete the internship self-evaluation (`6-Self-evaluation`) and program feedback (`7-Feedback`) | 02/12/2026 | 02/12/2026 | |
+| Thu | **Account Cost Audit & Resource Cleanup:** <br> - Inspect AWS Cost Explorer and active resources across all regions, confirming complete deletion of VPC Endpoints, Route 53 Resolver Endpoints, CloudFormation Stacks, S3 Buckets, and Elastic IPs | 03/12/2026 | 03/12/2026 | https://000007.awsstudygroup.com/ |
+| Fri | **GitHub Pages Deployment & Final Review:** <br> - Verify Hugo build integrity and push the complete codebase to the GitHub repository (`Ocean-ng.github.io`) <br> - Test navigation, image links, and VI/EN language switching on the live GitHub Pages site for final submission | 04/12/2026 | 04/12/2026 | https://ocean-ng.github.io/ |
 
+### Week 12 Achievements
 
-### Week 12 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Verified 100% reproducibility of the technical **Workshop** covering private Amazon S3 connectivity via Gateway Endpoints, Interface Endpoints (PrivateLink), Route 53 Hybrid DNS, and Endpoint Policies.
+* Confirmed a clean, secure AWS account with zero orphaned resources or unexpected post-internship charges.
+* Delivered a complete, bilingual (Vietnamese – English) **First Cloud AI Journey** internship report website powered by Hugo and GitHub Pages.
+* Consolidated three months of hands-on AWS Cloud and Information Security experience, preparing a strong foundation for final defense and a future career as a Cloud Security Engineer.

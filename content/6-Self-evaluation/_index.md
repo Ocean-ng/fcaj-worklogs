@@ -1,39 +1,40 @@
 ---
-title: "Self-Assessment"
-date: 2024-01-01
+title: "Self-Evaluation"
+date: 2026-12-04
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+During my internship at **Amazon Web Services Viet Nam Company Limited** (**Workforce Bootcamp - First Cloud AI Journey**) from **14/09/2026** to **14/12/2026**, I had the valuable opportunity to bridge my **Information Assurance** academic training at **FPT University HCMC** with real-world AWS Cloud infrastructure and security operations.
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
+Across the 12-week program, I progressed from core AWS foundations (IAM, VPC, EC2, S3, RDS) to designing Serverless architectures, authoring a complete technical Workshop on **Secure Hybrid Connectivity to Amazon S3 using VPC Gateway/Interface Endpoints & Route 53 Private DNS**, and practicing advanced cloud security and observability services (KMS, WAF, CloudTrail, GuardDuty, Security Hub). This journey strengthened my capability in secure cloud network design, infrastructure automation, bilingual technical documentation, and systematic troubleshooting.
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+To objectively reflect on my three-month internship performance, I have evaluated myself across the following criteria:
 
-To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
+| No. | Criterion | Description | Good | Fair | Average |
+| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | --- | --- | ---------- |
+| 1 | **Technical Knowledge & Skills** | Understanding of AWS infrastructure & Information Security, applying concepts in labs, proficiency with AWS Console & CLI | ✅ | ☐ | ☐ |
+| 2 | **Learning Agility** | Rapidly absorbing new AWS services, proactively studying official AWS Documentation and hands-on labs | ✅ | ☐ | ☐ |
+| 3 | **Proactiveness** | Independently diagnosing configuration issues, verifying architectures, and cleaning up resources after labs | ✅ | ☐ | ☐ |
+| 4 | **Sense of Responsibility** | Completing weekly worklogs, blog posts, project proposal, and workshop guide on schedule with high quality | ✅ | ☐ | ☐ |
+| 5 | **Discipline** | Strictly adhering to schedules, FCAJ program guidelines, and AWS account security best practices | ✅ | ☐ | ☐ |
+| 6 | **Growth Mindset** | Actively welcoming feedback from mentors and peers to refine architectural designs and documentation | ✅ | ☐ | ☐ |
+| 7 | **Communication & Presentation** | Presenting technical reports, drawing architecture diagrams, and writing clear step-by-step guides | ☐ | ✅ | ☐ |
+| 8 | **Team Collaboration** | Actively sharing knowledge and supporting fellow `FCAJ-FALL26` peers during lab exercises | ✅ | ☐ | ☐ |
+| 9 | **Professional Conduct** | Demonstrating respect toward mentors, program coordinators, and the AWS Study Group community | ✅ | ☐ | ☐ |
+| 10 | **Problem-Solving Mindset** | Systematically troubleshooting VPC routing, hybrid DNS resolution, and IAM/KMS permission boundaries | ✅ | ☐ | ☐ |
+| 11 | **Contribution to Project/Community** | Delivering a comprehensive Workshop guide and authoring technical blogs focused on Cloud Security | ✅ | ☐ | ☐ |
+| 12 | **Overall Assessment** | Overall achievement of learning and professional development goals throughout the internship | ✅ | ☐ | ☐ |
 
-| No. | Criteria                            | Description                                                                                      | Good | Fair | Average |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | ---- | ---- | ------- |
-| 1   | **Professional knowledge & skills** | Understanding of the field, applying knowledge in practice, proficiency with tools, work quality | ✅    | ☐    | ☐       |
-| 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
-| 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
-| 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
-| 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
-| 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅    | ☐    | ☐       |
-| 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅    | ☐       |
-| 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐    | ☐       |
-| 12  | **Overall**                         | General evaluation of the entire internship period                                               | ✅    | ☐    | ☐       |
+### Key Strengths Demonstrated
 
-### Needs Improvement
+* **Security-First Engineering Mindset:** Consistently applied the Principle of Least Privilege and favored private connectivity mechanisms (SSM Session Manager, VPC Endpoints) over public Internet exposure.
+* **Disciplined Resource & Cost Governance:** Maintained strict AWS Budgets monitoring and end-of-week cleanup routines, preventing idle resource charges.
+* **Structured Technical Documentation:** Produced clear architecture diagrams, weekly progress logs, and bilingual documentation across the entire report site.
 
-* Strengthen discipline and strictly comply with the rules and regulations of the company or any organization  
-* Improve problem-solving thinking  
-* Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+### Areas for Further Growth
+
+* **Deepening DevSecOps & IaC Automation:** Expand proficiency in AWS CloudFormation, AWS CDK, and Terraform to embed automated security compliance checks into CI/CD pipelines.
+* **Enhancing Technical Presentation Fluency:** Practice defending cloud architecture trade-offs concisely in both Vietnamese and English.
+* **Pursuing Professional AWS Certifications:** Continue structured preparation toward earning the *AWS Certified Solutions Architect – Associate* and *AWS Certified Security – Specialty* certifications.

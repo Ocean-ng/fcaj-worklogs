@@ -1,22 +1,18 @@
 ---
 title: "Blogs Posted"
-date: 2024-01-01
+date: 2026-11-15
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+> This section compiles technical articles and translated deep-dives focusing on AWS Cloud Security, Zero-Internet network architectures, and fine-grained identity governance authored during the **AWS First Cloud AI Journey (FCAJ)** internship.
 
-This section will list and introduce the blogs you have posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). For example:
+### [Blog 1 - Enforcing Least Privilege in Kubernetes with Session Policies in Amazon EKS Pod Identity](3.1-Blog1/)
+An in-depth look at **Session Policies** in **Amazon EKS Pod Identity**, enabling engineers to dynamically scope down IAM permissions per Kubernetes Pod/ServiceAccount through permission intersection without proliferating hundreds of distinct IAM Roles across large clusters.
 
-###  [Blog 1 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.1-Blog1/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### [Blog 2 - Designing Zero-Internet Exposure Network Architectures with AWS PrivateLink and VPC Endpoints](3.2-Blog2/)
+A technical guide to eliminating public Internet traversal when connecting workloads in Private Subnets or On-premises data centers to Amazon S3 and AWS services. Covers Gateway vs. Interface Endpoints, hybrid DNS resolution with Route 53 Resolver, and enforcing data perimeters with VPC Endpoint Policies.
 
-###  [Blog 2 - ...](3.2-Blog2/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
-
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### [Blog 3 - Automating Threat Detection and Security Incident Response on AWS with GuardDuty, Security Hub, and EventBridge](3.3-Blog3/)
+A practical blueprint for automated Cloud SecOps on AWS: combining ML-powered threat detection in Amazon GuardDuty, continuous CIS Benchmark compliance scoring in AWS Security Hub, and event-driven containment and alerting via Amazon EventBridge and AWS Lambda.

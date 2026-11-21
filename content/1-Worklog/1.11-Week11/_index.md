@@ -1,57 +1,30 @@
 ---
 title: "Week 11 Worklog"
-date: 2024-01-01
-weight: 2
+date: 2026-11-23
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 11 Objectives
 
-### Week 11 Objectives:
+* Explore intelligent threat detection and Cloud Security Posture Management (CSPM) services: **Amazon GuardDuty**, **AWS Security Hub**, and **AWS Config**.
+* Assess account security compliance against industry standards including **CIS AWS Foundations Benchmark** and **AWS Foundational Security Best Practices**.
+* Learn **Infrastructure as Code (IaC)** using **AWS CloudFormation** to standardize and automate network and security provisioning.
+* Remediate high-priority configuration findings identified by AWS Security Hub.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks Implemented This Week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task | Start Date | Completion Date | Reference Material |
+|------|-----------|-------------|----------------|---------------|
+| Mon | **Threat Detection with Amazon GuardDuty:** <br> - Study how Amazon GuardDuty uses Machine Learning and threat intelligence feeds to analyze CloudTrail Events, VPC Flow Logs, and DNS Logs <br> - Enable GuardDuty (30-day Free Trial), generate Sample Findings, and analyze Low/Medium/High severity threat categories | 23/11/2026 | 23/11/2026 | https://docs.aws.amazon.com/guardduty/ |
+| Tue | **Security Posture Management with AWS Security Hub:** <br> - Enable AWS Security Hub along with `AWS Foundational Security Best Practices` and `CIS AWS Foundations Benchmark` <br> - Evaluate the overall account Security Score and inspect failed security controls | 24/11/2026 | 24/11/2026 | https://docs.aws.amazon.com/securityhub/ |
+| Wed | **Security Finding Remediation:** <br> - Remediate high-priority Security Hub findings: enforce account-level S3 Block Public Access, restrict all VPC Default Security Groups, rotate aging IAM Access Keys, and verify MFA enforcement | 25/11/2026 | 25/11/2026 | https://docs.aws.amazon.com/securityhub/ |
+| Thu | **Infrastructure as Code with AWS CloudFormation:** <br> - Study AWS CloudFormation YAML template anatomy (`Parameters`, `Resources`, `Outputs`, `Mappings`) <br> - Codify the Workshop VPC, Private/Public Subnets, Route Tables, Security Groups, and EC2 resources into a reusable CloudFormation template | 26/11/2026 | 26/11/2026 | https://000037.awsstudygroup.com/ |
+| Fri | **Stack Deployment Verification & Cleanup:** <br> - Test one-click provisioning (`Create Stack`) and deterministic teardown (`Delete Stack`) via CloudFormation <br> - Disable GuardDuty and Security Hub after evaluation to prevent post-trial charges | 27/11/2026 | 27/11/2026 | https://000037.awsstudygroup.com/ |
 
+### Week 11 Achievements
 
-### Week 11 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Understood how **Amazon GuardDuty** continuously detects compromised IAM credentials, cryptocurrency mining, and command-and-control traffic without agent installation.
+* Evaluated and improved the AWS account's security posture using **AWS Security Hub** aligned with the **CIS AWS Foundations Benchmark**.
+* Adopted **AWS CloudFormation (IaC)** to provision and tear down multi-tier cloud environments reliably, eliminating manual configuration drift and orphaned billable resources.

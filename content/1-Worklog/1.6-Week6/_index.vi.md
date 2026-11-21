@@ -1,58 +1,31 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2026-10-19
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 6
 
-### Mục tiêu tuần 6:
+* Tìm hiểu chuyên sâu về kết nối mạng riêng tư trên AWS thông qua **VPC Endpoints** (Gateway Endpoint và Interface Endpoint / AWS PrivateLink).
+* Thực hành triển khai **S3 Gateway Endpoint** giúp các máy chủ EC2 trong Private Subnet truy cập Amazon S3 hoàn toàn qua mạng nội bộ AWS mà không cần NAT Gateway hay Internet Gateway.
+* Thực hành triển khai **S3 Interface Endpoint** và mô phỏng kết nối từ môi trường On-premises qua VPN/Private DNS với **Amazon Route 53 Resolver**.
+* Thiết lập và kiểm thử **VPC Endpoint Policies** kết hợp **S3 Bucket Policies** để giới hạn chặt chẽ phạm vi truy cập dữ liệu.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|------|-----------|-------------|----------------|---------------|
+| 2 | **Tổng quan VPC Endpoints & Chuẩn bị hạ tầng:** <br> - Phân tích sự khác nhau giữa Gateway Endpoint (miễn phí, định tuyến qua Route Table cho S3/DynamoDB) và Interface Endpoint (dùng ENI trong Subnet, hỗ trợ bởi AWS PrivateLink) <br> - Khởi tạo môi trường mạng VPC và máy chủ EC2 trong Private Subnet bằng CloudFormation template | 19/10/2026 | 19/10/2026 | https://000008.awsstudygroup.com/ |
+| 3 | **Triển khai & Kiểm thử S3 Gateway Endpoint:** <br> - Tạo S3 Gateway Endpoint gắn vào Route Table của Private Subnet <br> - Kiểm tra Prefix List tự động thêm vào Route Table <br> - Kết nối vào Private EC2 qua SSM Session Manager và kiểm thử lệnh `aws s3 ls`, `aws s3 cp` thành công mà không đi qua Internet | 20/10/2026 | 20/10/2026 | https://000008.awsstudygroup.com/ |
+| 4 | **Triển khai S3 Interface Endpoint cho mô hình On-premises:** <br> - Khởi tạo môi trường mô phỏng On-premises kết nối với VPC đám mây <br> - Tạo S3 Interface Endpoint với Security Group mở cổng HTTPS (443) cho dải mạng On-premises <br> - Kiểm thử truy cập S3 qua Endpoint-specific DNS name bằng tham số `--endpoint-url` | 21/10/2026 | 21/10/2026 | https://000008.awsstudygroup.com/ |
+| 5 | **Tích hợp DNS với Route 53 Private Hosted Zone & Resolver:** <br> - Cấu hình Route 53 Private Hosted Zone và bản ghi Alias trỏ về S3 Interface Endpoint <br> - Thiết lập Route 53 Inbound Resolver Endpoint để máy chủ On-premises phân giải tự động tên miền S3 về IP Private của Interface Endpoint (kiểm tra bằng lệnh `dig`) | 22/10/2026 | 22/10/2026 | https://000008.awsstudygroup.com/ |
+| 6 | **Bảo mật với VPC Endpoint Policy & Dọn dẹp:** <br> - Viết Custom JSON Policy trên VPC Endpoint chỉ cho phép truy cập duy nhất một S3 Bucket được chỉ định <br> - Cấu hình S3 Bucket Policy với điều kiện `aws:SourceVpce` để khóa truy cập từ ngoài Endpoint <br> - Ghi chép tài liệu thực hành cho phần Workshop và dọn dẹp tài nguyên | 23/10/2026 | 23/10/2026 | https://000008.awsstudygroup.com/ |
 
+### Kết quả đạt được trong tuần 6
 
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Nắm vững sự khác biệt kiến trúc, chi phí và kịch bản áp dụng giữa **S3 Gateway Endpoint** và **S3 Interface Endpoint (AWS PrivateLink)**.
+* Triển khai thành công luồng truy cập S3 hoàn toàn khép kín từ cả trong VPC lẫn mạng On-premises mà không đi qua Internet công cộng, giúp tăng cường bảo mật và giảm chi phí NAT Gateway.
+* Hiểu và cấu hình thành công cơ chế phân giải tên miền lai (Hybrid DNS) với **Amazon Route 53 Private Hosted Zone** và **Inbound Resolver**.
+* Áp dụng kiểm soát truy cập hai chiều bằng **VPC Endpoint Policy** và **S3 Bucket Policy (`aws:SourceVpce`)**, hoàn thành bộ khung thực hành cốt lõi cho bài Workshop.

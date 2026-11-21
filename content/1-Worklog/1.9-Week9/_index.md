@@ -1,57 +1,31 @@
 ---
 title: "Week 9 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-11-09
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 9 Objectives
 
-### Week 9 Objectives:
+* Understand global content delivery with **Amazon CloudFront (CDN)** and modern web hosting with **AWS Amplify**.
+* Implement **Origin Access Control (OAC)** to keep origin S3 buckets completely private while serving assets exclusively through CloudFront over HTTPS.
+* Manage SSL/TLS certificates using **AWS Certificate Manager (ACM)** to enforce Encryption in Transit.
+* Protect web applications and APIs against common Layer 7 attacks (OWASP Top 10: SQL Injection, Cross-Site Scripting, HTTP floods) using **AWS WAF**.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks Implemented This Week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task | Start Date | Completion Date | Reference Material |
+|------|-----------|-------------|----------------|---------------|
+| Mon | **Content Delivery with Amazon CloudFront & OAC:** <br> - Study edge caching, Origins, Cache Behaviors, and TTL settings in Amazon CloudFront <br> - Create a CloudFront Distribution connected to a private S3 Bucket using Origin Access Control (OAC) <br> - Update the S3 Bucket Policy to allow read access solely from the `cloudfront.amazonaws.com` service principal | 09/11/2026 | 09/11/2026 | https://000058.awsstudygroup.com/ |
+| Tue | **Encryption in Transit with ACM & HTTPS:** <br> - Study automated SSL/TLS certificate provisioning and renewal in AWS Certificate Manager (ACM) <br> - Set CloudFront Viewer Protocol Policy to `Redirect HTTP to HTTPS` and enforce a minimum security policy of `TLSv1.2_2021` | 10/11/2026 | 10/11/2026 | https://docs.aws.amazon.com/acm/ |
+| Wed | **Web Application Firewall with AWS WAF:** <br> - Study AWS WAF architecture: Web ACLs, Rule Groups, Managed Rules, and Custom Rules <br> - Provision a Web ACL associated with CloudFront / API Gateway and enable `AWSManagedRulesCommonRuleSet` and `AWSManagedRulesSQLiRuleSet` | 11/11/2026 | 11/11/2026 | https://000026.awsstudygroup.com/ |
+| Thu | **Rate-Based Rules & Simulated Attack Testing:** <br> - Configure an AWS WAF Rate-based Rule to block offending source IPs exceeding request thresholds within a 5-minute window <br> - Send simulated SQL Injection and XSS test payloads (`?id=1' OR '1'='1`) and verify AWS WAF blocks requests with `403 Forbidden` | 12/11/2026 | 12/11/2026 | https://000026.awsstudygroup.com/ |
+| Fri | **Frontend Hosting with AWS Amplify & Cleanup:** <br> - Explore automated CI/CD build and hosting workflows for web frontends (Next.js / Static Web) on AWS Amplify <br> - Review WAF Sampled Requests metrics and clean up test Web ACLs and CloudFront distributions | 13/11/2026 | 13/11/2026 | https://000026.awsstudygroup.com/ |
 
+### Week 9 Achievements
 
-### Week 9 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Built a secure content delivery architecture using **Amazon CloudFront** with **Origin Access Control (OAC)**, preventing direct public access to S3 origin buckets.
+* Enforced Encryption in Transit across all endpoints via HTTPS redirection and modern TLS 1.2+ policies.
+* Configured **AWS WAF** Managed Rule Groups and Rate-based Rules to defend web endpoints against OWASP Top 10 exploits (SQLi, XSS) and Layer 7 brute-force/flooding attacks.
+* Understood frontend deployment workflows with AWS Amplify.

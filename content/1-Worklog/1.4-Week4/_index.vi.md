@@ -1,59 +1,31 @@
 ---
 title: "Worklog Tuần 4"
-date: 2024-01-01
-weight: 1
+date: 2026-10-05
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 4
 
-### Mục tiêu tuần 4:
+* Tìm hiểu và thực hành dịch vụ lưu trữ đối tượng Amazon Simple Storage Service (Amazon S3): Storage Classes, Versioning, Lifecycle Policies.
+* Nắm vững các cơ chế bảo mật dữ liệu trên Amazon S3: Block Public Access, Bucket Policy, Server-Side Encryption và chia sẻ tệp tin an toàn qua Pre-signed URL.
+* Tìm hiểu dịch vụ cơ sở dữ liệu quan hệ được quản lý Amazon RDS (Multi-AZ, Read Replicas, Automated Backups) và cơ sở dữ liệu NoSQL Amazon DynamoDB.
+* Thực hành kết nối an toàn từ tầng ứng dụng (EC2) tới tầng cơ sở dữ liệu (RDS) đặt trong Private Subnet.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|------|-----------|-------------|----------------|---------------|
+| 2 | **Lưu trữ đối tượng với Amazon S3:** <br> - Tìm hiểu kiến trúc Amazon S3 (Buckets, Objects, Keys) và các lớp lưu trữ (S3 Standard, Intelligent-Tiering, Glacier) <br> - Thực hành khởi tạo S3 Bucket, bật Object Versioning và thiết lập Lifecycle Rule tự động chuyển dữ liệu cũ sang lớp lưu trữ chi phí thấp | 05/10/2026 | 05/10/2026 | https://000057.awsstudygroup.com/ |
+| 3 | **Bảo mật S3 & Pre-signed URL:** <br> - Cấu hình S3 Block Public Access và viết JSON Bucket Policy giới hạn quyền truy cập theo IAM Principal và điều kiện IP <br> - Tìm hiểu mã hóa dữ liệu tĩnh (SSE-S3, SSE-KMS) <br> - Thực hành tạo Pre-signed URL bằng AWS CLI để cấp quyền tải lên/tải xuống tệp tin có thời hạn mà không cần mở public bucket | 06/10/2026 | 06/10/2026 | https://000057.awsstudygroup.com/ |
+| 4 | **Cơ sở dữ liệu Amazon RDS:** <br> - Tìm hiểu kiến trúc Amazon RDS, phân biệt cơ chế dự phòng Multi-AZ Deployment (High Availability) và Read Replicas (tăng hiệu năng đọc) <br> - Tạo DB Subnet Group nằm trong các Private Subnets <br> - Khởi tạo RDS MySQL/PostgreSQL instance và cấu hình Security Group chỉ cho phép kết nối từ Security Group của App Server | 07/10/2026 | 07/10/2026 | https://000005.awsstudygroup.com/ |
+| 5 | **Kết nối App – DB & Sao lưu dữ liệu:** <br> - Thực hành kết nối từ EC2 App Server vào RDS instance trong Private Subnet và khởi tạo schema mẫu <br> - Thực hành tạo DB Snapshot thủ công, kiểm tra tính năng Automated Backup và Point-in-Time Recovery | 08/10/2026 | 08/10/2026 | https://000005.awsstudygroup.com/ |
+| 6 | **Tìm hiểu Amazon DynamoDB & Tổng kết:** <br> - Tìm hiểu cơ sở dữ liệu NoSQL Amazon DynamoDB (Partition Key, Sort Key, On-Demand vs Provisioned Capacity) <br> - Thực hành tạo bảng DynamoDB, thêm/truy vấn bản ghi và dọn dẹp RDS instance, S3 bucket sau thực hành | 09/10/2026 | 09/10/2026 | https://000005.awsstudygroup.com/ |
 
+### Kết quả đạt được trong tuần 4
 
-### Kết quả đạt được tuần 4:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Làm chủ cách quản lý và tối ưu chi phí lưu trữ trên Amazon S3 thông qua Versioning và Lifecycle Policies.
+* Thực thi bảo mật nghiêm ngặt cho kho lưu trữ S3: giữ bucket ở chế độ Private hoàn toàn, kiểm soát truy cập bằng Bucket Policy, mã hóa SSE và cấp quyền truy cập tạm thời qua Pre-signed URL.
+* Hiểu rõ kiến trúc triển khai cơ sở dữ liệu Amazon RDS an toàn trong Private Subnet, sử dụng Security Group Chaining (chỉ nhận lưu lượng từ Security Group của tầng ứng dụng) và nắm vững cơ chế Multi-AZ.
+* Phân biệt được trường hợp sử dụng giữa cơ sở dữ liệu quan hệ (Amazon RDS) và NoSQL hiệu năng cao (Amazon DynamoDB).

@@ -6,6 +6,7 @@ chapter: false
 ---
 
 # Báo cáo thực tập
+
 ### Thông tin sinh viên:
 &emsp; **Họ và tên:** Nguyễn Thị Thúy Nga
 
@@ -25,9 +26,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 14/09/2026 đến ngày 14/12/2026
 
-![Ảnh đại diện của bạn](<img width="1500" height="2250" alt="HTB_1083" src="https://github.com/user-attachments/assets/92baca46-b398-43f5-b4d9-ebeeb24fdaca" />)
-
-
+<img src="https://github.com/user-attachments/assets/92baca46-b398-43f5-b4d9-ebeeb24fdaca" alt="Ảnh đại diện - Nguyễn Thị Thúy Nga" width="260" style="border-radius: 12px; margin: 16px 0;" />
 
 ### Nội dung báo cáo
 

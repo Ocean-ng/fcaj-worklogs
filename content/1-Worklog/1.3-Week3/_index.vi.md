@@ -1,59 +1,31 @@
 ---
 title: "Worklog Tuần 3"
-date: 2024-01-01
-weight: 1
+date: 2026-09-28
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 3
 
-### Mục tiêu tuần 3:
+* Tìm hiểu chuyên sâu về dịch vụ máy chủ ảo Amazon EC2: các dòng Instance Types, Amazon Machine Image (AMI), Key Pair và User Data.
+* Nắm vững kiến trúc lưu trữ khối với Amazon EBS (Volumes, Snapshots) và dịch vụ chia sẻ tệp tin Amazon EFS.
+* Thực hành kết nối và quản trị máy chủ trong Private Subnet an toàn qua Bastion Host và AWS Systems Manager (SSM) Session Manager (không cần mở port 22 SSH).
+* Tìm hiểu cân bằng tải (Elastic Load Balancing - ALB) và tự động co giãn (Amazon EC2 Auto Scaling).
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|------|-----------|-------------|----------------|---------------|
+| 2 | **Amazon EC2 & User Data:** <br> - Tìm hiểu các họ EC2 Instance (General Purpose, Compute/Memory Optimized) và mô hình tính phí <br> - Thực hành khởi tạo Amazon Linux 2023 và Windows Server EC2 <br> - Sử dụng User Data script để tự động cài đặt và cấu hình Web Server (Nginx/Apache) khi khởi động | 28/09/2026 | 28/09/2026 | https://000004.awsstudygroup.com/ |
+| 3 | **Lưu trữ Amazon EBS & AMI:** <br> - Tìm hiểu các loại ổ cứng EBS (`gp3`, `gp2`, `io2`), thực hành tạo, gắn (Attach) và mở rộng dung lượng EBS Volume <br> - Tạo EBS Snapshot để sao lưu dữ liệu và đóng gói máy chủ đã cấu hình thành Custom AMI | 29/09/2026 | 29/09/2026 | https://000004.awsstudygroup.com/ |
+| 4 | **Quản trị máy chủ an toàn với SSM Session Manager:** <br> - So sánh mô hình Bastion Host truyền thống với AWS Systems Manager (SSM) Session Manager <br> - Tạo IAM Role gắn policy `AmazonSSMManagedInstanceCore` cho EC2 <br> - Thực hành truy cập shell vào EC2 trong Private Subnet qua trình duyệt mà không cần mở Inbound Port 22 hay dùng SSH Key | 30/09/2026 | 30/09/2026 | https://000014.awsstudygroup.com/ |
+| 5 | **Application Load Balancer & Auto Scaling:** <br> - Tìm hiểu kiến trúc High Availability cho tầng Compute với Application Load Balancer (ALB) và Target Groups <br> - Thiết lập Launch Template và Auto Scaling Group (ASG) tự động tăng/giảm số lượng EC2 theo tải CPU | 01/10/2026 | 01/10/2026 | https://000006.awsstudygroup.com/ |
+| 6 | **Tổng kết & Dọn dẹp tài nguyên:** <br> - Kiểm thử khả năng chịu lỗi (Fault Tolerance) khi tắt thử 1 EC2 instance sau ALB <br> - Dọn dẹp toàn bộ ASG, ALB, EC2, EBS Volumes và Snapshots sau bài lab | 02/10/2026 | 02/10/2026 | https://000004.awsstudygroup.com/ |
 
+### Kết quả đạt được trong tuần 3
 
-### Kết quả đạt được tuần 3:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Thành thạo quy trình triển khai, tự động hóa khởi tạo máy chủ Amazon EC2 bằng User Data và đóng gói môi trường chuẩn hóa thông qua Custom AMI.
+* Hiểu rõ cách quản lý lưu trữ bền vững trên EC2 với Amazon EBS Volumes và cơ chế sao lưu/phục hồi bằng EBS Snapshots.
+* Áp dụng thành công phương pháp bảo mật vận hành hiện đại với **AWS Systems Manager Session Manager**, loại bỏ rủi ro lộ khóa SSH và không cần mở cổng 22 trên Security Group.
+* Nắm được cách thiết kế tầng ứng dụng có tính sẵn sàng cao (High Availability) và tự động mở rộng thông qua Application Load Balancer kết hợp Auto Scaling Group.

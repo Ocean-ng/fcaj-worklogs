@@ -5,12 +5,7 @@ weight: 1
 chapter: false
 ---
 
-    
 # Internship Report
-
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 ### Student Information:
 &emsp; **Full Name:** Nguyen Thi Thuy Nga
@@ -19,7 +14,7 @@ chapter: false
 
 &emsp; **Email:** nganguyen47006@gmail.com
 
-&emsp; **University:** FPT University
+&emsp; **University:** FPT University HCMC
 
 &emsp; **Major:** Information Assurance
 
@@ -31,13 +26,13 @@ chapter: false
 
 &emsp; **Internship Duration:** From 14/09/2026 to 14/12/2026
 
-![Your profile picture](<img width="1500" height="2250" alt="HTB_1083" src="https://github.com/user-attachments/assets/d0fa3866-8081-48a0-ac8c-2f05be71e1bd" />)
+<img src="https://github.com/user-attachments/assets/d0fa3866-8081-48a0-ac8c-2f05be71e1bd" alt="Profile Picture - Nguyen Thi Thuy Nga" width="260" style="border-radius: 12px; margin: 16px 0;" />
 
 ### Report Content
 
 1.  [Worklog](1-Worklog/)
 2.  [Proposal](2-Proposal/)
-3.  [BlogsPosted](3-BlogsPosted/)
+3.  [Blogs Posted](3-BlogsPosted/)
 4.  [Events Participated](4-EventParticipated/)
 5.  [Workshop](5-Workshop/)
 6.  [Self-evaluation](6-Self-evaluation/)

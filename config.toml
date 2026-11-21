@@ -1,4 +1,4 @@
-baseURL = "https://ocean-ng.github.io/fcaj-worklogs/"
+baseURL = "https://ocean-ng.github.io/"
 relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "vi"
@@ -15,8 +15,8 @@ home = [ "HTML", "RSS", "JSON"]
   themeVariant = "workshop"
   # Git hub repo link
   editURL = ""
-  description = ""
-  author = "ocean-ng"
+  description = "Báo cáo thực tập First Cloud AI Journey - Nguyễn Thị Thúy Nga"
+  author = "nganguyen47006@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
@@ -60,4 +60,3 @@ weight = 20
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-      

@@ -1,47 +1,47 @@
 ---
 title: "Sharing and Feedback"
-date: 2024-01-01
+date: 2026-12-04
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+> This section captures my reflections and feedback after completing the three-month **First Cloud AI Journey (FCAJ Workforce Bootcamp)** internship. It has been a rewarding journey that enabled me, as an Information Assurance student, to translate theoretical cybersecurity principles into hands-on cloud architecture and security engineering skills on AWS.
 
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
+### General Evaluation
 
-### Overall Evaluation
+**1. Learning and Working Environment**  
+The FCAJ environment is open, motivating, and well-structured. The curated lab library on `awsstudygroup.com` provides a clear progression from cloud fundamentals to advanced architectures, enabling interns to build disciplined daily self-study and hands-on lab habits.
 
-**1. Working Environment**  
-The working environment is very friendly and open. FCAJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+**2. Support from Mentors and the Admin Team**  
+The mentors and program coordinators were consistently supportive and professional. Whenever I encountered challenges with VPC routing, hybrid DNS resolution, or IAM policy scoping, mentors guided me on how to inspect logs and analyze root causes rather than simply giving away the answer. Program schedules, guidelines, and evaluation criteria were also communicated clearly from Week 1.
 
-**2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+**3. Alignment with My Information Assurance Major**  
+The program aligned exceptionally well with my **Information Assurance** curriculum at FPT University. Beyond mastering foundational cloud infrastructure (VPC, EC2, S3, RDS, Serverless), I gained hands-on experience implementing enterprise cloud security controls including IAM Least Privilege, SSM Session Manager, AWS PrivateLink / VPC Endpoints, AWS KMS, AWS WAF, CloudTrail, GuardDuty, and Security Hub.
 
-**3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+**4. Learning & Holistic Skill Development**  
+In addition to technical AWS capabilities, the internship trained me to design systems using the **AWS Well-Architected Framework**, estimate and govern infrastructure budgets with the **AWS Pricing Calculator**, publish bilingual technical documentation using Git and Hugo, and maintain structured weekly engineering worklogs.
 
-**4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
-
-**5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
-
-**6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
+**5. Community Culture & Knowledge Sharing**  
+The *"Learn and Share"* culture of the First Cloud Journey community left the strongest impression on me. Writing technical blogs and documenting a complete hands-on Workshop not only solidified my own understanding, but also contributed practical documentation back to the student cloud community.
 
 ---
 
-### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+### Summary Reflection Questions
+
+* **What was I most satisfied with during the internship?**  
+  Getting true hands-on practice on a live AWS account solving enterprise-grade architecture scenarios, alongside attending in-person technical workshops at the AWS Vietnam office (Bitexco Financial Tower) to learn directly from AWS Solutions Architects.
+
+* **What could be improved for future cohorts?**  
+  Adding mid-term thematic peer-review or mini Tech Talk sessions grouped by focus track (e.g., Cloud Security, Serverless Backend, Data & GenAI) would give interns even more opportunities to exchange architectural feedback.
+
+* **Would I recommend the FCAJ internship to peers?**  
+  **Absolutely yes.** For students majoring in Information Assurance, Software Engineering, or Information Systems who want a rigorous, practical foundation in cloud computing, FCAJ is one of the best programs to launch an AWS career.
 
 ---
 
-### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+### Suggestions & Acknowledgments
+
+I hope the **First Cloud AI Journey** program continues expanding advanced hands-on tracks in **Cloud Security, DevSecOps, and Generative AI Security (Amazon Bedrock Security)**.
+
+I would like to express my sincere gratitude to the mentors, the FCAJ Admin team, and Amazon Web Services Viet Nam Company Limited for their dedicated guidance, support, and inspiration throughout this internship!

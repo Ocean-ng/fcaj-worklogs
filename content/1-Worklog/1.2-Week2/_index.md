@@ -1,57 +1,32 @@
 ---
 title: "Week 2 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-09-21
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 2 Objectives
 
-### Week 2 Objectives:
+* Master cloud networking architecture on AWS using Amazon Virtual Private Cloud (Amazon VPC).
+* Understand IP addressing (CIDR Blocks) and segmenting Public and Private Subnets across multiple Availability Zones.
+* Configure network routing using Route Tables, Internet Gateway (IGW), and NAT Gateway.
+* Differentiate and implement multi-layered network security using Security Groups (Stateful) and Network ACLs (Stateless).
+* Explore advanced connectivity models including VPC Peering and AWS Site-to-Site VPN.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks Implemented This Week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task | Start Date | Completion Date | Reference Material |
+|------|-----------|-------------|----------------|---------------|
+| Mon | **Amazon VPC Planning:** <br> - Study Amazon VPC concepts and CIDR block calculation (e.g., `10.0.0.0/16`) <br> - Design a Multi-AZ network topology with Public and Private Subnets <br> - Create a Custom VPC and Subnets on the AWS Management Console | 21/09/2026 | 21/09/2026 | https://000003.awsstudygroup.com/ |
+| Tue | **Routing & Internet Connectivity:** <br> - Understand Route Tables and Internet Gateway (IGW) mechanisms <br> - Attach an IGW to the VPC and configure the Public Route Table (`0.0.0.0/0` -> IGW) <br> - Enable Auto-assign Public IPv4 addressing on Public Subnets | 22/09/2026 | 22/09/2026 | https://000003.awsstudygroup.com/ |
+| Wed | **Network Security (Security Groups & NACLs):** <br> - Analyze differences between Security Groups (instance-level, stateful) and Network ACLs (subnet-level, stateless) <br> - Configure Inbound/Outbound rules restricting source IPs and ports <br> - Test packet filtering behavior for ICMP, SSH, and HTTP traffic | 23/09/2026 | 23/09/2026 | https://000003.awsstudygroup.com/ |
+| Thu | **NAT Gateway for Private Subnets:** <br> - Address the requirement for Private Subnet instances to download patches from the Internet without exposing a public IP <br> - Provision a NAT Gateway in the Public Subnet with an Elastic IP <br> - Update the Private Route Table to route outbound traffic through the NAT Gateway | 24/09/2026 | 24/09/2026 | https://000003.awsstudygroup.com/ |
+| Fri | **VPC Peering & Site-to-Site VPN:** <br> - Practice private inter-VPC communication using VPC Peering and bidirectional route updates <br> - Study AWS Site-to-Site VPN components (Virtual Private Gateway, Customer Gateway) <br> - Clean up NAT Gateway, Elastic IP, and lab resources to prevent idle charges | 25/09/2026 | 25/09/2026 | https://000003.awsstudygroup.com/ <br> https://000019.awsstudygroup.com/ |
 
+### Week 2 Achievements
 
-### Week 2 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Designed and provisioned a complete Multi-AZ Custom VPC isolating public-facing resources from internal private workloads.
+* Mastered packet routing flows across Route Tables, Internet Gateways, and NAT Gateways.
+* Applied Defense-in-Depth network security by combining subnet-level NACLs and instance-level Security Groups, clearly distinguishing stateful and stateless behavior during troubleshooting.
+* Gained foundational knowledge of inter-VPC connectivity via VPC Peering and hybrid cloud connections via Site-to-Site VPN.

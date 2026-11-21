@@ -1,57 +1,31 @@
 ---
 title: "Week 3 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-09-28
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 3 Objectives
 
-### Week 3 Objectives:
+* Dive deep into Amazon EC2 virtual servers: Instance Types, Amazon Machine Images (AMI), Key Pairs, and User Data automation.
+* Understand block storage architecture with Amazon EBS (Volumes, Snapshots) and shared file storage with Amazon EFS.
+* Practice secure access and management of Private Subnet instances using Bastion Hosts and AWS Systems Manager (SSM) Session Manager (zero open SSH ports).
+* Learn traffic distribution and elasticity using Application Load Balancer (ALB) and EC2 Auto Scaling.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks Implemented This Week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task | Start Date | Completion Date | Reference Material |
+|------|-----------|-------------|----------------|---------------|
+| Mon | **Amazon EC2 & User Data Automation:** <br> - Study EC2 instance families (General Purpose, Compute/Memory Optimized) and pricing models <br> - Launch Amazon Linux 2023 and Windows Server EC2 instances <br> - Use User Data scripts to bootstrap and configure a web server (Nginx/Apache) automatically on launch | 28/09/2026 | 28/09/2026 | https://000004.awsstudygroup.com/ |
+| Tue | **Amazon EBS Storage & Custom AMIs:** <br> - Explore EBS volume types (`gp3`, `gp2`, `io2`), practice creating, attaching, and expanding EBS volumes <br> - Create EBS Snapshots for backup and package pre-configured instances into Custom AMIs | 29/09/2026 | 29/09/2026 | https://000004.awsstudygroup.com/ |
+| Wed | **Secure Administration with SSM Session Manager:** <br> - Compare traditional Bastion Hosts with AWS Systems Manager (SSM) Session Manager <br> - Create an IAM Role with `AmazonSSMManagedInstanceCore` attached to EC2 <br> - Access Private Subnet EC2 shell sessions via browser without opening Inbound Port 22 or managing SSH keys | 30/09/2026 | 30/09/2026 | https://000014.awsstudygroup.com/ |
+| Thu | **Application Load Balancer & Auto Scaling:** <br> - Study High Availability compute architecture with Application Load Balancer (ALB) and Target Groups <br> - Configure Launch Templates and Auto Scaling Groups (ASG) to scale EC2 capacity dynamically based on CPU utilization | 01/10/2026 | 01/10/2026 | https://000006.awsstudygroup.com/ |
+| Fri | **Fault Tolerance Verification & Cleanup:** <br> - Verify fault tolerance and health checks by terminating an instance behind the ALB <br> - Clean up ASG, ALB, EC2 instances, EBS Volumes, and Snapshots | 02/10/2026 | 02/10/2026 | https://000004.awsstudygroup.com/ |
 
+### Week 3 Achievements
 
-### Week 3 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Automated EC2 instance bootstrapping with User Data and standardized server images using Custom AMIs.
+* Managed persistent block storage using Amazon EBS Volumes and verified backup/restore workflows with EBS Snapshots.
+* Applied security best practices by adopting **AWS Systems Manager Session Manager**, eliminating SSH key exposure and closing Inbound Port 22 on Security Groups.
+* Built a highly available, self-healing compute tier using Application Load Balancer and EC2 Auto Scaling Groups.
