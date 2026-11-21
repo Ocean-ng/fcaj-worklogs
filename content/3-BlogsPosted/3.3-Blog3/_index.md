@@ -6,60 +6,60 @@ chapter: false
 pre: " <b> 3.3. </b> "
 ---
 
-# Automating Threat Detection and Security Incident Response on AWS with GuardDuty, Security Hub, and EventBridge
+# AWS Security: Starting with Identity and Access Control
 
-In Cloud Security Operations (Cloud SecOps), the elapsed time between an initial compromise and when defenders detect (**MTTD** - Mean Time to Detect) and contain (**MTTR** - Mean Time to Respond) the threat determines the blast radius of an incident. Relying solely on manual log reviews across CloudTrail or VPC Flow Logs leaves organizations vulnerable to fast-moving automated attacks.
-
-This article outlines an event-driven threat detection, compliance scoring, and automated incident response architecture on AWS practiced during my internship.
-
----
-
-### 1. Three-Tier Automated Cloud SecOps Architecture
-
-An active cloud defense pipeline on AWS integrates three core functional tiers:
-
-1. **Detection & Posture Assessment Tier:**
-   * **Amazon GuardDuty:** Continuously analyzes **AWS CloudTrail Events**, **VPC Flow Logs**, and **Route 53 DNS Query Logs** using Machine Learning anomaly detection and integrated threat intelligence feeds (e.g., detecting IAM credentials used from Tor exit nodes, EC2 instances communicating with crypto-mining pools, or internal port sweeps).
-   * **AWS Security Hub:** Aggregates findings in the standardized **AWS Security Finding Format (ASFF)** from GuardDuty, Inspector, and IAM Access Analyzer while continuously evaluating account configurations against the **CIS AWS Foundations Benchmark**.
-
-2. **Event Orchestration Tier:**
-   * **Amazon EventBridge:** Acts as the real-time event router, filtering high-severity findings (`HIGH` / `CRITICAL`) emitted by GuardDuty and Security Hub.
-
-3. **Automated Response & Notification Tier:**
-   * **Amazon SNS:** Delivers instant alerts to the security engineering team via Email, Slack, or Microsoft Teams.
-   * **AWS Lambda:** Executes automated containment playbooks within seconds of detection.
+* **Published on:** [AWS Study Group VN Facebook Group](https://www.facebook.com/groups/660548818043427/user/100016726392723)
+* **Author:** Thuy Nga
 
 ---
 
-### 2. EventBridge Rule Pattern for High-Severity GuardDuty Findings
+When building systems on AWS, security goes beyond firewalls and private networks. You must strictly govern which identities can access resources, what actions they are permitted to perform, and under which conditions. The **AWS Well-Architected Security Pillar** recommends establishing layered identity controls across design, deployment, and operations.
 
-To trigger automated containment and alerting only for high-severity threats (`severity >= 7.0`), configure the following Event Pattern in Amazon EventBridge:
+![Identity Federation and Temporary Credentials Flow on AWS](/images/3-BlogsPosted/blog3-iam-federation.png)
 
-```json
-{
-  "source": ["aws.guardduty"],
-  "detail-type": ["GuardDuty Finding"],
-  "detail": {
-    "severity": [
-      { "numeric": [">=", 7.0] }
-    ]
-  }
-}
-```
+### 1. Protect the Root User
+
+The AWS account Root user holds unrestricted access to all resources in the account. AWS strongly recommends using the Root user only for tasks that explicitly require root privileges, and never creating programmatic access keys for the Root user. Multi-Factor Authentication (**MFA**) must be enforced on the Root user across all AWS account types.
+
+### 2. Use Appropriate Identities and Temporary Credentials
+
+For human users within an organization, AWS recommends identity **federation** with short-lived credentials; **AWS IAM Identity Center** provides centralized multi-account access management. For applications and compute workloads running on AWS, always use **IAM Roles** to provide temporary credentials.
+
+Temporary credentials automatically expire after a defined lifetime, after which AWS rejects them for new API requests. This eliminates the risk of distributing or embedding long-term static credentials in application code.
+
+### 3. Grant Only the Permissions Workloads Actually Need (Least Privilege)
+
+The **Principle of Least Privilege** means granting only the minimum permissions required to complete a specific task, scoped by actions, resources, and conditions.
+
+For example, if an application only needs to read objects whose keys start with `reports/`, the IAM policy should scope `s3:GetObject` strictly to that prefix (`arn:aws:s3:::example-bucket/reports/*`). In Amazon S3, "folders" shown in the console are actually object key prefixes rather than physical directories. If the workload also needs to list objects under that prefix, `s3:ListBucket` must be granted separately on the bucket ARN with a `s3:prefix` condition.
+
+### 4. Audit Account Activity with AWS CloudTrail
+
+**CloudTrail Event History** provides a 90-day searchable record of management events per AWS Region. By default, Event History displays only management events—it does not include data events, CloudTrail Insights events, or network activity events. For long-term retention, multi-region auditing, and data event visibility, configure a dedicated **CloudTrail Trail** or **CloudTrail Lake Event Data Store**.
+
+### Getting Started Checklist
+
+* Enable MFA for the Root user and stop using Root for everyday administrative tasks.
+* Prefer identity federation, IAM Roles, and temporary credentials over static IAM access keys.
+* Scope IAM policies tightly by specific actions, resource ARNs, and conditions.
+* Verify event scope coverage when investigating activity in AWS CloudTrail.
+
+Cloud security requires continuous review: regularly verify which identities hold permissions, whether those permissions remain necessary, and whether account activity is being logged at the required depth.
+
+### References
+
+1. [AWS Well-Architected Framework – Security Pillar](https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/)
+2. [Best practices to protect your AWS account root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html)
+3. [Security best practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+4. [AWS security credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html)
+5. [Viewing recent management events with the CloudTrail console](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)
+
+`#AWS` `#CloudSecurity` `#IAM`
 
 ---
 
-### 3. Automated EC2 Quarantine Playbook with AWS Lambda
+### Original Post on AWS Study Group VN
 
-When GuardDuty detects an EC2 instance communicating with a known Command-and-Control server (`Backdoor:EC2/C&CActivity.B!DNS`), EventBridge invokes an AWS Lambda remediation function that performs three automated steps:
-1. **Network Isolation:** Replaces the instance's active Security Groups with a dedicated `Quarantine-Security-Group` (containing zero Inbound and zero Outbound rules) to sever attacker communication while keeping the instance running to preserve volatile memory for forensic investigation.
-2. **Forensic Snapshot Capture:** Triggers **EBS Snapshots** of all attached volumes and tags them with `ForensicEvidence=True`.
-3. **Structured Alerting:** Publishes the Instance ID, Finding Type, Region, and remediation status to **Amazon SNS** for immediate analyst review.
+![Blog 3 Post on AWS Study Group VN (Part 1)](/images/3-BlogsPosted/blog3-fb-post-1.jpg)
 
----
-
-### 4. Key Takeaways from Hands-On Practice
-
-* **Agentless, Tamper-Resistant Visibility:** Because Amazon GuardDuty operates directly on AWS control-plane telemetry streams (CloudTrail, VPC Flow Logs, DNS logs), an attacker who gains `root` access inside an EC2 guest OS cannot disable GuardDuty telemetry collection.
-* **Isolate Rather Than Terminate:** During incident response, isolating an instance via Security Group swap and capturing EBS Snapshots preserves crucial forensic evidence needed for Root Cause Analysis, whereas terminating the instance destroys evidence.
-* **Cost Management in Lab Environments:** GuardDuty provides a 30-day Free Trial; students practicing SecOps labs should monitor the Usage tab in the GuardDuty console and disable the detector after completing their evaluation.
+![Blog 3 Post on AWS Study Group VN (Part 2)](/images/3-BlogsPosted/blog3-fb-post-2.jpg)

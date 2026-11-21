@@ -6,41 +6,55 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Bài thu hoạch “AWS Cloud Security & Generative AI Builders Day”
+# Bài thu hoạch sự kiện “AWS Cloud Mastery”
 
-### 1. Thông tin & Mục đích của sự kiện
+### 1. Thông tin chung về sự kiện
 
-* **Thời gian:** 13:30 – 17:00, ngày 28/10/2026
-* **Địa điểm:** Văn phòng AWS Việt Nam – Tầng 26, Tòa nhà Bitexco Financial Tower, Quận 1, TP.HCM
-* **Mục tiêu cốt lõi:**
-  - Hệ thống hóa các nguyên tắc thiết kế bảo mật đám mây theo trụ cột **Security Pillar** của **AWS Well-Architected Framework**.
-  - Hướng dẫn xây dựng vành đai bảo vệ dữ liệu (**Data Perimeter**) bằng IAM, VPC Endpoints (AWS PrivateLink) và KMS.
-  - Trình diễn quy trình tự động hóa phát hiện mối đe dọa và quản trị tư thế bảo mật với **Amazon GuardDuty** và **AWS Security Hub**.
-  - Giới thiệu các cơ chế kiểm soát an toàn dữ liệu và quyền riêng tư khi xây dựng ứng dụng Generative AI với **Amazon Bedrock Guardrails**.
+* **Tên sự kiện:** AWS Cloud Mastery
+* **Đơn vị tổ chức:** Chương trình AWS First Cloud AI Journey (FCAJ) & Cộng đồng AWS Study Group VN
+* **Thời gian:** Sáng Thứ Bảy, ngày 14/11/2026
+* **Địa điểm:** Văn phòng AWS Việt Nam – Tầng 26, Tòa nhà Bitexco Financial Tower, Số 02 Hải Triều, Quận 1, TP. Hồ Chí Minh
+* **Vai trò:** Người tham dự (Thực tập sinh chương trình First Cloud AI Journey)
+* **Link bài tổng kết sự kiện trên AWS Study Group VN:** [Xem bài đăng của anh Châu Bảo trên Facebook Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2340764136688545/)
 
-### 2. Nội dung chuyên môn nổi bật
+![Bài viết tổng kết sự kiện AWS Cloud Mastery trên nhóm AWS Study Group VN](/images/4-EventParticipated/event2-post.jpg)
 
-#### Bảo mật theo chiều sâu (Defense in Depth) trên AWS
-* Không dựa vào một lớp tường lửa duy nhất mà thiết lập bảo vệ ở mọi tầng:
-  - **Tầng Biên & Ứng dụng:** Amazon CloudFront, AWS Shield và AWS WAF lọc các cuộc tấn công OWASP Top 10 và DDoS.
-  - **Tầng Mạng VPC:** Phân tách Public/Private Subnets, kiểm soát gói tin bằng Security Groups (Stateful) và Network ACLs (Stateless).
-  - **Tầng Định danh & Dữ liệu:** Áp dụng IAM Least Privilege, sử dụng thông tin xác thực tạm thời (IAM Roles / STS) thay cho Long-term Access Keys và mã hóa dữ liệu bằng AWS KMS.
+---
 
-#### Thiết lập Vành đai dữ liệu (Data Perimeter) với VPC Endpoints
-* Phân tích kịch bản ngăn chặn rò rỉ dữ liệu (Data Exfiltration): ngay cả khi thông tin xác thực IAM bị lộ, kẻ tấn công bên ngoài cũng không thể truy cập vào S3 Bucket của doanh nghiệp nếu Bucket Policy kiểm tra điều kiện `aws:SourceVpce` hoặc `aws:SourceVpc`.
-* Minh họa thực tế cách kết hợp **S3 Gateway Endpoint**, **S3 Interface Endpoint** và **VPC Endpoint Policy** cho mô hình mạng Hybrid Cloud.
+### 2. Mục đích của sự kiện
 
-#### Tự động hóa SecOps với GuardDuty, Security Hub & EventBridge
-* Cách **Amazon GuardDuty** phát hiện bất thường từ CloudTrail, VPC Flow Logs và DNS Logs mà không cần triển khai Agent.
-* Sử dụng **AWS Security Hub** để gom nhóm cảnh báo và đối chiếu tự động với bộ tiêu chuẩn **CIS AWS Foundations Benchmark**.
-* Xây dựng luồng phản ứng tự động (Automated Playbook): `GuardDuty Finding` → `Amazon EventBridge` → `AWS Lambda` tự động cách ly Security Group và gửi thông báo qua `Amazon SNS`.
+* Hệ thống hóa kiến thức trọng tâm để làm chủ nền tảng điện toán đám mây AWS (**Cloud Mastery**), từ tư duy thiết kế kiến trúc chuẩn mực, bảo mật hệ thống cho đến vận hành và tối ưu hóa chi phí trong dự án thực tế.
+* Tạo không gian đối thoại trực tiếp, cởi mở giữa các anh chị Mentor/Solutions Architect dày dạn kinh nghiệm với đông đảo sinh viên công nghệ tại TP.HCM.
+* Giải đáp chuyên sâu các bài toán kỹ thuật thực tế mà sinh viên gặp phải trong quá trình làm bài Lab, xây dựng Proposal/Workshop cũng như định hướng lộ trình nghề nghiệp Cloud Engineer, Cloud Security và Solutions Architect.
 
-#### Bảo mật ứng dụng Generative AI trên Amazon Bedrock
-* Dữ liệu prompt và kết quả đầu ra của khách hàng trên Amazon Bedrock không bao giờ được dùng để huấn luyện lại mô hình nền tảng gốc.
-* Sử dụng **VPC Interface Endpoint (PrivateLink)** để gọi API Amazon Bedrock hoàn toàn qua mạng nội bộ và dùng **Bedrock Guardrails** để lọc thông tin nhạy cảm (PII Redaction) cũng như ngăn chặn Prompt Injection.
+---
 
-### 3. Bài học rút ra & Ứng dụng vào kỳ thực tập
+### 3. Nội dung & Các hoạt động nổi bật trong sự kiện
 
-* **Củng cố trực tiếp cho bài Workshop của kỳ thực tập:** Phần trình bày về **Data Perimeter** và **VPC Endpoints** tại sự kiện đã giúp mình hiểu sâu hơn bản chất của điều kiện `aws:SourceVpce` và kiến trúc **Route 53 Inbound Resolver**, từ đó hoàn thiện mạch lạc chương 4 và chương 5 của mục **5-Workshop**.
-* **Định hình rõ lộ trình nghề nghiệp ngành An toàn thông tin:** Sự kiện giúp mình thấy rõ sự giao thoa giữa **An toàn thông tin truyền thống** và **Cloud Security / DevSecOps**, nơi mọi chính sách bảo mật, kiểm toán tuân thủ và phản ứng sự cố đều được định nghĩa và tự động hóa bằng mã nguồn (Policy as Code & Automated Remediation).
-* **Thực hành ngay trên tài khoản lab cá nhân:** Ngay sau sự kiện, mình đã áp dụng kiến thức học được vào các bài thực hành ở **Tuần 8 (KMS & Secrets)**, **Tuần 9 (CloudFront & WAF)**, **Tuần 10 (CloudTrail & Flow Logs)** và **Tuần 11 (GuardDuty & Security Hub)**.
+#### 1. Làm chủ kiến trúc và thực hành cốt lõi trên AWS (Cloud Mastery Sharing)
+* Đi sâu vào cách kết hợp nhịp nhàng các dịch vụ nền tảng của AWS (Networking với VPC, Compute với EC2/Serverless, Storage với S3, Database và IAM Security) thành một kiến trúc hoàn chỉnh thay vì chỉ học rời rạc từng dịch vụ đơn lẻ.
+* Phân tích các lỗi cấu hình phổ biến mà sinh viên và kỹ sư mới thường gặp phải khi triển khai dự án trên AWS: phân quyền IAM quá rộng, lộ thông tin xác thực, đặt cơ sở dữ liệu ở Public Subnet hoặc quên kiểm soát chi phí NAT Gateway / CloudWatch Logs.
+* Chia sẻ kinh nghiệm xây dựng tài liệu kỹ thuật, thiết kế sơ đồ kiến trúc (Architecture Diagram) và bảo vệ giải pháp (Proposal & Workshop) thuyết phục dưới góc nhìn của doanh nghiệp.
+
+#### 2. Phiên thảo luận & Hỏi đáp chuyên sâu (Open Q&A)
+* Điểm nhấn đặc biệt nhất của buổi sáng Thứ Bảy là phần giao lưu hỏi đáp diễn ra vô cùng sôi nổi (*"không có hồi kết"*) với hàng loạt câu hỏi thực tế từ các bạn sinh viên đến từ khắp các trường đại học tại TP.HCM:
+  - **Về chuyên môn kỹ thuật:** Cách lựa chọn giữa kiến trúc Serverless và Container/EC2 cho dự án quy mô nhỏ và vừa; cách thiết lập bảo mật đa tầng (Defense in Depth) và kiểm soát truy cập dữ liệu an toàn trên Cloud.
+  - **Về định hướng nghề nghiệp:** Lộ trình phát triển từ sinh viên thực tập lên vị trí Cloud Engineer / Cloud Security Engineer / Solutions Architect; kinh nghiệm ôn luyện chứng chỉ AWS quốc tế kết hợp với làm dự án thực chiến để tạo lợi thế khi ứng tuyển.
+
+#### 3. Hoạt động Interactive Quiz Game & Kết nối cộng đồng
+* Cuối chương trình là phần **Game Quiz** tương tác trực tiếp, giúp các bạn sinh viên ôn tập nhanh và kiểm tra lại độ hiểu sâu về các dịch vụ AWS trong bầu không khí hào hứng, sôi động.
+* Sự kiện cũng là dịp để mình gặp gỡ, trao đổi kinh nghiệm làm báo cáo thực tập với các bạn thực tập sinh FCAJ và cùng hướng tới ngày hội lớn **AWS Student Community Day Vietnam 2026**.
+
+---
+
+### 4. Bài học rút ra & Ứng dụng vào kỳ thực tập
+
+* **Hoàn thiện chất lượng bài Workshop & Báo cáo thực tập:** Những chia sẻ tại buổi **Cloud Mastery** (ngày `14/11/2026` — giai đoạn nước rút của kỳ thực tập) giúp mình rà soát lại toàn bộ kiến trúc mạng riêng tư trong bài **5-Workshop (S3 VPC Endpoints & Hybrid DNS)** cũng như kiểm tra kỹ các tiêu chí bảo mật, tối ưu chi phí trước khi đóng băng báo cáo.
+* **Rõ ràng hơn về định hướng Cloud Security:** Phần hỏi đáp thực tế giúp mình hiểu rõ doanh nghiệp kỳ vọng gì ở một sinh viên ngành **An toàn thông tin** khi bước vào mảng Cloud: không chỉ nắm lý thuyết bảo mật mà phải biết áp dụng trực tiếp vào IAM Policy, VPC Endpoint Policy, KMS, WAF và hệ thống giám sát CloudTrail/GuardDuty.
+* **Mở rộng mạng lưới kết nối (Networking):** Được trực tiếp đến văn phòng AWS Việt Nam vào sáng cuối tuần, học hỏi từ các anh chị đi trước và đồng hành cùng những người bạn cùng chí hướng trong chương trình FCAJ.
+
+---
+
+### 5. Hình ảnh kỷ niệm khi tham gia sự kiện tại văn phòng AWS Việt Nam
+
+![Check-in cùng các bạn thực tập sinh FCAJ tại sự kiện AWS Cloud Mastery - Tầng 26 Bitexco (14/11/2026)](/images/4-EventParticipated/event2-checkin.jpg)

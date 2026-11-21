@@ -21,7 +21,7 @@ pre: " <b> 1.3. </b> "
 | Tue | **Amazon EBS Storage & Custom AMIs:** <br> - Explore EBS volume types (`gp3`, `gp2`, `io2`), practice creating, attaching, and expanding EBS volumes <br> - Create EBS Snapshots for backup and package pre-configured instances into Custom AMIs | 29/09/2026 | 29/09/2026 | https://000004.awsstudygroup.com/ |
 | Wed | **Secure Administration with SSM Session Manager:** <br> - Compare traditional Bastion Hosts with AWS Systems Manager (SSM) Session Manager <br> - Create an IAM Role with `AmazonSSMManagedInstanceCore` attached to EC2 <br> - Access Private Subnet EC2 shell sessions via browser without opening Inbound Port 22 or managing SSH keys | 30/09/2026 | 30/09/2026 | https://000014.awsstudygroup.com/ |
 | Thu | **Application Load Balancer & Auto Scaling:** <br> - Study High Availability compute architecture with Application Load Balancer (ALB) and Target Groups <br> - Configure Launch Templates and Auto Scaling Groups (ASG) to scale EC2 capacity dynamically based on CPU utilization | 01/10/2026 | 01/10/2026 | https://000006.awsstudygroup.com/ |
-| Fri | **Fault Tolerance Verification & Cleanup:** <br> - Verify fault tolerance and health checks by terminating an instance behind the ALB <br> - Clean up ASG, ALB, EC2 instances, EBS Volumes, and Snapshots | 02/10/2026 | 02/10/2026 | https://000004.awsstudygroup.com/ |
+| Fri | **AWS Fireside Chat Event & Weekly Cleanup:** <br> - Attend *"Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam"* with Amazon CTO Dr. Werner Vogels at Level 26 Bitexco <br> - Verify ALB fault tolerance and clean up ASG, ALB, EC2 instances, EBS Volumes, and Snapshots | 02/10/2026 | 02/10/2026 | https://000004.awsstudygroup.com/ |
 
 ### Week 3 Achievements
 

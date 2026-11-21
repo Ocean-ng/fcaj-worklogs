@@ -21,7 +21,7 @@ pre: " <b> 1.3. </b> "
 | 3 | **Lưu trữ Amazon EBS & AMI:** <br> - Tìm hiểu các loại ổ cứng EBS (`gp3`, `gp2`, `io2`), thực hành tạo, gắn (Attach) và mở rộng dung lượng EBS Volume <br> - Tạo EBS Snapshot để sao lưu dữ liệu và đóng gói máy chủ đã cấu hình thành Custom AMI | 29/09/2026 | 29/09/2026 | https://000004.awsstudygroup.com/ |
 | 4 | **Quản trị máy chủ an toàn với SSM Session Manager:** <br> - So sánh mô hình Bastion Host truyền thống với AWS Systems Manager (SSM) Session Manager <br> - Tạo IAM Role gắn policy `AmazonSSMManagedInstanceCore` cho EC2 <br> - Thực hành truy cập shell vào EC2 trong Private Subnet qua trình duyệt mà không cần mở Inbound Port 22 hay dùng SSH Key | 30/09/2026 | 30/09/2026 | https://000014.awsstudygroup.com/ |
 | 5 | **Application Load Balancer & Auto Scaling:** <br> - Tìm hiểu kiến trúc High Availability cho tầng Compute với Application Load Balancer (ALB) và Target Groups <br> - Thiết lập Launch Template và Auto Scaling Group (ASG) tự động tăng/giảm số lượng EC2 theo tải CPU | 01/10/2026 | 01/10/2026 | https://000006.awsstudygroup.com/ |
-| 6 | **Tổng kết & Dọn dẹp tài nguyên:** <br> - Kiểm thử khả năng chịu lỗi (Fault Tolerance) khi tắt thử 1 EC2 instance sau ALB <br> - Dọn dẹp toàn bộ ASG, ALB, EC2, EBS Volumes và Snapshots sau bài lab | 02/10/2026 | 02/10/2026 | https://000004.awsstudygroup.com/ |
+| 6 | **Tham dự sự kiện AWS & Tổng kết tuần:** <br> - Tham dự buổi trò chuyện trực tiếp *"Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam"* cùng CTO Amazon tại Tầng 26 Bitexco <br> - Kiểm thử khả năng chịu lỗi (Fault Tolerance) sau ALB và dọn dẹp tài nguyên lab (ASG, ALB, EC2, EBS) | 02/10/2026 | 02/10/2026 | https://000004.awsstudygroup.com/ |
 
 ### Kết quả đạt được trong tuần 3
 

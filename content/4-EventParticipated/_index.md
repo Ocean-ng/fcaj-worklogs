@@ -6,28 +6,30 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Throughout the **First Cloud AI Journey (FCAJ)** internship, I participated in technical workshops and seminars organized by AWS Vietnam and the AWS Study Group community. Each event provided practical insights from AWS Solutions Architects, connecting cloud architecture and information security concepts with real-world enterprise challenges.
+Throughout the **First Cloud AI Journey (FCAJ)** internship, I attended in-person fireside chats and technical sharing events at the AWS Vietnam office (Bitexco Financial Tower) alongside the AWS Study Group VN community. Each event offered valuable insights directly from Amazon technology leadership, mentors, and cloud practitioners.
 
-### [Event 1 - GenAI-powered App-DB Modernization Workshop](4.1-Event1/)
-&emsp;**Event Name:** GenAI-powered App-DB Modernization Workshop
+### [Event 1 - Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam](4.1-Event1/)
+&emsp;**Event Name:** Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam
 
-&emsp;**Date & Time:** 09:00 – 12:30, 23/09/2026
+&emsp;**Keynote Speaker:** **Dr. Werner Vogels** (VP & CTO at Amazon)
 
-&emsp;**Location:** Level 26, Bitexco Financial Tower, 02 Hai Trieu Street, District 1, Ho Chi Minh City
+&emsp;**Organizer:** AWS First Cloud AI Journey x Amazon (Hosted by Huynh Hoang Long)
+
+&emsp;**Date & Time:** 10:30 – 12:30, Friday, 02/10/2026
+
+&emsp;**Location:** 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, District 1, Ho Chi Minh City
 
 &emsp;**Role:** Attendee
-
-&emsp;**Summary:** Explored application and database modernization strategies using Domain-Driven Design (DDD), Event-Driven Architecture (EDA), AWS Serverless compute options, and accelerating secure software development lifecycles with Amazon Q Developer.
 
 ---
 
-### [Event 2 - AWS Cloud Security & Generative AI Builders Day](4.2-Event2/)
-&emsp;**Event Name:** AWS Cloud Security & Generative AI Builders Day
+### [Event 2 - AWS Cloud Mastery](4.2-Event2/)
+&emsp;**Event Name:** AWS Cloud Mastery
 
-&emsp;**Date & Time:** 13:30 – 17:00, 28/10/2026
+&emsp;**Organizer:** AWS First Cloud AI Journey (FCAJ) & AWS Study Group VN
 
-&emsp;**Location:** Level 26, Bitexco Financial Tower, 02 Hai Trieu Street, District 1, Ho Chi Minh City
+&emsp;**Date & Time:** Saturday Morning, 14/11/2026 (08:30 – 12:00)
+
+&emsp;**Location:** AWS Vietnam Office – 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, District 1, Ho Chi Minh City
 
 &emsp;**Role:** Attendee
-
-&emsp;**Summary:** Deep-dived into multi-layered security architectures aligned with the AWS Well-Architected Security Pillar, building Data Perimeters with VPC Endpoints, automating threat detection with Amazon GuardDuty and Security Hub, and applying security guardrails for Generative AI workloads on Amazon Bedrock.

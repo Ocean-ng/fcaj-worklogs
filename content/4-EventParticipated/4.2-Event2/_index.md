@@ -6,41 +6,55 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Workshop Report: “AWS Cloud Security & Generative AI Builders Day”
+# Event Report: “AWS Cloud Mastery”
 
-### 1. Event Overview & Objectives
+### 1. Event Information
 
-* **Date & Time:** 13:30 – 17:00, 28/10/2026
-* **Location:** AWS Vietnam Office – Level 26, Bitexco Financial Tower, District 1, Ho Chi Minh City
-* **Core Objectives:**
-  - Systematize cloud security design principles aligned with the **Security Pillar** of the **AWS Well-Architected Framework**.
-  - Demonstrate how to build a robust **Data Perimeter** using AWS IAM, VPC Endpoints (AWS PrivateLink), and AWS KMS.
-  - Showcase automated threat detection and compliance posture management with **Amazon GuardDuty** and **AWS Security Hub**.
-  - Introduce data privacy controls and safety guardrails for Generative AI applications using **Amazon Bedrock Guardrails**.
+* **Event Name:** AWS Cloud Mastery
+* **Organizer:** AWS First Cloud AI Journey (FCAJ) & AWS Study Group VN Community
+* **Date & Time:** Saturday Morning, 14/11/2026
+* **Location:** AWS Vietnam Office – 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, District 1, Ho Chi Minh City
+* **Role:** Attendee (First Cloud AI Journey Intern)
+* **Event Recap Post on AWS Study Group VN:** [View Chau Bao's Recap Post on Facebook Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2340764136688545/)
 
-### 2. Key Technical Highlights
+![AWS Cloud Mastery Event Recap Post on AWS Study Group VN](/images/4-EventParticipated/event2-post.jpg)
 
-#### Defense in Depth on AWS
-* Establishing layered security controls across every architectural boundary:
-  - **Edge & Application Layer:** Amazon CloudFront, AWS Shield, and AWS WAF mitigating OWASP Top 10 exploits and DDoS traffic.
-  - **VPC Network Layer:** Segmenting Public and Private Subnets, enforcing packet filtering with stateful Security Groups and stateless Network ACLs.
-  - **Identity & Data Layer:** Enforcing Least-Privilege IAM policies, adopting short-lived credentials via IAM Roles/STS over static access keys, and encrypting data at rest with AWS KMS.
+---
 
-#### Enforcing Data Perimeters with VPC Endpoints
-* Analyzing data exfiltration prevention: even if an IAM access key is compromised, external actors cannot read corporate S3 buckets when Bucket Policies enforce `aws:SourceVpce` or `aws:SourceVpc` conditions.
-* Practical walkthrough combining **S3 Gateway Endpoints**, **S3 Interface Endpoints**, and **VPC Endpoint Policies** across hybrid cloud networks.
+### 2. Event Purpose
 
-#### Automated Cloud SecOps with GuardDuty, Security Hub & EventBridge
-* How **Amazon GuardDuty** identifies threats across CloudTrail, VPC Flow Logs, and DNS logs without agent deployment.
-* Using **AWS Security Hub** to aggregate findings and benchmark accounts against the **CIS AWS Foundations Benchmark**.
-* Building automated containment playbooks: `GuardDuty Finding` → `Amazon EventBridge` → `AWS Lambda` quarantine execution and `Amazon SNS` alerting.
+* Consolidate core cloud engineering competencies to achieve **Cloud Mastery** on AWS—spanning well-architected design, multi-layered security, operational excellence, and cost optimization in real-world projects.
+* Foster direct, open dialogue between experienced AWS Mentors / Solutions Architects and university technology students across Ho Chi Minh City.
+* Address practical technical challenges encountered during hands-on labs, Proposal/Workshop implementation, and career preparation for Cloud Engineer, Cloud Security, and Solutions Architect roles.
 
-#### Securing Generative AI Workloads on Amazon Bedrock
-* Customer prompts and responses in Amazon Bedrock remain private and are never used to train base foundation models.
-* Using **VPC Interface Endpoints (PrivateLink)** to invoke Bedrock APIs privately without Internet exposure, paired with **Bedrock Guardrails** for PII redaction and Prompt Injection defense.
+---
 
-### 3. Key Takeaways & Application to My Internship
+### 3. Key Highlights & Activities
 
-* **Direct Reinforcement for My Technical Workshop:** The session on **Data Perimeters** and **VPC Endpoints** deepened my understanding of the `aws:SourceVpce` condition key and **Route 53 Inbound Resolver** hybrid DNS architecture, directly strengthening Chapters 4 and 5 of my **5-Workshop** guide.
-* **Career Alignment with Information Assurance:** Seeing how traditional Information Security principles translate into **Cloud Security and DevSecOps**—where security guardrails, compliance audits, and incident containment are codified and automated—gave me a clear roadmap for my career as a Cloud Security Engineer.
-* **Immediate Hands-On Practice:** I directly applied the architectures learned at this event during my weekly labs in **Week 8 (KMS & Secrets)**, **Week 9 (CloudFront & WAF)**, **Week 10 (CloudTrail & Flow Logs)**, and **Week 11 (GuardDuty & Security Hub)**.
+#### 1. Mastering Core AWS Architecture & Best Practices
+* Explored how to integrate foundational AWS services (VPC Networking, EC2/Serverless Compute, S3 Storage, Databases, and IAM Security) into cohesive production-ready architectures rather than treating services in isolation.
+* Reviewed common architectural pitfalls made by junior engineers: overly permissive IAM policies, exposed credentials, placing databases in public subnets, and overlooking NAT Gateway or CloudWatch log retention costs.
+* Shared practical guidance on structuring technical documentation, drawing clear architecture diagrams, and defending cloud proposals effectively.
+
+#### 2. Extended Interactive Q&A Session
+* A standout highlight of the Saturday morning session was the marathon Q&A discussion filled with practical questions from students across Saigon regarding both technical depth and career growth:
+  - **Technical Deep-Dives:** Trade-offs when choosing between Serverless and Container/EC2 architectures; implementing Defense-in-Depth security controls and data perimeters on AWS.
+  - **Career Roadmap:** Transitioning from student intern to Cloud Engineer / Cloud Security Engineer / Solutions Architect, and combining AWS certifications with hands-on project portfolios to stand out to employers.
+
+#### 3. Interactive Quiz Game & Community Networking
+* The session concluded with an energetic **Interactive Quiz Game** testing participants' understanding of AWS services and architectural scenarios.
+* Provided an opportunity to connect with fellow FCAJ interns across Ho Chi Minh City universities while building momentum toward **AWS Student Community Day Vietnam 2026**.
+
+---
+
+### 4. Key Takeaways & Application to My Internship
+
+* **Refining My Technical Workshop & Final Report:** Attending **AWS Cloud Mastery** on `14/11/2026` helped me review and polish the private network architecture in my **5-Workshop (S3 VPC Endpoints & Hybrid DNS)** and validate security and cost controls across my project documentation.
+* **Sharpening My Cloud Security Career Focus:** The Q&A session clarified what employers expect from an **Information Assurance** graduate entering the cloud domain—translating security principles directly into enforceable IAM Policies, VPC Endpoint Policies, KMS encryption, WAF rules, and CloudTrail/GuardDuty monitoring.
+* **Peer & Mentor Networking:** Connecting in person at the AWS Vietnam office on a Saturday morning with mentors and driven peers reinforced the collaborative *"Learn and Share"* spirit of the FCAJ community.
+
+---
+
+### 5. Event Photos at the AWS Vietnam Office
+
+![Checking in with fellow FCAJ interns at the AWS Cloud Mastery event - Level 26 Bitexco (14/11/2026)](/images/4-EventParticipated/event2-checkin.jpg)

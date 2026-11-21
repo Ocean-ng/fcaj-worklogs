@@ -6,72 +6,39 @@ chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-# Enforcing Least Privilege in Kubernetes with Session Policies in Amazon EKS Pod Identity
+# Exploring the Shared Responsibility Model and Amazon S3 Data Security
 
-In enterprise Kubernetes (Amazon EKS) environments, granting Pods fine-grained access to AWS resources (such as Amazon S3, DynamoDB, or Secrets Manager) in strict accordance with the **Principle of Least Privilege** is a persistent challenge. Creating a dedicated IAM Role for every microservice or namespace leads to IAM Role sprawl and quickly exhausts AWS account IAM quotas.
-
-**Session Policies** in **Amazon EKS Pod Identity** solve this problem by allowing platform teams to reuse a shared base IAM Role while dynamically scoping down effective permissions per Pod at session issuance time.
-
----
-
-### 1. How Session Policies Work in EKS Pod Identity
-
-When a Pod in Amazon EKS requests temporary AWS credentials through the EKS Pod Identity Agent, the EKS control plane invokes the AWS Security Token Service (STS) `AssumeRoleForPodIdentity` API.
-
-With **Session Policies**, you can attach an inline IAM policy directly to a **Pod Identity Association** (the binding between a Kubernetes `ServiceAccount`, `Namespace`, and `IAM Role`).
-
-Key evaluation rule:
-* **Effective Permissions** = **Intersection** of the `IAM Role Identity-based Policy` and the `Session Policy`.
-* A Session Policy can **only restrict (narrow)** permissions granted by the base IAM Role; it can **never escalate** permissions beyond what the base IAM Role allows.
+* **Published on:** [AWS Study Group VN Facebook Group](https://www.facebook.com/groups/660548818043427/user/100016726392723)
+* **Author:** Thuy Nga
 
 ---
 
-### 2. Practical Use Case
+### Tasks Completed
 
-Suppose you manage a shared S3 Bucket named `fcaj-shared-artifacts-bucket` storing artifacts for multiple tenant workloads (`team-alpha`, `team-beta`).
+* Studied official AWS documentation on the **Shared Responsibility Model**, focusing on customer security responsibilities when using **Amazon EC2** and **Amazon S3**.
+* Reviewed Amazon S3 security guidelines: **Block Public Access**, default **SSE-S3** encryption, and **S3 Versioning**.
+* Synthesized key takeaways into a practical security checklist and knowledge-sharing post.
 
-Instead of maintaining 20 separate IAM Roles for 20 microservices, you can:
-1. Create **one base IAM Role** (`EKS-S3-Base-Role`) allowing read/write operations across `arn:aws:s3:::fcaj-shared-artifacts-bucket/*`.
-2. When associating this Role with `team-alpha`'s `ServiceAccount`, attach a **Session Policy** scoping access strictly to the `team-alpha/*` prefix:
+### Key Findings & Outcomes
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:GetObject",
-        "s3:PutObject"
-      ],
-      "Resource": "arn:aws:s3:::fcaj-shared-artifacts-bucket/team-alpha/*"
-    }
-  ]
-}
-```
+* Clearly distinguished AWS's responsibility for protecting the underlying cloud infrastructure from the customer's responsibility for governing data, access permissions, and workload configurations.
+* Noted that new general-purpose S3 buckets enable all four **Block Public Access** settings by default, and newly uploaded objects are automatically encrypted at rest using **SSE-S3**.
+* Understood that **S3 Versioning** is disabled by default; when enabled, it protects against accidental overwrites and deletions by preserving multiple object versions, though retained versions consume additional storage capacity.
 
-Because effective permissions are the intersection of both policies, `team-alpha` Pods cannot access objects under `team-beta/*`, even though they share `EKS-S3-Base-Role`.
+### Lesson Learned
+
+Adopting a managed cloud service does not eliminate the customer's responsibility to govern access permissions and protect data. Engineers must regularly audit access configurations and balance data recovery requirements against storage costs when enabling S3 Versioning.
+
+### References
+
+1. [AWS Shared Responsibility Model](https://aws.amazon.com/compliance/shared-responsibility-model/)
+2. [Amazon S3 Security Best Practices](https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html)
+3. [Blocking public access to your Amazon S3 storage](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html)
+4. [Using server-side encryption with Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html)
+5. [Retaining multiple versions of objects with S3 Versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html)
 
 ---
 
-### 3. Configuring via AWS CLI
+### Original Post on AWS Study Group VN
 
-You can create or update a Pod Identity Association with a Session Policy directly through the AWS CLI:
-
-```bash
-aws eks create-pod-identity-association \
-  --cluster-name fcaj-prod-cluster \
-  --namespace team-alpha \
-  --service-account alpha-worker-sa \
-  --role-arn arn:aws:iam::123456789012:role/EKS-S3-Base-Role \
-  --policy file://session-policy-alpha.json
-```
-
----
-
-### 4. Security and Operational Takeaways
-
-* **Eliminates Over-Permissioning:** Prevents lateral movement across prefixes or tables if a single microservice Pod is compromised.
-* **Prevents IAM Role Sprawl:** Reduces the number of IAM Roles by 70–80% in multi-tenant EKS clusters, avoiding IAM quota limits.
-* **Cross-Account Compatibility:** Works seamlessly with IAM Role chaining for workloads accessing resources across AWS Organizations accounts.
-* **Clear Separation of Duties:** Cloud Security teams define the maximum permission boundary on the base IAM Role, while Platform teams further tighten per-pod permissions via Session Policies.
+![Blog 1 Post on AWS Study Group VN](/images/3-BlogsPosted/blog1-fb-post.jpg)
