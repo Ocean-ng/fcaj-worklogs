@@ -1,4 +1,4 @@
-baseURL = "https://github.com/Ocean-ng/Ocean-ng.github.io/"
+baseURL = "https://ocean-ng.github.io/"
 relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "en"
