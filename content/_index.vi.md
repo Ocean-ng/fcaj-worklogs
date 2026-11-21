@@ -26,7 +26,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 14/09/2026 đến ngày 14/12/2026
 
-<img src="https://github.com/user-attachments/assets/92baca46-b398-43f5-b4d9-ebeeb24fdaca" alt="Ảnh đại diện - Nguyễn Thị Thúy Nga" width="260" style="border-radius: 12px; margin: 16px 0;" />
+![Ảnh đại diện - Nguyễn Thị Thúy Nga](/images/avatar.png)
 
 ### Nội dung báo cáo
 

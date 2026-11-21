@@ -26,7 +26,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 14/09/2026 to 14/12/2026
 
-<img src="https://github.com/user-attachments/assets/d0fa3866-8081-48a0-ac8c-2f05be71e1bd" alt="Profile Picture - Nguyen Thi Thuy Nga" width="260" style="border-radius: 12px; margin: 16px 0;" />
+![Profile Picture - Nguyen Thi Thuy Nga](/images/avatar.png)
 
 ### Report Content
 
