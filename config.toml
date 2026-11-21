@@ -1,4 +1,4 @@
-baseURL = "https://ocean-ng.github.io/"
+baseURL = "https://ocean-ng.github.io/fcaj-worklogs/"
 relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "en"
