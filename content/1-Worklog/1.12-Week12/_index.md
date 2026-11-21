@@ -1,6 +1,6 @@
 ---
 title: "Week 12 Worklog"
-date: 2026-11-30
+date: 2024-01-01
 weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
@@ -21,7 +21,7 @@ pre: " <b> 1.12. </b> "
 | Tue | **Finalizing Workshop & Proposal Documentation:** <br> - Proofread and refine all 6 chapters of `5-Workshop` (Overview, Prerequisites, S3 from VPC, S3 from On-premises, VPC Endpoint Policies, Cleanup) in both Vietnamese and English <br> - Review architecture diagrams and AWS Pricing Calculator estimates in `2-Proposal` | 01/12/2026 | 01/12/2026 | https://cloudjourney.awsstudygroup.com/ |
 | Wed | **Compiling Blogs, Events & Self-Evaluation:** <br> - Finalize translated technical blog posts in `3-BlogsPosted` and AWS event summaries in `4-EventParticipated` <br> - Complete the internship self-evaluation (`6-Self-evaluation`) and program feedback (`7-Feedback`) | 02/12/2026 | 02/12/2026 | |
 | Thu | **Account Cost Audit & Resource Cleanup:** <br> - Inspect AWS Cost Explorer and active resources across all regions, confirming complete deletion of VPC Endpoints, Route 53 Resolver Endpoints, CloudFormation Stacks, S3 Buckets, and Elastic IPs | 03/12/2026 | 03/12/2026 | https://000007.awsstudygroup.com/ |
-| Fri | **GitHub Pages Deployment & Final Review:** <br> - Verify Hugo build integrity and push the complete codebase to the GitHub repository (`Ocean-ng.github.io`) <br> - Test navigation, image links, and VI/EN language switching on the live GitHub Pages site for final submission | 04/12/2026 | 04/12/2026 | https://ocean-ng.github.io/ |
+| Fri | **GitHub Pages Deployment & Final Review:** <br> - Verify Hugo build integrity and push the complete codebase to the GitHub repository (`Ocean-ng.github.io`) <br> - Test navigation, image links, and VI/EN language switching on the live GitHub Pages site for final submission | 04/12/2026 | 04/12/2026 | https://ocean-ng.github.io/fcaj-worklogs/ |
 
 ### Week 12 Achievements
 
