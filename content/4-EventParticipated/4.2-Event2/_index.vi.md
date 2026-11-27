@@ -18,7 +18,7 @@ pre: " <b> 4.2. </b> "
 * **Vai trò:** Người tham dự (Thực tập sinh chương trình First Cloud AI Journey)
 * **Link bài viết sự kiện trên AWS Study Group VN:** [Xem bài đăng sự kiện trên Facebook Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2293508058080820/)
 
-![Thông tin sự kiện Fireside Chat with Dr. Werner trên Luma](/images/4-EventParticipated/event2-werner-poster.jpg)
+![Ảnh chụp tập thể cùng Dr. Werner Vogels (CTO Amazon) và các thành viên First Cloud AI Journey tại Văn phòng AWS TP.HCM](/images/4-EventParticipated/event2-werner-group.jpg)
 
 ---
 
@@ -57,8 +57,6 @@ pre: " <b> 4.2. </b> "
 
 ---
 
-### 5. Hình ảnh check-in khi tham gia sự kiện tại văn phòng AWS Việt Nam
+### 5. Hình ảnh chụp cùng nhóm tại sự kiện
 
-![Ảnh chụp tập thể cùng Dr. Werner Vogels (CTO Amazon) và các thành viên First Cloud AI Journey tại Văn phòng AWS TP.HCM](/images/4-EventParticipated/event2-werner-group.jpg)
-
-![Check-in cùng các bạn thực tập sinh FCAJ trước bức tường AWS Invent and Simplify tại Tầng 26 Bitexco](/images/4-EventParticipated/event2-werner-checkin.jpg)
+![Hình chụp cùng nhóm tại sự kiện Fireside Chat with Dr. Werner - Tầng 26 Bitexco](/images/4-EventParticipated/event2-werner-checkin.jpg)

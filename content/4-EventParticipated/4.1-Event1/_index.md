@@ -54,6 +54,6 @@ pre: " <b> 4.1. </b> "
 
 ---
 
-### 5. Event Check-in Photo at the AWS Vietnam Office
+### 5. Photo with My Team at the Event
 
-![Checking in with fellow FCAJ interns holding AWS Cloud & AI Day 2026 attendee badges at the AWS HCMC Office](/images/4-EventParticipated/event1-watchparty-checkin.png)
+![Photo with my team at the AWS Cloud & AI Day 2026 HCMC Watch Party – AWS Vietnam Office](/images/4-EventParticipated/event1-watchparty-checkin.png)

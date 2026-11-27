@@ -17,7 +17,7 @@ pre: " <b> 4.3. </b> "
 * **Role:** Attendee (First Cloud AI Journey Intern)
 * **Event Recap Post on AWS Study Group VN:** [View Chau Bao's Recap Post on Facebook Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2340764136688545/)
 
-![AWS Cloud Mastery Event Recap Post on AWS Study Group VN](/images/4-EventParticipated/event3-mastery-post.jpg)
+![Group photo of student attendees at the AWS Cloud Mastery event at the AWS Vietnam Office (14/11/2026)](/images/4-EventParticipated/event3-mastery-group.jpg)
 
 ---
 
@@ -54,8 +54,6 @@ pre: " <b> 4.3. </b> "
 
 ---
 
-### 5. Event Check-in Photo at the AWS Vietnam Office
+### 5. Photo with My Team at the Event
 
-![Group photo of student attendees at the AWS Cloud Mastery event at the AWS Vietnam Office (14/11/2026)](/images/4-EventParticipated/event3-mastery-group.jpg)
-
-![Checking in with fellow FCAJ interns at the AWS Cloud Mastery event - Level 26 Bitexco (14/11/2026)](/images/4-EventParticipated/event3-mastery-checkin.jpg)
+![Photo with my team at the AWS Cloud Mastery event - Level 26 Bitexco (14/11/2026)](/images/4-EventParticipated/event3-mastery-checkin.jpg)

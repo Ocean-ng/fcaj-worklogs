@@ -54,6 +54,6 @@ pre: " <b> 4.1. </b> "
 
 ---
 
-### 5. Hình ảnh check-in khi tham gia sự kiện tại văn phòng AWS Việt Nam
+### 5. Hình ảnh chụp cùng nhóm tại sự kiện
 
-![Check-in cùng các bạn thực tập sinh FCAJ với thẻ tham dự AWS Cloud & AI Day 2026 tại Văn phòng AWS TP.HCM](/images/4-EventParticipated/event1-watchparty-checkin.png)
+![Hình chụp cùng nhóm tại sự kiện AWS Cloud & AI Day 2026 – Văn phòng AWS TP.HCM](/images/4-EventParticipated/event1-watchparty-checkin.png)

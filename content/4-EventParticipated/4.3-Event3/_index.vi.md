@@ -17,7 +17,7 @@ pre: " <b> 4.3. </b> "
 * **Vai trò:** Người tham dự (Thực tập sinh chương trình First Cloud AI Journey)
 * **Link bài tổng kết sự kiện trên AWS Study Group VN:** [Xem bài đăng của anh Châu Bảo trên Facebook Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2340764136688545/)
 
-![Bài viết tổng kết sự kiện AWS Cloud Mastery trên nhóm AWS Study Group VN](/images/4-EventParticipated/event3-mastery-post.jpg)
+![Ảnh chụp tập thể đông đảo sinh viên tham dự sự kiện AWS Cloud Mastery tại Văn phòng AWS TP.HCM (14/11/2026)](/images/4-EventParticipated/event3-mastery-group.jpg)
 
 ---
 
@@ -54,8 +54,6 @@ pre: " <b> 4.3. </b> "
 
 ---
 
-### 5. Hình ảnh check-in khi tham gia sự kiện tại văn phòng AWS Việt Nam
+### 5. Hình ảnh chụp cùng nhóm tại sự kiện
 
-![Ảnh chụp tập thể đông đảo sinh viên tham dự sự kiện AWS Cloud Mastery tại Văn phòng AWS TP.HCM (14/11/2026)](/images/4-EventParticipated/event3-mastery-group.jpg)
-
-![Check-in cùng các bạn thực tập sinh FCAJ tại sự kiện AWS Cloud Mastery - Tầng 26 Bitexco (14/11/2026)](/images/4-EventParticipated/event3-mastery-checkin.jpg)
+![Hình chụp cùng nhóm tại sự kiện AWS Cloud Mastery - Tầng 26 Bitexco (14/11/2026)](/images/4-EventParticipated/event3-mastery-checkin.jpg)

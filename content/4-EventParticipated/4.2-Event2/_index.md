@@ -18,7 +18,7 @@ pre: " <b> 4.2. </b> "
 * **Role:** Attendee (First Cloud AI Journey Intern)
 * **Event Post on AWS Study Group VN:** [View Official Event Post on Facebook Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2293508058080820/)
 
-![Fireside Chat with Dr. Werner Event Page on Luma](/images/4-EventParticipated/event2-werner-poster.jpg)
+![Group photo with Dr. Werner Vogels (CTO of Amazon) and First Cloud AI Journey interns at the AWS Vietnam Office](/images/4-EventParticipated/event2-werner-group.jpg)
 
 ---
 
@@ -57,8 +57,6 @@ pre: " <b> 4.2. </b> "
 
 ---
 
-### 5. Event Check-in Photo at the AWS Vietnam Office
+### 5. Photo with My Team at the Event
 
-![Group photo with Dr. Werner Vogels (CTO of Amazon) and First Cloud AI Journey interns at the AWS Vietnam Office](/images/4-EventParticipated/event2-werner-group.jpg)
-
-![Checking in with fellow FCAJ interns in front of the AWS Invent and Simplify wall at Level 26 Bitexco](/images/4-EventParticipated/event2-werner-checkin.jpg)
+![Photo with my team at the Fireside Chat with Dr. Werner event - Level 26 Bitexco](/images/4-EventParticipated/event2-werner-checkin.jpg)
