@@ -63,7 +63,7 @@ With this explicit `Deny` guardrail in place:
 
 ### Security Checklist for Generative AI Workloads on AWS
 
-* Never store API keys, credentials, or authorization logic inside System Prompts—enforce access control strictly in backend code and AWS IAM.
+* Never store API keys, credentials, or authorization logic inside System Prompts-enforce access control strictly in backend code and AWS IAM.
 * Enable **Prompt Attack Filters** and **PII Redaction** in Amazon Bedrock Guardrails for all user-facing AI endpoints.
 * Enforce the **`bedrock:GuardrailIdentifier`** condition key in IAM Policies or SCPs so 100% of model invocations traverse approved guardrails.
 * Route Guardrail intervention metrics and logs to **Amazon CloudWatch** to monitor prompt attack attempts in real time.

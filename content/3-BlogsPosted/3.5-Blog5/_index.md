@@ -13,7 +13,7 @@ pre: " <b> 3.5. </b> "
 
 ---
 
-In production cloud systems—such as sending daily revenue summaries, triggering weekly database backups, expiring stale sessions, or revoking access at the end of a billing cycle—**time-based task scheduling** is a foundational requirement. Running a dedicated 24/7 EC2 instance solely to execute `crontab` jobs wastes compute budget during idle hours and introduces a single point of failure if the instance goes unhealthy.
+In production cloud systems-such as sending daily revenue summaries, triggering weekly database backups, expiring stale sessions, or revoking access at the end of a billing cycle-**time-based task scheduling** is a foundational requirement. Running a dedicated 24/7 EC2 instance solely to execute `crontab` jobs wastes compute budget during idle hours and introduces a single point of failure if the instance goes unhealthy.
 
 **Amazon EventBridge Scheduler** addresses this with a fully **Serverless** task scheduler capable of managing anything from a few recurring jobs to millions of per-user one-time schedules with zero server maintenance.
 

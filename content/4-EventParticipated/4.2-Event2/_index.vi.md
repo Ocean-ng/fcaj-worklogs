@@ -11,11 +11,12 @@ pre: " <b> 4.2. </b> "
 ### 1. Thông tin chung về sự kiện
 
 * **Tên sự kiện:** Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam
-* **Diễn giả chính:** **Dr. Werner Vogels** — Vice President & Chief Technology Officer (VP & CTO) tại Amazon
+* **Diễn giả chính:** **Dr. Werner Vogels** - Vice President & Chief Technology Officer (VP & CTO) tại Amazon
 * **Đơn vị tổ chức:** AWS First Cloud AI Journey x Amazon (Được tổ chức bởi anh **Huỳnh Hoàng Long**)
 * **Thời gian:** 10:30 – 12:30, Thứ Sáu ngày 02/10/2026
 * **Địa điểm:** Tầng 26, Tòa nhà Bitexco Financial Tower, Số 02 Hải Triều, Quận 1, TP. Hồ Chí Minh
 * **Vai trò:** Người tham dự (Thực tập sinh chương trình First Cloud AI Journey)
+* **Link bài viết sự kiện trên AWS Study Group VN:** [Xem bài đăng sự kiện trên Facebook Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2293508058080820/)
 
 ![Thông tin sự kiện Fireside Chat with Dr. Werner trên Luma](/images/4-EventParticipated/event2-werner-poster.jpg)
 
@@ -44,14 +45,14 @@ pre: " <b> 4.2. </b> "
 * Công cụ AI hỗ trợ lập trình giúp tăng tốc độ viết code, nhưng **người kỹ sư vẫn là người chịu trách nhiệm cuối cùng** trong việc hiểu rõ từng dòng cấu hình, từng chính sách IAM Policy trước khi đưa lên môi trường Production.
 
 #### 4. Lời khuyên dành cho sinh viên và kỹ sư trẻ Việt Nam
-* **Nắm chắc kiến thức nền tảng (Master the Fundamentals):** Hiểu sâu về mạng máy tính (DNS, TCP/IP, Routing), hệ điều hành, cơ sở dữ liệu và bảo mật định danh — vì công nghệ thay đổi nhanh nhưng các nguyên lý nền tảng của hệ thống phân tán không bao giờ lỗi thời.
+* **Nắm chắc kiến thức nền tảng (Master the Fundamentals):** Hiểu sâu về mạng máy tính (DNS, TCP/IP, Routing), hệ điều hành, cơ sở dữ liệu và bảo mật định danh - vì công nghệ thay đổi nhanh nhưng các nguyên lý nền tảng của hệ thống phân tán không bao giờ lỗi thời.
 * **Học qua thực hành ("Build, Break, and Learn"):** Đừng chỉ đọc lý thuyết; hãy trực tiếp bắt tay vào dựng hệ thống thực tế trên AWS, thử nghiệm các kịch bản lỗi và chia sẻ lại kiến thức cho cộng đồng.
 
 ---
 
 ### 4. Bài học rút ra & Ứng dụng vào kỳ thực tập
 
-* **Thấm nhuần tinh thần "Invent and Simplify" và "Frugal Architect":** Buổi gặp gỡ trực tiếp CTO của Amazon giúp mình nhận ra rằng một kiến trúc tốt không phải là kiến trúc phức tạp nhất, mà là kiến trúc đơn giản, bảo mật chặt chẽ và tối ưu chi phí nhất — tinh thần này được áp dụng trực tiếp vào kiến trúc **Serverless** của dự án nhóm **SecureTable** (ngân sách dự kiến chỉ ~$7.60/tháng).
+* **Thấm nhuần tinh thần "Invent and Simplify" và "Frugal Architect":** Buổi gặp gỡ trực tiếp CTO của Amazon giúp mình nhận ra rằng một kiến trúc tốt không phải là kiến trúc phức tạp nhất, mà là kiến trúc đơn giản, bảo mật chặt chẽ và tối ưu chi phí nhất - tinh thần này được áp dụng trực tiếp vào kiến trúc **Serverless** của dự án nhóm **SecureTable** (ngân sách dự kiến chỉ ~$7.60/tháng).
 * **Củng cố định hướng chuyên ngành An toàn thông tin trên Cloud:** Lời nhấn mạnh của Dr. Werner về việc *"Security must be built in from Day 1, not bolted on later"* là kim chỉ nam cho quá trình thực hành của mình xuyên suốt 12 tuần: từ khóa chặt Root User bằng MFA, phân quyền Least Privilege IAM, đến khóa S3 Origin bằng CloudFront OAC và truy vết hoạt động bằng CloudTrail / Audit Logs.
 
 ---

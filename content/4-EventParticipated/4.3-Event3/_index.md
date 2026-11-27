@@ -23,7 +23,7 @@ pre: " <b> 4.3. </b> "
 
 ### 2. Event Purpose
 
-* Consolidate core cloud engineering competencies to achieve **Cloud Mastery** on AWS—spanning well-architected design, multi-layered security, operational excellence, and cost optimization in real-world projects.
+* Consolidate core cloud engineering competencies to achieve **Cloud Mastery** on AWS-spanning well-architected design, multi-layered security, operational excellence, and cost optimization in real-world projects.
 * Foster direct, open dialogue between experienced AWS Mentors / Solutions Architects and university technology students across Ho Chi Minh City.
 * Address practical technical challenges encountered during hands-on labs, Proposal/Workshop implementation, and career preparation for Cloud Engineer, Cloud Security, and Solutions Architect roles.
 
@@ -50,7 +50,7 @@ pre: " <b> 4.3. </b> "
 ### 4. Key Takeaways & Application to My Internship
 
 * **Refining SecureTable & Final Report Quality:** Attending **AWS Cloud Mastery** on `14/11/2026` helped our team verify alignment between our architecture diagram and deployed **SecureTable** services, while double-checking Well-Architected and cost controls ahead of final review.
-* **Sharpening My Cloud Security Career Focus:** The Q&A session clarified what employers expect from an **Information Assurance** graduate entering the cloud domain—translating security principles directly into Least-Privilege IAM Policies, Cognito Authorizers, CloudFront OAC, AWS WAF, and CloudWatch/CloudTrail observability.
+* **Sharpening My Cloud Security Career Focus:** The Q&A session clarified what employers expect from an **Information Assurance** graduate entering the cloud domain-translating security principles directly into Least-Privilege IAM Policies, Cognito Authorizers, CloudFront OAC, AWS WAF, and CloudWatch/CloudTrail observability.
 
 ---
 

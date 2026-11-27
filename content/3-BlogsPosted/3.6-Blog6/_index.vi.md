@@ -63,7 +63,7 @@ Với chính sách `Deny` tường minh này:
 
 ### Checklist khi triển khai ứng dụng Generative AI an toàn trên AWS
 
-* Không lưu bí mật hệ thống, API Key hoặc logic phân quyền vào trong System Prompt — luôn thực thi kiểm tra quyền ở tầng Backend và IAM.
+* Không lưu bí mật hệ thống, API Key hoặc logic phân quyền vào trong System Prompt - luôn thực thi kiểm tra quyền ở tầng Backend và IAM.
 * Bật **Prompt Attack Filter** và **PII Redaction** trên Amazon Bedrock Guardrails cho mọi ứng dụng tương tác với người dùng bên ngoài.
 * Áp dụng điều kiện **`bedrock:GuardrailIdentifier`** trong IAM Policy (hoặc Service Control Policy - SCP) để bắt buộc 100% lệnh gọi mô hình phải đi qua Guardrail chuẩn.
 * Đẩy nhật ký vi phạm Guardrail về **Amazon CloudWatch** để theo dõi xu hướng tấn công Prompt Injection theo thời gian thực.

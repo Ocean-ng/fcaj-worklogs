@@ -15,8 +15,8 @@ pre: " <b> 5. </b> "
 Trong bài thực hành (Workshop) này, chúng ta sẽ thiết lập, cấu hình và kiểm thử các **VPC Endpoints** để cho phép hệ thống máy chủ tiếp cận dịch vụ Amazon S3 hoàn toàn qua hạ tầng mạng riêng của AWS.
 
 Chúng ta sẽ triển khai hai loại VPC Endpoint để truy cập Amazon S3: **Gateway VPC Endpoint** và **Interface VPC Endpoint**. Mỗi loại mang lại lợi ích kiến trúc riêng tùy thuộc vào việc bạn truy cập S3 từ bên trong VPC trên Cloud hay từ trung tâm dữ liệu On-premises:
-+ **Gateway Endpoint** — Gửi lưu lượng đến Amazon S3 hoặc DynamoDB qua mạng nội bộ AWS hoàn toàn miễn phí. Lưu lượng từ VPC được định tuyến đến Gateway Endpoint thông qua bảng định tuyến (Route Tables) bằng Prefix List.
-+ **Interface Endpoint (AWS PrivateLink)** — Tạo các giao diện mạng đàn hồi (ENI) có địa chỉ IP Private ngay trong Subnet để nhận lưu lượng gửi đến dịch vụ đích, hỗ trợ kết nối từ cả mạng On-premises (qua Site-to-Site VPN / Direct Connect) và kết hợp với **Amazon Route 53 Private DNS / Inbound Resolver**.
++ **Gateway Endpoint** - Gửi lưu lượng đến Amazon S3 hoặc DynamoDB qua mạng nội bộ AWS hoàn toàn miễn phí. Lưu lượng từ VPC được định tuyến đến Gateway Endpoint thông qua bảng định tuyến (Route Tables) bằng Prefix List.
++ **Interface Endpoint (AWS PrivateLink)** - Tạo các giao diện mạng đàn hồi (ENI) có địa chỉ IP Private ngay trong Subnet để nhận lưu lượng gửi đến dịch vụ đích, hỗ trợ kết nối từ cả mạng On-premises (qua Site-to-Site VPN / Direct Connect) và kết hợp với **Amazon Route 53 Private DNS / Inbound Resolver**.
 
 #### Nội dung thực hành
 

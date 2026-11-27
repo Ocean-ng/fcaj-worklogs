@@ -35,7 +35,7 @@ For example, if an application only needs to read objects whose keys start with 
 
 ### 4. Audit Account Activity with AWS CloudTrail
 
-**CloudTrail Event History** provides a 90-day searchable record of management events per AWS Region. By default, Event History displays only management events—it does not include data events, CloudTrail Insights events, or network activity events. For long-term retention, multi-region auditing, and data event visibility, configure a dedicated **CloudTrail Trail** or **CloudTrail Lake Event Data Store**.
+**CloudTrail Event History** provides a 90-day searchable record of management events per AWS Region. By default, Event History displays only management events-it does not include data events, CloudTrail Insights events, or network activity events. For long-term retention, multi-region auditing, and data event visibility, configure a dedicated **CloudTrail Trail** or **CloudTrail Lake Event Data Store**.
 
 ### Getting Started Checklist
 
