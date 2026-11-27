@@ -6,57 +6,54 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Event Report: “Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam”
+# Event Report: “AWS Cloud & AI Day 2026: HCMC Watch Party”
 
 ### 1. Event Information
 
-* **Event Name:** Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam
-* **Keynote Speaker:** **Dr. Werner Vogels** — Vice President & Chief Technology Officer (VP & CTO) at Amazon
-* **Organizer:** AWS First Cloud AI Journey x Amazon (Hosted by **Huynh Hoang Long**)
-* **Date & Time:** 10:30 – 12:30, Friday, 02/10/2026
-* **Location:** 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, District 1, Ho Chi Minh City
+* **Event Name:** AWS Cloud & AI Day 2026 – HCMC Watch Party
+* **Organizer:** AWS Vietnam & AWS Study Group VN Community
+* **Date:** 29/09/2026
+* **Location:** AWS Vietnam Office – 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, District 1, Ho Chi Minh City
 * **Role:** Attendee (First Cloud AI Journey Intern)
+* **Event Recap Post on AWS Study Group VN:** [View Official Recap Post on Facebook Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2292589671505992/)
 
-![Fireside Chat with Dr. Werner Event Page on Luma](/images/4-EventParticipated/event1-poster.jpg)
+![Over 300 Cloud & AI Builders gathered at the AWS Cloud & AI Day 2026 HCMC Watch Party – AWS Vietnam Office](/images/4-EventParticipated/event1-watchparty-group.jpg)
 
 ---
 
 ### 2. Event Purpose
 
-* Provide an exclusive, in-person fireside conversation between **Dr. Werner Vogels (CTO of Amazon)** and young cloud engineers and **First Cloud AI Journey** interns in Vietnam.
-* Share strategic insights on cloud innovation, artificial intelligence, and the technologies shaping the future of business and society in Vietnam and Southeast Asia.
-* Inspire the next generation of Vietnamese builders with distributed systems engineering principles, Amazon's **"Invent and Simplify"** culture, and career guidance for the Cloud & AI era.
+* Connect over 300 Cloud & AI Builders in Ho Chi Minh City directly with the flagship **AWS Cloud & AI Day 2026** autumn conference keynote in Hanoi.
+* Share strategic updates on **Agentic AI**, building resilient **Data Foundations**, and enterprise cloud modernization strategies on AWS.
+* Foster interactive roundtable discussions on-site at the AWS HCMC office among students, developers, and AWS Solutions Architects on transitioning Cloud & AI prototypes into secure, cost-effective production workloads.
 
 ---
 
-### 3. Key Highlights from Dr. Werner Vogels' Session
+### 3. Key Highlights & Activities
 
-#### 1. "The Frugal Architect" & Pragmatic System Design
-* **Security and Cost as First-Class Non-Functional Requirements:** Building on the cloud is not just about making features work; **Security**, **Resilience**, and **Cost Awareness** must be architected in from Day 1.
-* **"Everything fails, all the time":** Distributed systems must be designed assuming components will fail or face threats. Multi-AZ network isolation, automated recovery, and blast-radius reduction are essential for continuous availability.
+#### 1. Strategic Insights from the AWS Cloud & AI Day 2026 Keynote
+* **The Rise of Agentic AI:** Moving beyond simple Q&A chatbots toward autonomous **AI Agents** capable of multi-step reasoning, tool invocation, and workflow execution on AWS (Amazon Bedrock).
+* **Building a Strong Data Foundation:** Reliable AI and analytics depend on clean, well-governed data architectures powered by services such as Amazon S3, Amazon DynamoDB, and modern serverless data pipelines.
+* **Cloud Modernization & Built-In Security:** Adopting Serverless and Event-Driven architectures to accelerate delivery while maintaining strict identity governance (IAM, Guardrails) and high availability.
 
-#### 2. From AI Hype to Solving Real-World Problems in Vietnam
-* Generative AI does not replace core software and cloud engineering fundamentals; rather, **well-governed data** and **secure cloud infrastructure** are prerequisites for effective AI adoption.
-* Encouraged Vietnamese students and builders to apply Cloud and AI to solve high-impact local problems—such as smart agriculture, environmental and weather monitoring, education, digital finance, and cybersecurity.
+#### 2. Hands-On Roundtable Discussions at the HCMC Venue
+* Beyond watching the keynote stream, AWS Solutions Architects, developers, and FCAJ interns engaged in lively breakout discussions tackling practical engineering questions:
+  - How to bridge the gap from experimental PoC prototypes to reliable, secure production operations on AWS.
+  - Practical strategies to control and optimize cloud infrastructure costs from Day 1 for student and startup-scale workloads.
 
-#### 3. Security and Responsibility in the Age of AI
-* From an Information Security perspective, integrating AI requires strict data access governance (IAM), end-to-end encryption, and safety guardrails to protect customer privacy.
-* While AI coding assistants (such as Amazon Q Developer) accelerate development velocity, **the human engineer remains fully accountable** for reviewing every configuration line and IAM policy before production deployment.
-
-#### 4. Advice for Young Engineers and Students in Vietnam
-* **Master the Fundamentals:** Deeply understand computer networking (DNS, TCP/IP, routing), operating systems, databases, and identity security—tools evolve rapidly, but distributed systems fundamentals endure.
-* **Learn by Building ("Build, Break, and Learn"):** Move beyond passive reading or exam memorization; get hands-on in real AWS environments, test failure modes, and share knowledge back with the community.
+#### 3. Community Networking at the AWS Vietnam Office
+* Brought together more than 300 builders and university students across Ho Chi Minh City at Level 26 Bitexco, embodying the collaborative *"Learn and Share"* spirit of **AWS Study Group VN**.
 
 ---
 
 ### 4. Key Takeaways & Application to My Internship
 
-* **Embracing "Invent and Simplify":** Hearing directly from Amazon's CTO reinforced that the best architecture is not the most complex one, but the simplest architecture that meets security, reliability, and cost targets—directly reflected in our **Serverless Proposal** operating at ~$0.70/month.
-* **Strengthening My Cloud Security Focus:** Dr. Werner's emphasis that *"Security must be built in from Day 1, not bolted on later"* guided my entire 12-week hands-on practice: from locking down the Root account, enforcing Least-Privilege IAM, and adopting SSM Session Manager to building private connectivity with **VPC Endpoints** in my **5-Workshop**.
-* **Community & Inspiration:** Attending this event with fellow FCAJ interns and mentors at the AWS Vietnam office (Level 26, Bitexco Tower) was one of the most memorable milestones of my internship.
+* **Shaping Our SecureTable Project Architecture:** Insights on Serverless modernization, structured data foundations, and early cost awareness from the `29/09/2026` event directly informed our team's design of **SecureTable** (combining S3, CloudFront, API Gateway, Lambda, DynamoDB, and EventBridge Scheduler).
+* **Data Governance & Security Mindset:** As an **Information Assurance** student, the discussions reinforced why strict data access boundaries (Least-Privilege IAM) and security guardrails must precede automation or AI adoption.
+* **Early Cohort Connection:** Provided an energizing opportunity to connect in person with mentors and fellow `FCAJ-FALL26` teammates during the first month of the internship.
 
 ---
 
-### 5. Event Photos at the AWS Vietnam Office
+### 5. Event Check-in Photo at the AWS Vietnam Office
 
-![Checking in with fellow FCAJ interns in front of the AWS Invent and Simplify wall at Level 26 Bitexco](/images/4-EventParticipated/event1-checkin.jpg)
+![Checking in with fellow FCAJ interns holding AWS Cloud & AI Day 2026 attendee badges at the AWS HCMC Office](/images/4-EventParticipated/event1-watchparty-checkin.png)

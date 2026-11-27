@@ -6,9 +6,22 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Trong suốt quá trình thực tập tại chương trình **First Cloud AI Journey (FCAJ)**, mình đã trực tiếp tham dự các buổi trò chuyện chuyên đề và hội thảo kỹ thuật tại văn phòng AWS Việt Nam (Tòa nhà Bitexco Financial Tower) cùng cộng đồng AWS Study Group VN. Mỗi sự kiện là một trải nghiệm đáng nhớ, mang lại góc nhìn thực tiễn sâu sắc từ lãnh đạo cấp cao của Amazon và các anh chị chuyên gia, mentor trong cộng đồng.
+Trong suốt quá trình thực tập tại chương trình **First Cloud AI Journey (FCAJ)**, mình đã trực tiếp tham dự **3 sự kiện công nghệ và buổi chia sẻ chuyên môn** tại văn phòng AWS Việt Nam (Tầng 26, Tòa nhà Bitexco Financial Tower) cùng cộng đồng AWS Study Group VN. Mỗi sự kiện đều có những góc nhìn thực tiễn sâu sắc từ lãnh đạo cấp cao của Amazon và các anh chị Solutions Architect, giúp mình củng cố kiến thức Cloud, AI và An toàn thông tin để áp dụng trực tiếp vào dự án thực tập.
 
-### [Event 1 - Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam](4.1-Event1/)
+### [Event 1 - AWS Cloud & AI Day 2026: HCMC Watch Party](4.1-Event1/)
+&emsp;**Tên sự kiện:** AWS Cloud & AI Day 2026 – HCMC Watch Party
+
+&emsp;**Ban tổ chức:** AWS Việt Nam & Cộng đồng AWS Study Group VN
+
+&emsp;**Thời gian:** Ngày 29/09/2026
+
+&emsp;**Địa điểm:** Văn phòng AWS Việt Nam – Tầng 26, Tòa nhà Bitexco Financial Tower, Số 02 Hải Triều, Quận 1, TP. Hồ Chí Minh
+
+&emsp;**Vai trò trong sự kiện:** Người tham dự
+
+---
+
+### [Event 2 - Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam](4.2-Event2/)
 &emsp;**Tên sự kiện:** Fireside Chat with Dr. Werner: Navigating the Future of Cloud & AI in Vietnam
 
 &emsp;**Diễn giả:** **Dr. Werner Vogels** (VP & CTO at Amazon)
@@ -23,7 +36,7 @@ Trong suốt quá trình thực tập tại chương trình **First Cloud AI Jou
 
 ---
 
-### [Event 2 - AWS Cloud Mastery](4.2-Event2/)
+### [Event 3 - AWS Cloud Mastery](4.3-Event3/)
 &emsp;**Tên sự kiện:** AWS Cloud Mastery
 
 &emsp;**Ban tổ chức:** AWS First Cloud AI Journey (FCAJ) & Cộng đồng AWS Study Group VN
