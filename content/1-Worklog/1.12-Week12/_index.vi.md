@@ -8,24 +8,24 @@ pre: " <b> 1.12. </b> "
 
 ### Mục tiêu tuần 12
 
-* Thực hiện kiểm thử tổng thể End-to-End (E2E) cho toàn bộ bài thực hành Workshop (Kết nối riêng tư tới Amazon S3 từ VPC và On-premises với Gateway/Interface Endpoints & Route 53 Private DNS) và kiến trúc dự án.
-* Rà soát toàn diện bảo mật tài khoản và tối ưu hóa chi phí bằng **AWS Cost Explorer** và **AWS Trusted Advisor**, đảm bảo không còn tài nguyên dư thừa phát sinh phí.
-* Biên tập, chuẩn hóa song ngữ (Tiếng Việt & Tiếng Anh) toàn bộ 7 hạng mục trên trang báo cáo thực tập Hugo: Worklog, Proposal, Blogs Posted, Events Participated, Workshop, Self-evaluation và Feedback.
-* Kiểm tra tự động hóa CI/CD bằng GitHub Actions và hoàn tất nộp báo cáo kỳ thực tập FCAJ.
+* Thực hiện kiểm thử tổng thể End-to-End (E2E) toàn bộ quy trình nghiệp vụ thực tế của hệ thống **SecureTable** trên môi trường AWS (`ap-southeast-1`).
+* Đối chiếu chi phí sử dụng thực tế trên **AWS Cost Explorer / Billing** với bảng dự toán ngân sách, kiểm tra quy trình dọn dẹp tài nguyên (**Clean-up**) triệt để.
+* Hoàn thiện và rà soát chuẩn song ngữ (Tiếng Việt – Tiếng Anh) cho toàn bộ 7 chuyên mục trên website báo cáo thực tập Hugo.
+* Chuẩn bị minh chứng Demo sản phẩm và hoàn tất thủ tục nộp báo cáo kỳ thực tập chương trình **First Cloud AI Journey**.
 
 ### Các công việc thực hiện trong tuần
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 |------|-----------|-------------|----------------|---------------|
-| 2 | **Kiểm thử End-to-End (E2E) bài Workshop:** <br> - Chạy lại toàn bộ quy trình bài Workshop từ bước khởi tạo CloudFormation, tạo S3 Gateway Endpoint, S3 Interface Endpoint, cấu hình Route 53 Inbound Resolver cho đến kiểm thử VPC Endpoint Policy <br> - Đối chiếu kết quả câu lệnh CLI (`aws s3 ls`, `dig`) và chụp ảnh màn hình minh họa sắc nét cho từng bước | 30/11/2026 | 30/11/2026 | https://000008.awsstudygroup.com/ |
-| 3 | **Hoàn thiện tài liệu Workshop & Proposal:** <br> - Rà soát và biên tập chi tiết nội dung 6 phần của mục `5-Workshop` (Tổng quan, Chuẩn bị, S3 từ VPC, S3 từ On-premises, VPC Endpoint Policy, Dọn dẹp tài nguyên) trên cả bản Tiếng Việt và Tiếng Anh <br> - Kiểm tra lại toàn bộ sơ đồ kiến trúc và bảng dự toán ngân sách trong mục `2-Proposal` | 01/12/2026 | 01/12/2026 | https://cloudjourney.awsstudygroup.com/ |
-| 4 | **Tổng hợp Blogs, Events & Tự đánh giá:** <br> - Cập nhật các bài blog kỹ thuật đã dịch/viết tại mục `3-BlogsPosted` và nhật ký các sự kiện AWS đã tham dự tại mục `4-EventParticipated` <br> - Viết bản tự đánh giá năng lực (`6-Self-evaluation`) và đóng góp ý kiến (`7-Feedback`) sau 3 tháng thực tập tại FCAJ | 02/12/2026 | 02/12/2026 | |
-| 5 | **Kiểm toán chi phí & Dọn dẹp tài khoản AWS (Clean up):** <br> - Sử dụng AWS Cost Explorer và Bills để kiểm tra chi tiết từng Region, đảm bảo đã xóa toàn bộ VPC Endpoints, Route 53 Resolver Endpoints, CloudFormation Stacks, S3 Buckets và Elastic IPs không còn sử dụng | 03/12/2026 | 03/12/2026 | https://000007.awsstudygroup.com/ |
-| 6 | **Triển khai GitHub Pages & Nghiệm thu báo cáo:** <br> - Kiểm tra build Hugo cục bộ và đẩy mã nguồn hoàn chỉnh lên GitHub repository (`Ocean-ng.github.io`) <br> - Kiểm tra giao diện, đường dẫn ảnh và chuyển đổi song ngữ VI/EN trên trang GitHub Pages chính thức, hoàn tất nộp báo cáo thực tập | 04/12/2026 | 04/12/2026 | https://ocean-ng.github.io/fcaj-worklogs/ |
+| 2 | **Kiểm thử End-to-End (E2E) hệ thống SecureTable:** <br> - Kiểm thử trọn vẹn luồng nghiệp vụ: Reception mở bàn & hóa đơn → Guest quét QR gọi món → Kitchen hoàn tất/từ chối món → Inventory cập nhật kho → Reception đóng hóa đơn → Admin kiểm tra doanh thu & Audit Logs <br> - Kiểm thử các kịch bản biên (đặt món khi hóa đơn đã đóng, đặt vượt tồn kho, gọi API trái quyền) | 30/11/2026 | 30/11/2026 | https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/opex-testing.html |
+| 3 | **Chuẩn bị Minh chứng Demo & Rà soát phần Cost:** <br> - Ghi hình / chuẩn bị kịch bản Live Demo minh chứng sản phẩm chạy thực tế khớp đúng sơ đồ kiến trúc <br> - Đối chiếu chi phí vận hành trên AWS Billing & Cost Explorer với bảng dự toán AWS Pricing Calculator (**$7.60/tháng**) | 01/12/2026 | 01/12/2026 | https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html |
+| 4 | **Hoàn thiện Blogs, Events, Tự đánh giá & Góp ý:** <br> - Rà soát danh sách các bài Blog kỹ thuật (kèm đầy đủ tài liệu tham khảo và hình ảnh sơ đồ AWS) cùng các sự kiện đã tham gia tại văn phòng AWS Việt Nam <br> - Hoàn thiện mục `6-Self-evaluation` và `7-Feedback` trên cả hai phiên bản Tiếng Việt và Tiếng Anh | 02/12/2026 | 02/12/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | **Kiểm tra quy trình Dọn dẹp tài nguyên (Clean-up):** <br> - Rà soát chi tiết hướng dẫn Clean-up sau khi kết thúc demo (xóa EventBridge Schedules, tắt CloudWatch Alarms, xóa API Gateway/Lambda, xóa bảng DynamoDB/PITR, làm trống và xóa S3 Buckets, vô hiệu hóa CloudFront Distribution) | 03/12/2026 | 03/12/2026 | https://000007.awsstudygroup.com/ |
+| 6 | **Kiểm tra GitHub Pages & Nghiệm thu báo cáo thực tập:** <br> - Đẩy mã nguồn hoàn chỉnh lên GitHub repository (`Ocean-ng/fcaj-worklogs`) và kiểm tra workflow GitHub Actions <br> - Kiểm tra toàn bộ link điều hướng, hình ảnh, code blocks và chuyển đổi ngôn ngữ VI/EN trên trang chính thức | 04/12/2026 | 04/12/2026 | https://ocean-ng.github.io/fcaj-worklogs/ |
 
 ### Kết quả đạt được trong tuần 12
 
-* Kiểm chứng thành công 100% các bước kỹ thuật trong bài **Workshop** về bảo mật kết nối riêng tư tới Amazon S3 qua Gateway Endpoint, Interface Endpoint (PrivateLink), Route 53 Hybrid DNS và Endpoint Policies.
-* Đảm bảo tài khoản AWS sạch sẽ, an toàn và không còn bất kỳ tài nguyên ngầm nào gây phát sinh chi phí sau khi kết thúc thực tập.
-* Hoàn thiện trang web báo cáo thực tập **First Cloud AI Journey** song ngữ (Tiếng Việt – Tiếng Anh) chỉn chu, đầy đủ 7 chuyên mục trên nền tảng Hugo và GitHub Pages.
-* Hệ thống hóa toàn bộ kiến thức về hạ tầng đám mây và an toàn thông tin trên AWS, sẵn sàng cho buổi bảo vệ và định hướng phát triển sự nghiệp Cloud Security Engineer.
+* Kiểm chứng thành công quy trình hoạt động End-to-End của **SecureTable** trên hạ tầng AWS Serverless với dữ liệu nhất quán, phân quyền chặt chẽ và giám sát đầy đủ.
+* Đảm bảo đầy đủ bảng dự toán chi phí, chiến lược tối ưu hóa chi phí và hướng dẫn dọn dẹp tài nguyên triệt để nhằm tránh mọi chi phí phát sinh ngoài ý muốn.
+* Hoàn thiện website báo cáo thực tập **First Cloud AI Journey** song ngữ (Việt – Anh) đúng chuẩn template, đầy đủ references và minh chứng thực tế.
+* Tổng kết vững vàng hành trang kiến thức AWS Cloud & An toàn thông tin sau 3 tháng thực tập, sẵn sàng cho buổi bảo vệ và chặng đường nghề nghiệp phía trước.

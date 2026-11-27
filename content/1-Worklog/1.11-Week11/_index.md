@@ -8,23 +8,22 @@ pre: " <b> 1.11. </b> "
 
 ### Week 11 Objectives
 
-* Explore intelligent threat detection and Cloud Security Posture Management (CSPM) services: **Amazon GuardDuty**, **AWS Security Hub**, and **AWS Config**.
-* Assess account security compliance against industry standards including **CIS AWS Foundations Benchmark** and **AWS Foundational Security Best Practices**.
-* Learn **Infrastructure as Code (IaC)** using **AWS CloudFormation** to standardize and automate network and security provisioning.
-* Remediate high-priority configuration findings identified by AWS Security Hub.
+* Conduct cloud security posture reviews and threat checks on the AWS environment using **Amazon GuardDuty** and **AWS Security Hub**.
+* Audit the **SecureTable** implementation against the 5 evaluated **AWS Well-Architected Framework** pillars (Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization).
+* Compile reproducible Step-by-Step deployment documentation, code snippets, and screenshots for the **Workshop** guide.
 
 ### Tasks Implemented This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 |------|-----------|-------------|----------------|---------------|
-| Mon | **Threat Detection with Amazon GuardDuty:** <br> - Study how Amazon GuardDuty uses Machine Learning and threat intelligence feeds to analyze CloudTrail Events, VPC Flow Logs, and DNS Logs <br> - Enable GuardDuty (30-day Free Trial), generate Sample Findings, and analyze Low/Medium/High severity threat categories | 23/11/2026 | 23/11/2026 | https://docs.aws.amazon.com/guardduty/ |
-| Tue | **Security Posture Management with AWS Security Hub:** <br> - Enable AWS Security Hub along with `AWS Foundational Security Best Practices` and `CIS AWS Foundations Benchmark` <br> - Evaluate the overall account Security Score and inspect failed security controls | 24/11/2026 | 24/11/2026 | https://docs.aws.amazon.com/securityhub/ |
-| Wed | **Security Finding Remediation:** <br> - Remediate high-priority Security Hub findings: enforce account-level S3 Block Public Access, restrict all VPC Default Security Groups, rotate aging IAM Access Keys, and verify MFA enforcement | 25/11/2026 | 25/11/2026 | https://docs.aws.amazon.com/securityhub/ |
-| Thu | **Infrastructure as Code with AWS CloudFormation:** <br> - Study AWS CloudFormation YAML template anatomy (`Parameters`, `Resources`, `Outputs`, `Mappings`) <br> - Codify the Workshop VPC, Private/Public Subnets, Route Tables, Security Groups, and EC2 resources into a reusable CloudFormation template | 26/11/2026 | 26/11/2026 | https://000037.awsstudygroup.com/ |
-| Fri | **Stack Deployment Verification & Cleanup:** <br> - Test one-click provisioning (`Create Stack`) and deterministic teardown (`Delete Stack`) via CloudFormation <br> - Disable GuardDuty and Security Hub after evaluation to prevent post-trial charges | 27/11/2026 | 27/11/2026 | https://000037.awsstudygroup.com/ |
+| Mon | **Threat Review with Amazon GuardDuty:** <br> - Study how GuardDuty analyzes CloudTrail Events, VPC Flow Logs, and DNS Logs to detect anomalous behavior <br> - Verify zero suspicious IAM credential or API activity across the project environment | 23/11/2026 | 23/11/2026 | https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html |
+| Tue | **Security Posture Check with AWS Security Hub:** <br> - Benchmark resource configurations against **AWS Foundational Security Best Practices** <br> - Confirm S3 Block Public Access enforcement, Root MFA status, scoped IAM Roles (no wildcards), and zero exposed secrets | 24/11/2026 | 24/11/2026 | https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html |
+| Wed | **Well-Architected Alignment Audit for SecureTable:** <br> - Verify 1-to-1 alignment between the `SecureTable_Architecture.svg` diagram and the deployed AWS environment in `ap-southeast-1` <br> - Review failure handling, DynamoDB transactional consistency, and Serverless auto-scaling characteristics | 25/11/2026 | 25/11/2026 | https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html |
+| Thu | **Authoring Step-by-Step Workshop Documentation:** <br> - Document reproducible deployment steps (Prerequisites, S3/CloudFront Frontend, DynamoDB, Cognito/IAM, Lambda/API Gateway, Automation, Security & Cleanup) with syntax-highlighted snippets and console screenshots | 26/11/2026 | 26/11/2026 | https://github.com/thienluhoan/fcj-workshop-template |
+| Fri | **Exploring GenAI Security with Amazon Bedrock Guardrails:** <br> - Study modern AI safety controls using **Amazon Bedrock Guardrails** (Prompt Injection defense, PII redaction, IAM policy enforcement) and draft new technical blog posts | 27/11/2026 | 27/11/2026 | https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html |
 
 ### Week 11 Achievements
 
-* Understood how **Amazon GuardDuty** continuously detects compromised IAM credentials, cryptocurrency mining, and command-and-control traffic without agent installation.
-* Evaluated and improved the AWS account's security posture using **AWS Security Hub** aligned with the **CIS AWS Foundations Benchmark**.
-* Adopted **AWS CloudFormation (IaC)** to provision and tear down multi-tier cloud environments reliably, eliminating manual configuration drift and orphaned billable resources.
+* Verified strong security compliance across the AWS account and **SecureTable** resources using **AWS Security Hub** and **Amazon GuardDuty**.
+* Confirmed full alignment between the production deployment and the designed architecture across all 5 evaluated **AWS Well-Architected** pillars.
+* Structured bilingual Step-by-Step Workshop documentation and expanded technical blog coverage into Generative AI security with **Amazon Bedrock Guardrails**.

@@ -8,7 +8,7 @@ pre: " <b> 6. </b> "
 
 Trong suốt thời gian thực tập tại **Công ty TNHH Amazon Web Services Việt Nam** (chương trình **Workforce Bootcamp - First Cloud AI Journey**) từ ngày **14/09/2026** đến ngày **14/12/2026**, mình đã có cơ hội quý báu để hệ thống hóa và vận dụng những kiến thức chuyên ngành **An toàn thông tin** được học tại **Trường Đại học FPT cơ sở TP.HCM** vào môi trường hạ tầng điện toán đám mây thực tế.
 
-Mình đã hoàn thành lộ trình 12 tuần rèn luyện từ nền tảng AWS Cloud (IAM, VPC, EC2, S3, RDS) đến thiết kế kiến trúc Serverless, triển khai bài Workshop chuyên sâu về **Kết nối Hybrid an toàn tới Amazon S3 qua VPC Gateway/Interface Endpoints & Route 53 Private DNS**, cũng như thực hành các dịch vụ bảo mật và giám sát an ninh đám mây (KMS, WAF, CloudTrail, GuardDuty, Security Hub). Qua đó, mình đã phát triển mạnh mẽ kỹ năng thiết kế kiến trúc mạng đám mây an toàn, tự động hóa hạ tầng, viết tài liệu kỹ thuật song ngữ và giải quyết sự cố.
+Mình đã hoàn thành lộ trình 12 tuần rèn luyện từ nền tảng AWS Cloud (IAM, VPC, EC2, S3, RDS/DynamoDB) đến tham gia thiết kế kiến trúc và triển khai dự án **SecureTable** (Hệ thống quản lý nguyên liệu và gọi món bằng mã QR trên nền tảng AWS Serverless tại Region `ap-southeast-1`), cũng như thực hành sâu các dịch vụ bảo mật và giám sát an ninh đám mây (CloudFront OAC, Cognito, KMS, WAF, CloudTrail, GuardDuty, Security Hub). Qua đó, mình đã phát triển mạnh mẽ kỹ năng thiết kế kiến trúc Serverless an toàn theo chuẩn **AWS Well-Architected Framework**, kiểm soát chi phí, viết tài liệu kỹ thuật song ngữ và giải quyết sự cố.
 
 Để phản ánh khách quan quá trình rèn luyện trong 3 tháng thực tập, mình xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:
 

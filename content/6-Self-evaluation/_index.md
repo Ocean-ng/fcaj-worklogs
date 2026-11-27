@@ -8,7 +8,7 @@ pre: " <b> 6. </b> "
 
 During my internship at **Amazon Web Services Viet Nam Company Limited** (**Workforce Bootcamp - First Cloud AI Journey**) from **14/09/2026** to **14/12/2026**, I had the valuable opportunity to bridge my **Information Assurance** academic training at **FPT University HCMC** with real-world AWS Cloud infrastructure and security operations.
 
-Across the 12-week program, I progressed from core AWS foundations (IAM, VPC, EC2, S3, RDS) to designing Serverless architectures, authoring a complete technical Workshop on **Secure Hybrid Connectivity to Amazon S3 using VPC Gateway/Interface Endpoints & Route 53 Private DNS**, and practicing advanced cloud security and observability services (KMS, WAF, CloudTrail, GuardDuty, Security Hub). This journey strengthened my capability in secure cloud network design, infrastructure automation, bilingual technical documentation, and systematic troubleshooting.
+Across the 12-week program, I progressed from core AWS foundations (IAM, VPC, EC2, S3, RDS/DynamoDB) to designing and implementing the **SecureTable** project (an AWS Serverless Ingredient Management and QR Code Ordering System in `ap-southeast-1`), alongside practicing advanced cloud security and observability services (CloudFront OAC, Cognito, KMS, WAF, CloudTrail, GuardDuty, Security Hub). This journey strengthened my capability in secure Serverless architecture design under the **AWS Well-Architected Framework**, cost governance, bilingual technical documentation, and systematic troubleshooting.
 
 To objectively reflect on my three-month internship performance, I have evaluated myself across the following criteria:
 

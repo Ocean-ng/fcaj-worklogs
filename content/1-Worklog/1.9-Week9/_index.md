@@ -8,24 +8,22 @@ pre: " <b> 1.9. </b> "
 
 ### Week 9 Objectives
 
-* Understand global content delivery with **Amazon CloudFront (CDN)** and modern web hosting with **AWS Amplify**.
-* Implement **Origin Access Control (OAC)** to keep origin S3 buckets completely private while serving assets exclusively through CloudFront over HTTPS.
-* Manage SSL/TLS certificates using **AWS Certificate Manager (ACM)** to enforce Encryption in Transit.
-* Protect web applications and APIs against common Layer 7 attacks (OWASP Top 10: SQL Injection, Cross-Site Scripting, HTTP floods) using **AWS WAF**.
+* Build automated revenue reporting and scheduled backup pipelines for **SecureTable** using **Amazon EventBridge Scheduler**, **AWS Lambda**, and **Amazon SNS**.
+* Configure **DynamoDB Point-in-Time Recovery (PITR)**, weekly **DynamoDB Export to S3**, and long-term storage cost optimization using **S3 Lifecycle Policies** (transitioning archives to S3 Glacier Flexible Retrieval).
+* Attend the in-person **AWS Cloud Mastery** technical sharing session at the AWS Vietnam office to refine system architecture practices.
 
 ### Tasks Implemented This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 |------|-----------|-------------|----------------|---------------|
-| Mon | **Content Delivery with Amazon CloudFront & OAC:** <br> - Study edge caching, Origins, Cache Behaviors, and TTL settings in Amazon CloudFront <br> - Create a CloudFront Distribution connected to a private S3 Bucket using Origin Access Control (OAC) <br> - Update the S3 Bucket Policy to allow read access solely from the `cloudfront.amazonaws.com` service principal | 09/11/2026 | 09/11/2026 | https://000058.awsstudygroup.com/ |
-| Tue | **Encryption in Transit with ACM & HTTPS:** <br> - Study automated SSL/TLS certificate provisioning and renewal in AWS Certificate Manager (ACM) <br> - Set CloudFront Viewer Protocol Policy to `Redirect HTTP to HTTPS` and enforce a minimum security policy of `TLSv1.2_2021` | 10/11/2026 | 10/11/2026 | https://docs.aws.amazon.com/acm/ |
-| Wed | **Web Application Firewall with AWS WAF:** <br> - Study AWS WAF architecture: Web ACLs, Rule Groups, Managed Rules, and Custom Rules <br> - Provision a Web ACL associated with CloudFront / API Gateway and enable `AWSManagedRulesCommonRuleSet` and `AWSManagedRulesSQLiRuleSet` | 11/11/2026 | 11/11/2026 | https://000026.awsstudygroup.com/ |
-| Thu | **Rate-Based Rules & Simulated Attack Testing:** <br> - Configure an AWS WAF Rate-based Rule to block offending source IPs exceeding request thresholds within a 5-minute window <br> - Send simulated SQL Injection and XSS test payloads (`?id=1' OR '1'='1`) and verify AWS WAF blocks requests with `403 Forbidden` | 12/11/2026 | 12/11/2026 | https://000026.awsstudygroup.com/ |
-| Fri | **Frontend Hosting with AWS Amplify & Cleanup:** <br> - Explore automated CI/CD build and hosting workflows for web frontends (Next.js / Static Web) on AWS Amplify <br> - Review WAF Sampled Requests metrics and clean up test Web ACLs and CloudFront distributions | 13/11/2026 | 13/11/2026 | https://000026.awsstudygroup.com/ |
+| Mon | **Configuring Amazon EventBridge Scheduler:** <br> - Study Serverless scheduling with EventBridge Scheduler (timezone-aware `Asia/Ho_Chi_Minh` schedules, retry policies, and DLQs) <br> - Author a dedicated IAM Role permitting Scheduler to invoke only `Report Lambda` and `Backup Lambda` | 09/11/2026 | 09/11/2026 | https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html |
+| Tue | **Developing `Report Lambda` & Amazon SNS Notifications:** <br> - Implement `Report Lambda` aggregating closed bills, daily/weekly revenue, and ingredient usage from DynamoDB <br> - Create an Amazon SNS Topic, confirm Admin email subscription, and verify automated summary email delivery | 10/11/2026 | 10/11/2026 | https://docs.aws.amazon.com/sns/latest/dg/welcome.html |
+| Wed | **Enabling DynamoDB PITR & `Backup Lambda` (Export to S3):** <br> - Enable **Point-in-Time Recovery (PITR)** on critical SecureTable DynamoDB tables <br> - Implement `Backup Lambda` invoking `ExportTableToPointInTime` to export weekly table snapshots to a private S3 Backup Bucket | 11/11/2026 | 11/11/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery.html |
+| Thu | **Backup Storage Cost Optimization with S3 Lifecycle:** <br> - Configure **S3 Lifecycle Rules** on the S3 Backup Bucket to transition aging exports to **S3 Glacier Flexible Retrieval** and expire obsolete archives <br> - Document asynchronous export behavior and realistic recovery time expectations | 12/11/2026 | 12/11/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html |
+| Fri | **Automation Verification & AWS Cloud Mastery Event (14/11):** <br> - Verify End-to-End EventBridge Scheduler execution for both reporting and backup workflows <br> - Attend **AWS Cloud Mastery** (Saturday morning, 14/11/2026 at Level 26 Bitexco) to exchange practical Serverless architecture insights | 13/11/2026 | 14/11/2026 | https://aws.amazon.com/blogs/compute/introducing-amazon-eventbridge-scheduler/ |
 
 ### Week 9 Achievements
 
-* Built a secure content delivery architecture using **Amazon CloudFront** with **Origin Access Control (OAC)**, preventing direct public access to S3 origin buckets.
-* Enforced Encryption in Transit across all endpoints via HTTPS redirection and modern TLS 1.2+ policies.
-* Configured **AWS WAF** Managed Rule Groups and Rate-based Rules to defend web endpoints against OWASP Top 10 exploits (SQLi, XSS) and Layer 7 brute-force/flooding attacks.
-* Understood frontend deployment workflows with AWS Amplify.
+* Delivered a decoupled automation pipeline handling scheduled management reports via **Amazon SNS** and weekly **DynamoDB Exports to S3** via **EventBridge Scheduler**.
+* Strengthened **Reliability** and **Cost Optimization** pillars by combining **DynamoDB PITR**, **Export to S3**, and **S3 Lifecycle** tiering.
+* Gained actionable architectural feedback from mentors and peers at the **AWS Cloud Mastery** event.

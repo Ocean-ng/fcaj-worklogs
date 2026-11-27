@@ -8,24 +8,23 @@ pre: " <b> 1.10. </b> "
 
 ### Week 10 Objectives
 
-* Establish centralized performance monitoring and log aggregation with **Amazon CloudWatch** (Metrics, Logs, Alarms, Dashboards).
-* Enable and analyze VPC network traffic using **VPC Flow Logs** to detect rejected connections (`REJECT`) and anomalous port scanning.
-* Deploy account-wide API audit logging with **AWS CloudTrail**, enforcing **Log File Integrity Validation**.
-* Build real-time automated security alerting via email using **Amazon EventBridge** and **Amazon SNS**.
+* Strengthen edge and web application protection for **SecureTable** using **AWS WAF** integrated with **Amazon CloudFront**.
+* Establish centralized operational monitoring using **Amazon CloudWatch** (Lambda Logs, API Gateway Metrics, and CloudWatch Alarms notifying via SNS).
+* Audit AWS account-level management API activity with **AWS CloudTrail**, clearly distinguishing infrastructure logs from DynamoDB business Audit Logs.
+* Author and publish technical blogs on the **Shared Responsibility Model**, **Amazon S3 Security**, and **IAM & CloudTrail** to the **AWS Study Group VN** community.
 
 ### Tasks Implemented This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 |------|-----------|-------------|----------------|---------------|
-| Mon | **Infrastructure Monitoring with Amazon CloudWatch:** <br> - Study CloudWatch Metrics, Namespaces, Dimensions, and CloudWatch Logs <br> - Configure CloudWatch Alarms monitoring CPU Utilization, API Gateway 4xx/5xx error rates, and Lambda invocation errors <br> - Build a unified CloudWatch Dashboard visualizing system health | 16/11/2026 | 16/11/2026 | https://000018.awsstudygroup.com/ |
-| Tue | **Network Traffic Analysis with VPC Flow Logs:** <br> - Configure VPC Flow Logs to publish network traffic records to a CloudWatch Log Group <br> - Write **CloudWatch Logs Insights** queries filtering `REJECT` records to identify unauthorized port probes or Security Group misconfigurations | 17/11/2026 | 17/11/2026 | https://000032.awsstudygroup.com/ |
-| Wed | **API Audit Logging with AWS CloudTrail:** <br> - Understand AWS CloudTrail's role in auditing *"Who did what, when, and from which IP"* across the AWS account <br> - Create a Multi-Region Trail delivering logs to a dedicated S3 Bucket, encrypted with SSE-KMS and protected by **Log File Integrity Validation** (SHA-256 digest chaining) | 18/11/2026 | 18/11/2026 | https://000032.awsstudygroup.com/ |
-| Thu | **Automated Security Alerts with EventBridge & SNS:** <br> - Create an Amazon SNS Topic with an email subscription <br> - Configure Amazon EventBridge Rules matching high-risk CloudTrail events (e.g., Root Console Sign-in, Security Group modifications, KMS key deletion) to trigger instant SNS email alerts | 19/11/2026 | 19/11/2026 | https://000032.awsstudygroup.com/ |
-| Fri | **Incident Alerting Verification & Log Retention:** <br> - Trigger a test Security Group rule modification and verify real-time SNS email alert delivery <br> - Set CloudWatch Log Group retention policies (14 days) to prevent unbounded storage costs | 20/11/2026 | 20/11/2026 | https://000018.awsstudygroup.com/ |
+| Mon | **Edge Protection with AWS WAF on CloudFront:** <br> - Study Web ACLs, AWS Managed Rule Groups (SQLi, XSS, Bad Inputs), and Rate-based Rules in AWS WAF <br> - Test abnormal web request filtering and evaluate CloudFront Free Plan WAF inclusion vs. standalone WAF pricing | 16/11/2026 | 16/11/2026 | https://000026.awsstudygroup.com/ |
+| Tue | **Observability with Amazon CloudWatch Logs & Metrics:** <br> - Configure explicit Log Retention policies across all SecureTable Lambda Log Groups to optimize storage costs <br> - Monitor Lambda `Errors`, `Duration`, `Throttles` and API Gateway `4XXError`, `5XXError`, and `Latency` metrics | 17/11/2026 | 17/11/2026 | https://000018.awsstudygroup.com/ |
+| Wed | **CloudWatch Alarms & S3 Security Knowledge Sharing:** <br> - Configure CloudWatch Standard Alarms publishing email alerts via Amazon SNS whenever Lambda error counts or API 5XX thresholds breach <br> - Synthesize Shared Responsibility Model & S3 data protection findings and publish to **AWS Study Group VN** | 18/11/2026 | 18/11/2026 | https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html |
+| Thu | **Account Activity Auditing with AWS CloudTrail:** <br> - Inspect 90-day Management Events in **AWS CloudTrail Event History** in `ap-southeast-1` <br> - Differentiate CloudTrail (AWS control-plane auditing) from DynamoDB Audit Logs (application business traceability) and publish IAM & CloudTrail blog posts | 19/11/2026 | 19/11/2026 | https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html |
+| Fri | **Error Handling & Alerting Validation:** <br> - Simulate malformed request payloads and error conditions to verify graceful Lambda exception handling and confirm CloudWatch Alarm -> SNS notification delivery | 20/11/2026 | 20/11/2026 | https://000032.awsstudygroup.com/ |
 
 ### Week 10 Achievements
 
-* Built a centralized observability pipeline using **Amazon CloudWatch** Dashboards and Alarms for proactive operational awareness.
-* Analyzed network-level telemetry with **VPC Flow Logs** and CloudWatch Logs Insights to diagnose connectivity issues and spot blocked traffic patterns.
-* Established tamper-evident audit logging with **AWS CloudTrail** and **Log File Integrity Validation** for forensic traceability.
-* Automated real-time security notifications by integrating **CloudTrail, Amazon EventBridge, and Amazon SNS**.
+* Hardened **SecureTable**'s web perimeter using **AWS WAF** paired with **Amazon CloudFront HTTPS**.
+* Satisfied **Operational Excellence** requirements with structured logging, real-time metrics, and automated **CloudWatch + SNS** alerting.
+* Established dual-layer audit visibility across **AWS CloudTrail** and **DynamoDB Audit Logs**, while publishing technical knowledge-sharing blogs to **AWS Study Group VN**.

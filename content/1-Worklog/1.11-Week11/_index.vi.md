@@ -8,23 +8,22 @@ pre: " <b> 1.11. </b> "
 
 ### Mục tiêu tuần 11
 
-* Tìm hiểu các dịch vụ phát hiện mối đe dọa thông minh và quản trị tư thế bảo mật đám mây (CSPM): **Amazon GuardDuty**, **AWS Security Hub** và **AWS Config**.
-* Đánh giá mức độ tuân thủ bảo mật của tài khoản AWS theo bộ tiêu chuẩn quốc tế **CIS AWS Foundations Benchmark** và **AWS Foundational Security Best Practices**.
-* Tìm hiểu phương pháp Quản lý hạ tầng bằng mã (**Infrastructure as Code - IaC**) với **AWS CloudFormation** để chuẩn hóa và tự động hóa việc khởi tạo hạ tầng mạng & bảo mật.
-* Khắc phục (Remediation) các cảnh báo cấu hình sai được phát hiện bởi AWS Security Hub.
+* Rà soát toàn diện tư thế bảo mật đám mây (CSPM) và phát hiện mối đe dọa trên tài khoản AWS bằng **Amazon GuardDuty** và **AWS Security Hub**.
+* Đối chiếu toàn bộ hệ thống **SecureTable** theo 5 trụ cột chấm điểm của **AWS Well-Architected Framework** (Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization).
+* Đóng gói cấu hình và tài liệu hướng dẫn triển khai Step-by-Step cho mục **Workshop**, đảm bảo tính tái lập (Reproducible) từ đầu đến cuối.
 
 ### Các công việc thực hiện trong tuần
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 |------|-----------|-------------|----------------|---------------|
-| 2 | **Phát hiện mối đe dọa với Amazon GuardDuty:** <br> - Tìm hiểu cơ chế phân tích log tự động của Amazon GuardDuty dựa trên Machine Learning và Threat Intelligence từ ba nguồn: CloudTrail Events, VPC Flow Logs và DNS Logs <br> - Kích hoạt GuardDuty (Free Trial 30 ngày), tạo Sample Findings và phân tích mức độ nghiêm trọng (Low, Medium, High) của từng loại cảnh báo | 23/11/2026 | 23/11/2026 | https://docs.aws.amazon.com/guardduty/ |
-| 3 | **Quản trị tư thế bảo mật với AWS Security Hub:** <br> - Kích hoạt AWS Security Hub và bộ tiêu chuẩn `AWS Foundational Security Best Practices` cùng `CIS AWS Foundations Benchmark` <br> - Phân tích điểm số bảo mật tổng thể (Security Score) và danh sách các Controls chưa đạt chuẩn trên tài khoản | 24/11/2026 | 24/11/2026 | https://docs.aws.amazon.com/securityhub/ |
-| 4 | **Khắc phục lỗ hổng cấu hình (Security Remediation):** <br> - Dựa trên báo cáo của Security Hub, thực hiện khắc phục các cảnh báo ưu tiên cao: bật S3 Block Public Access cấp tài khoản, siết chặt Default Security Group trong mọi VPC, xoay vòng Access Key cũ và bật MFA | 25/11/2026 | 25/11/2026 | https://docs.aws.amazon.com/securityhub/ |
-| 5 | **Tự động hóa hạ tầng với AWS CloudFormation (IaC):** <br> - Tìm hiểu cấu trúc template YAML của AWS CloudFormation (`Parameters`, `Resources`, `Outputs`, `Mappings`) <br> - Đóng gói kiến trúc VPC, Private/Public Subnets, Route Tables, Security Groups và EC2 của bài Workshop thành tệp CloudFormation template có thể tái sử dụng | 26/11/2026 | 26/11/2026 | https://000037.awsstudygroup.com/ |
-| 6 | **Kiểm thử triển khai Stack & Dọn dẹp:** <br> - Thực hành triển khai (Create Stack) và thu hồi toàn bộ hạ tầng (Delete Stack) chỉ với một thao tác qua CloudFormation <br> - Tắt GuardDuty và Security Hub sau khi hoàn tất đánh giá để tránh phát sinh phí sau thời gian dùng thử | 27/11/2026 | 27/11/2026 | https://000037.awsstudygroup.com/ |
+| 2 | **Rà soát mối đe dọa với Amazon GuardDuty:** <br> - Tìm hiểu cách GuardDuty phân tích CloudTrail Events, VPC Flow Logs và DNS Logs để phát hiện hành vi xâm nhập <br> - Kiểm tra tài khoản triển khai dự án đảm bảo không có cảnh báo sử dụng IAM Credentials bất thường | 23/11/2026 | 23/11/2026 | https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html |
+| 3 | **Đánh giá tuân thủ bảo mật với AWS Security Hub:** <br> - Đối chiếu cấu hình các dịch vụ trong tài khoản theo bộ chuẩn **AWS Foundational Security Best Practices** <br> - Xác minh toàn bộ S3 Buckets bật Block Public Access, Root Account bật MFA, IAM Roles không cấp quyền thừa (`*`) và không lộ thông tin xác thực | 24/11/2026 | 24/11/2026 | https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html |
+| 4 | **Rà soát kiến trúc SecureTable theo Well-Architected:** <br> - Kiểm tra sự đồng nhất 100% giữa sơ đồ kiến trúc `SecureTable_Architecture.svg` và môi trường triển khai thực tế trên AWS Region `ap-southeast-1` <br> - Rà soát cơ chế xử lý lỗi (Failure Handling), giao dịch DynamoDB Transactions và khả năng mở rộng tự động của Lambda/API Gateway | 25/11/2026 | 25/11/2026 | https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html |
+| 5 | **Biên soạn tài liệu hướng dẫn thực hành Workshop:** <br> - Viết tài liệu hướng dẫn triển khai từng bước (Prerequisites, Frontend S3/CloudFront, DynamoDB, Cognito/IAM, Lambda/API Gateway, Automation, Security & Cleanup) kèm code snippets và ảnh chụp màn hình rõ nét | 26/11/2026 | 26/11/2026 | https://github.com/thienluhoan/fcj-workshop-template |
+| 6 | **Nghiên cứu bảo mật AI hiện đại với Amazon Bedrock Guardrails:** <br> - Tìm hiểu xu hướng bảo vệ ứng dụng Generative AI bằng **Amazon Bedrock Guardrails** (chống Prompt Injection, lọc PII) và viết bài Blog kỹ thuật bổ sung cho cộng đồng | 27/11/2026 | 27/11/2026 | https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html |
 
 ### Kết quả đạt được trong tuần 11
 
-* Hiểu rõ cách **Amazon GuardDuty** tự động phát hiện các hành vi xâm nhập, rò rỉ IAM Credentials hay kết nối tới IP độc hại mà không cần cài đặt agent lên máy chủ.
-* Biết cách sử dụng **AWS Security Hub** để đo lường định lượng điểm số an toàn của tài khoản AWS theo chuẩn **CIS Benchmark** và trực tiếp xử lý các điểm yếu cấu hình nhằm nâng cao Security Score.
-* Làm chủ kỹ năng viết và vận hành **AWS CloudFormation (IaC)**, giúp khởi tạo và dọn dẹp môi trường bài lab/dự án nhất quán, tránh sai sót thủ công và không bỏ sót tài nguyên gây tốn phí.
+* Xác nhận tài khoản AWS và hệ thống **SecureTable** đáp ứng tốt các tiêu chuẩn an toàn cốt lõi trên **AWS Security Hub** và không phát sinh cảnh báo rủi ro trên **GuardDuty**.
+* Đảm bảo sản phẩm triển khai thực tế khớp hoàn toàn với sơ đồ kiến trúc đã thiết kế và thỏa mãn cả 5 trụ cột đánh giá của **AWS Well-Architected Framework**.
+* Chuẩn hóa tài liệu hướng dẫn thực hành Step-by-Step song ngữ và mở rộng kiến thức sang mảng bảo mật Generative AI với **Amazon Bedrock Guardrails**.
