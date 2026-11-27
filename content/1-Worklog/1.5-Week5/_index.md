@@ -9,7 +9,7 @@ pre: " <b> 1.5. </b> "
 ### Week 5 Objectives
 
 * Study the 6 pillars of the **AWS Well-Architected Framework**, focusing on the Security Pillar and Cost Optimization Pillar.
-* Analyze system requirements, define project scope, and select appropriate AWS services for the project Proposal.
+* Analyze system requirements, define project scope, and select appropriate AWS Serverless services for the **SecureTable** team project (Ingredient Management and QR Code Ordering System) in the project Proposal.
 * Design the end-to-end Architecture Diagram and data flow using Draw.io with official AWS icons.
 * Estimate monthly and annual infrastructure operating costs using the **AWS Pricing Calculator**.
 

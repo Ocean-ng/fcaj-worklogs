@@ -9,7 +9,7 @@ pre: " <b> 1.5. </b> "
 ### Mục tiêu tuần 5
 
 * Nghiên cứu 6 trụ cột của bộ khung **AWS Well-Architected Framework**, trọng tâm vào hai trụ cột Bảo mật (Security Pillar) và Tối ưu chi phí (Cost Optimization Pillar).
-* Phân tích yêu cầu bài toán thực tế, xác định phạm vi hệ thống và lựa chọn tập dịch vụ AWS phù hợp cho bản đề xuất dự án (Proposal).
+* Phân tích yêu cầu bài toán thực tế, xác định phạm vi hệ thống và lựa chọn tập dịch vụ AWS Serverless phù hợp cho dự án nhóm **SecureTable** (Hệ thống quản lý nguyên liệu và gọi món bằng mã QR) trong bản đề xuất dự án (Proposal).
 * Thiết kế sơ đồ kiến trúc tổng thể (Architecture Diagram) và luồng dữ liệu của hệ thống bằng công cụ Draw.io.
 * Thực hành ước tính chi phí vận hành hạ tầng hàng tháng/hàng năm bằng công cụ **AWS Pricing Calculator**.
 
