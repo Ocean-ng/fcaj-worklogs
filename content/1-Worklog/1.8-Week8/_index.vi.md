@@ -11,7 +11,7 @@ pre: " <b> 1.8. </b> "
 * Thiết kế và khởi tạo hệ thống bảng dữ liệu **Amazon DynamoDB** cho dự án **SecureTable** (quản lý bàn, hóa đơn, thực đơn, đơn gọi món, tồn kho nguyên liệu, tài chính và nhật ký thao tác Audit Logs).
 * Phát triển và tích hợp các hàm **AWS Lambda** xử lý nghiệp vụ cốt lõi: `GuestServices`, `Ordering`, `Reception`, `Kitchen`, `Inventory` và `AdminDashboard`.
 * Áp dụng **DynamoDB Transactions**, **Conditional Expressions** và khóa chống trùng lặp (**Idempotency-Key**) để đảm bảo tính nhất quán tồn kho khi nhiều khách đặt món cùng lúc.
-* Thực hành bảo mật khóa mã hóa với **AWS KMS** và quản lý cấu hình an toàn qua biến môi trường được bảo vệ / **SSM Parameter Store**.
+* Nghiên cứu cơ chế mã hóa dữ liệu trên AWS (KMS vs mã hóa mặc định SSE-S3 / DynamoDB AWS-owned key) và đảm bảo không lưu cứng thông tin nhạy cảm trong mã nguồn.
 
 ### Các công việc thực hiện trong tuần
 
@@ -21,7 +21,7 @@ pre: " <b> 1.8. </b> "
 | 3 | **Phát triển Lambda `GuestServices` & `Ordering`:** <br> - Xây dựng API xem thực đơn theo tình trạng nguyên liệu khả dụng (`GET /v1/guest/menu`) <br> - Phát triển `Ordering Lambda` sử dụng **DynamoDB `TransactWriteItems`** và `Idempotency-Key` để vừa tạo đơn món vừa đặt giữ (reserve) nguyên liệu nguyên tử (Atomic), chống âm kho khi đặt đồng thời | 03/11/2026 | 03/11/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html |
 | 4 | **Phát triển Lambda `Reception`, `Kitchen` & `Inventory`:** <br> - Xây dựng luồng Reception mở bàn, chuyển trạng thái `CLOSING` và chốt hóa đơn <br> - Xây dựng luồng Kitchen xác nhận hoàn tất món (trừ kho thực tế) hoặc từ chối món (hoàn trả lượng nguyên liệu đã đặt giữ) <br> - Xây dựng luồng Inventory nhập kho, điều chỉnh hao hụt và ghi nhận lịch sử | 04/11/2026 | 04/11/2026 | https://docs.aws.amazon.com/lambda/latest/dg/welcome.html |
 | 5 | **Phát triển `AdminDashboard` & Ghi nhận Audit Logs:** <br> - Xây dựng hàm tổng hợp báo cáo doanh thu, chi phí nguyên liệu cho Admin <br> - Ghi nhận đầy đủ **Audit Logs nghiệp vụ** (ai thực hiện, thao tác gì, thời gian, giá trị trước/sau) vào bảng Audit trên DynamoDB cho các hành động nhạy cảm như sửa kho hay đóng/hủy món | 05/11/2026 | 05/11/2026 | https://000022.awsstudygroup.com/ |
-| 6 | **Bảo mật dữ liệu & Cấu hình với AWS KMS / Parameter Store:** <br> - Nghiên cứu cơ chế mã hóa khóa với **AWS KMS** và lưu trữ cấu hình nhạy cảm trên **SSM Parameter Store (`SecureString`)** <br> - Rà soát toàn bộ mã nguồn dự án đảm bảo không tồn tại bất kỳ mật khẩu hay khóa bí mật nào bị hard-code | 06/11/2026 | 06/11/2026 | https://000020.awsstudygroup.com/ |
+| 6 | **Đánh giá phương án mã hóa & Quản lý bí mật:** <br> - Nghiên cứu tài liệu **AWS KMS**, **Secrets Manager** và so sánh chi phí cho dự án nhỏ <br> - Thống nhất chọn mã hóa mặc định miễn phí (**SSE-S3** và **AWS-owned key** trên DynamoDB) kết hợp xác thực **IAM Execution Role (SigV4)** để vừa an toàn, không cần lưu mật khẩu tĩnh, vừa không tốn phí KMS/Secrets hàng tháng | 06/11/2026 | 06/11/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EncryptionAtRest.html |
 
 ### Kết quả đạt được trong tuần 8
 
