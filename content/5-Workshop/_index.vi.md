@@ -1,28 +1,43 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-20-19
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC Endpoint
+# Xây dựng hệ thống quản lý nhà hàng SecureTable trên nền tảng AWS Serverless
 
 #### Tổng quan
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ AWS từ VPC hoặc trung tâm dữ liệu tại chỗ (On-premises) mà không làm lộ lưu lượng truy cập ra ngoài mạng Internet công cộng.
+**AWS Serverless** cho phép xây dựng và triển khai ứng dụng mà không cần trực tiếp quản lý máy chủ. Các dịch vụ như AWS Lambda, Amazon API Gateway và Amazon DynamoDB hỗ trợ xử lý yêu cầu, lưu trữ dữ liệu và mở rộng theo nhu cầu sử dụng, giúp giảm công sức vận hành.
 
-Trong bài thực hành (Workshop) này, chúng ta sẽ thiết lập, cấu hình và kiểm thử các **VPC Endpoints** để cho phép hệ thống máy chủ tiếp cận dịch vụ Amazon S3 hoàn toàn qua hạ tầng mạng riêng của AWS.
+Trong workshop này, chúng ta sẽ tìm hiểu cách xây dựng và triển khai **SecureTable**, một hệ thống quản lý nhà hàng trên AWS, tập trung vào quản lý nguyên liệu, gọi món bằng mã QR, xử lý đơn hàng, quản lý hóa đơn và theo dõi doanh thu.
 
-Chúng ta sẽ triển khai hai loại VPC Endpoint để truy cập Amazon S3: **Gateway VPC Endpoint** và **Interface VPC Endpoint**. Mỗi loại mang lại lợi ích kiến trúc riêng tùy thuộc vào việc bạn truy cập S3 từ bên trong VPC trên Cloud hay từ trung tâm dữ liệu On-premises:
-+ **Gateway Endpoint** - Gửi lưu lượng đến Amazon S3 hoặc DynamoDB qua mạng nội bộ AWS hoàn toàn miễn phí. Lưu lượng từ VPC được định tuyến đến Gateway Endpoint thông qua bảng định tuyến (Route Tables) bằng Prefix List.
-+ **Interface Endpoint (AWS PrivateLink)** - Tạo các giao diện mạng đàn hồi (ENI) có địa chỉ IP Private ngay trong Subnet để nhận lưu lượng gửi đến dịch vụ đích, hỗ trợ kết nối từ cả mạng On-premises (qua Site-to-Site VPN / Direct Connect) và kết hợp với **Amazon Route 53 Private DNS / Inbound Resolver**.
+Hệ thống sử dụng kiến trúc Serverless, kết hợp các dịch vụ AWS để xây dựng giao diện web, xử lý nghiệp vụ, xác thực người dùng, lưu trữ dữ liệu và giám sát hoạt động.
 
-#### Nội dung thực hành
+Các thành phần chính được triển khai gồm:
 
-1. [Tổng quan về Workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị hạ tầng](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC với Gateway Endpoint](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises với Interface Endpoint & Route 53](5.4-S3-onprem/)
-5. [Bảo mật với VPC Endpoint Policies](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+- **Frontend – Amazon S3 & Amazon CloudFront:** Lưu trữ và phân phối giao diện web cho khách hàng và nhân viên qua HTTPS.
+- **Authentication – Amazon Cognito & AWS IAM:** Xác thực nhân viên, phân quyền và kiểm soát quyền truy cập tài nguyên AWS.
+- **Backend – AWS Lambda & Amazon API Gateway:** Xây dựng API phục vụ đặt món, quản lý bàn, hóa đơn, bếp, kho và báo cáo.
+- **Database – Amazon DynamoDB:** Lưu trữ dữ liệu nhà hàng và sử dụng DynamoDB Transactions cho các thao tác cần đảm bảo tính nhất quán.
+- **Automation – Amazon EventBridge Scheduler & Amazon SNS:** Lập lịch báo cáo, sao lưu dữ liệu và gửi thông báo qua email.
+- **Monitoring & Security – Amazon CloudWatch, AWS CloudTrail & AWS WAF:** Theo dõi hệ thống, ghi nhận hoạt động AWS và bổ sung biện pháp bảo vệ web khi WAF được bật.
+
+Sau khi hoàn thành workshop, chúng ta sẽ có một hệ thống SecureTable hoạt động trên AWS: khách hàng quét QR để đặt món, nhân viên thực hiện các nghiệp vụ quản lý và người quản trị theo dõi dữ liệu vận hành.
+
+Workshop cũng trình bày cách kiểm thử, giám sát và tối ưu tài nguyên dựa trên các nguyên tắc của **AWS Well-Architected Framework**.
+
+#### Nội dung
+
+1. [Tổng quan & Kiến trúc hệ thống](5.1-System-overview/)
+2. [Chuẩn bị](5.2-Prerequisite/)
+3. [Triển khai Frontend](5.3-Frontend-dev/)
+4. [Thiết lập cơ sở dữ liệu](5.4-Database-setup/)
+5. [Xác thực & Phân quyền](5.5-Auth/)
+6. [Xây dựng Backend](5.6-Backend-dev/)
+7. [Tự động hóa Báo cáo & Sao lưu dữ liệu](5.7-Automation/)
+8. [Tăng cường Bảo mật & Giám sát hệ thống](5.8-Security/)
+9. [Kiểm thử Hệ thống từ đầu đến cuối](5.9-E2E-testing/)
+10. [Dọn dẹp tài nguyên](5.10-Cleanup/)
