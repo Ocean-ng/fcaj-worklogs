@@ -8,24 +8,23 @@ pre: " <b> 1.5. </b> "
 
 ### Mục tiêu tuần 5
 
-* Nghiên cứu bộ khung **AWS Well-Architected Framework** (trọng tâm vào Security, Reliability, Operational Excellence, Performance Efficiency và Cost Optimization).
-* Thống nhất bài toán thực tế và phạm vi dự án **SecureTable** (Hệ thống quản lý nguyên liệu và gọi món bằng mã QR trên nền tảng AWS Serverless tại Region `ap-southeast-1`).
-* Thiết kế sơ đồ kiến trúc chuẩn AWS Architecture Icons và phân tích luồng nghiệp vụ cho 5 nhóm vai trò: `Guest`, `Reception`, `Kitchen`, `Inventory`, `Admin`.
-* Lập bảng dự toán chi phí vận hành hàng tháng và 12 tháng dựa trên kịch bản tải thực tế bằng **AWS Pricing Calculator**.
+* Tìm hiểu các nguyên tắc cốt lõi của **AWS Well-Architected Framework** để chuẩn bị bước vào giai đoạn làm dự án nhóm.
+* Cùng nhóm khảo sát thực tế quy trình vận hành quán ăn nhỏ, thống nhất đề tài **SecureTable** (Hệ thống quản lý nguyên liệu và gọi món bằng mã QR trên nền tảng AWS Serverless tại Region `ap-southeast-1`).
+* Phân chia rõ vai trò giữa các thành viên trong nhóm: nhận nhiệm vụ phụ trách **Frontend (giao diện Guest & Staff), bảo mật tầng giao diện, triển khai S3 + CloudFront và quay dựng Demo sản phẩm**.
+* Cùng nhóm rà soát sơ đồ kiến trúc, phân quyền 5 nhóm vai trò và dự toán ngân sách vận hành thử nghiệm trên AWS.
 
 ### Các công việc thực hiện trong tuần
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 |------|-----------|-------------|----------------|---------------|
-| 2 | **Nghiên cứu AWS Well-Architected Framework:** <br> - Tìm hiểu các nguyên tắc thiết kế cốt lõi của 6 trụ cột AWS Well-Architected <br> - Đi sâu vào Security Pillar (Least Privilege IAM, bảo vệ dữ liệu truyền tải/lưu trữ, truy vết thao tác) | 12/10/2026 | 12/10/2026 | https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html |
-| 3 | **Phân tích yêu cầu nghiệp vụ dự án SecureTable:** <br> - Xác định bài toán sai lệch tồn kho, chậm chuyển đơn bếp và đối chiếu doanh thu thủ công ở nhà hàng nhỏ <br> - Phân định quyền hạn và luồng thao tác của 5 nhóm người dùng (`Guest`, `Reception`, `Kitchen`, `Inventory`, `Admin`) <br> - Lựa chọn bộ dịch vụ AWS Serverless: S3, CloudFront, API Gateway, Lambda, DynamoDB, Cognito, EventBridge Scheduler, SNS, CloudWatch, CloudTrail, WAF | 13/10/2026 | 13/10/2026 | https://aws.amazon.com/serverless/ |
-| 4 | **Thiết kế sơ đồ kiến trúc chuẩn AWS:** <br> - Tự tay thiết kế sơ đồ kiến trúc `SecureTable_Architecture` trên Draw.io với bộ AWS Architecture Icons chính thức <br> - Biểu diễn rõ ràng 4 luồng xử lý: Guest gọi món qua QR, Staff xác thực qua Cognito, xử lý giao dịch Kitchen/Inventory và luồng Automation báo cáo/sao lưu | 14/10/2026 | 14/10/2026 | https://aws.amazon.com/architecture/icons/ |
-| 5 | **Dự toán ngân sách với AWS Pricing Calculator:** <br> - Xây dựng giả định tải thực tế (10 bàn, ~40.000 REST API requests/tháng, ~60.000 Lambda invocations ở mức 256 MB, ~1 GB DynamoDB) tại Region Singapore (`ap-southeast-1`) <br> - Tính toán chi phí từng dịch vụ ($5.60/tháng + $2.00 dự phòng = **$7.60/tháng**) và đề xuất phương án tối ưu chi phí | 15/10/2026 | 15/10/2026 | https://calculator.aws/ |
-| 6 | **Đánh giá rủi ro & Hoàn thiện tài liệu Proposal:** <br> - Phân tích rủi ro bảo mật mã QR tĩnh (giới hạn Guest Session theo hóa đơn đang `OPEN`), xung đột đặt món đồng thời (dùng DynamoDB Transactions) và rủi ro vượt ngân sách <br> - Biên tập hoàn chỉnh tài liệu Proposal song ngữ Tiếng Việt – Tiếng Anh | 16/10/2026 | 16/10/2026 | https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html |
+| 2 | **Tìm hiểu AWS Well-Architected Framework:** <br> - Đọc tài liệu tổng quan về 6 trụ cột của AWS Well-Architected, chú trọng Security Pillar và Cost Optimization Pillar cho ứng dụng nhỏ | 12/10/2026 | 12/10/2026 | https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html |
+| 3 | **Họp nhóm khảo sát bài toán & Chốt kiến trúc Serverless:** <br> - Thảo luận bài toán thực tế tại quán ăn quy mô nhỏ (nhầm đơn giấy, sai lệch nguyên liệu kho, tổng hợp doanh thu thủ công) <br> - Nhóm thống nhất chọn kiến trúc **100% AWS Serverless** (S3, CloudFront, API Gateway, Lambda, DynamoDB, Cognito, EventBridge Scheduler, SNS) thay cho EC2/RDS để tối ưu chi phí dưới $10/tháng | 13/10/2026 | 13/10/2026 | https://aws.amazon.com/serverless/ |
+| 4 | **Phân chia công việc nhóm & Xác định luồng người dùng:** <br> - Thống nhất phân công trong nhóm 4 người: mình đảm nhận mảng **Frontend Web (React/Vite), tích hợp giao diện bảo mật & phụ trách Demo** <br> - Phân tích chi tiết thao tác trên giao diện của 5 vai trò: `Guest` (quét QR gọi món), `Reception`, `Kitchen`, `Inventory` và `Admin` | 14/10/2026 | 14/10/2026 | https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/web-applications.html |
+| 5 | **Phối hợp rà soát sơ đồ kiến trúc & Dự toán chi phí:** <br> - Cùng các bạn trong nhóm kiểm tra luồng dữ liệu từ trình duyệt người dùng qua **CloudFront + S3** vào **API Gateway / Cognito** trên bản vẽ `SecureTable_Architecture` <br> - Tìm hiểu cách nhóm lập bảng dự toán chi phí (~$7.60/tháng cho 10 bàn) tham chiếu theo AWS Pricing Calculator | 15/10/2026 | 15/10/2026 | https://calculator.aws/ |
+| 6 | **Góp ý rủi ro giao diện & Hoàn thiện Proposal nhóm:** <br> - Thảo luận cùng nhóm về giới hạn bảo mật của mã QR cố định tại bàn (cần khóa phiên Guest theo hóa đơn đang mở `OPEN`) <br> - Rà soát nội dung bản đề xuất **Proposal** song ngữ Việt - Anh của nhóm | 16/10/2026 | 16/10/2026 | https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html |
 
 ### Kết quả đạt được trong tuần 5
 
-* Hoàn thiện kiến trúc tổng thể cho hệ thống **SecureTable** tuân thủ chặt chẽ các nguyên tắc của **AWS Well-Architected Framework**.
-* Xây dựng sơ đồ kiến trúc rõ nét, đúng chuẩn icon và tên dịch vụ của AWS, phản ánh chính xác luồng dữ liệu thực tế của sản phẩm.
-* Lập bảng dự toán chi phí minh bạch (**$7.60/tháng** tương đương **$91.20/năm**) kèm giải pháp kiểm soát ngân sách bằng AWS Budgets.
-* Xác định rõ các biện pháp kiểm soát rủi ro nghiệp vụ và an toàn thông tin ngay từ khâu thiết kế.
+* Xác định rõ phạm vi nghiệp vụ của dự án **SecureTable** và nắm chắc ranh giới công việc cá nhân trong nhóm (Frontend, triển khai S3/CloudFront và Demo).
+* Hiểu rõ lý do nhóm lựa chọn mô hình **AWS Serverless** để vừa đảm bảo khả năng mở rộng vừa giữ chi phí thử nghiệm ở mức thấp.
+* Nắm vững luồng tương tác của cả 5 nhóm người dùng để làm cơ sở thiết kế màn hình giao diện trong tuần tiếp theo.

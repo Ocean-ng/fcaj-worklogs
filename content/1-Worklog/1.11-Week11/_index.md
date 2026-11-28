@@ -8,22 +8,22 @@ pre: " <b> 1.11. </b> "
 
 ### Week 11 Objectives
 
-* Study cloud threat detection and posture management services (**Amazon GuardDuty**, **AWS Security Hub**) and evaluate security-vs-cost trade-offs for Serverless workloads.
-* Manually audit AWS account configurations against **AWS Foundational Security Best Practices / CIS Benchmarks** and verify **SecureTable** against the 5 evaluated **AWS Well-Architected Framework** pillars.
-* Compile reproducible Step-by-Step deployment documentation, code snippets, and screenshots for the **Workshop** guide.
+* Package the **SecureTable** Frontend production bundle and deploy it to a **private Amazon S3 Bucket** served via **Amazon CloudFront** (with **Origin Access Control - OAC** and **AWS WAF** under the CloudFront Free Plan) in `ap-southeast-1`.
+* Collaborate with all teammates to run End-to-End (E2E) integration tests connecting the CloudFront UI to API Gateway, Cognito, Lambda, and DynamoDB.
+* Prepare the walkthrough script and sample data for **recording the team's product Demo (scheduled for 28–29/11/2026)** and update my personal GitHub Pages report.
 
 ### Tasks Implemented This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 |------|-----------|-------------|----------------|---------------|
-| Mon | **Studying Amazon GuardDuty & Serverless Cost Trade-Offs:** <br> - Study how GuardDuty analyzes CloudTrail, VPC Flow Logs, and DNS Logs <br> - Evaluate cost-effectiveness: since SecureTable is 100% Serverless (no VPC/EC2) under a <$10/month budget, document why application-layer controls (Cognito, Least-Privilege IAM, WAF, Audit Logs) are prioritized over paid GuardDuty ingestion | 23/11/2026 | 23/11/2026 | https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html |
-| Tue | **Manual Security Audit via AWS Security Best Practices:** <br> - Study **AWS Security Hub / CIS Benchmark** controls and perform a manual compliance check across the project account <br> - Verify S3 Block Public Access on all buckets, Root MFA enforcement, scoped IAM Roles (no `*` wildcards), and zero leaked secrets in Git | 24/11/2026 | 24/11/2026 | https://docs.aws.amazon.com/securityhub/latest/userguide/fsbp-standard.html |
-| Wed | **Well-Architected Alignment Audit for SecureTable:** <br> - Verify 1-to-1 alignment between the `SecureTable_Architecture.svg` diagram and the deployed AWS environment in `ap-southeast-1` <br> - Review failure handling, DynamoDB transactional consistency, and Serverless auto-scaling characteristics | 25/11/2026 | 25/11/2026 | https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html |
-| Thu | **Authoring Step-by-Step Workshop Documentation:** <br> - Document reproducible deployment steps (Prerequisites, S3/CloudFront Frontend, DynamoDB, Cognito/IAM, Lambda/API Gateway, Automation, Security & Cleanup) with syntax-highlighted snippets and console screenshots | 26/11/2026 | 26/11/2026 | https://github.com/thienluhoan/fcj-workshop-template |
-| Fri | **Exploring GenAI Security with Amazon Bedrock Guardrails:** <br> - Study modern AI safety controls using **Amazon Bedrock Guardrails** (Prompt Injection defense, PII redaction, IAM policy enforcement) to broaden Cloud Security knowledge | 27/11/2026 | 27/11/2026 | https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html |
+| Mon | **Building Production Frontend & Uploading to Private S3:** <br> - Configure live AWS (`ap-southeast-1`) endpoints and build static frontend assets <br> - Create a private S3 Bucket (`ACLs disabled`, `Block all public access` enabled) and upload frontend files with `index.html` at the bucket root | 23/11/2026 | 23/11/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html |
+| Tue | **Configuring Amazon CloudFront (OAC & AWS WAF):** <br> - Create a CloudFront Distribution under the **CloudFront Free Plan**, enable **AWS WAF**, and connect the S3 origin via **Origin Access Control (Sign requests)** <br> - Apply the CloudFront S3 Bucket Policy, set `Default root object: index.html`, and verify HTTPS access via the `cloudfront.net` domain | 24/11/2026 | 24/11/2026 | https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html |
+| Wed | **Team End-to-End (E2E) Integration Testing:** <br> - Run full workflow verification with teammates from the CloudFront UI: Reception opens table & bill → Guest scans QR and places order → Kitchen serves/rejects items → Inventory verifies stock → Reception closes bill → Admin checks revenue & Audit Logs | 25/11/2026 | 25/11/2026 | https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/opex-testing.html |
+| Thu | **Authoring Frontend Deployment Steps for Team Workshop:** <br> - Capture S3 and CloudFront OAC configuration screenshots and write deployment notes for section **`5.3-Frontend-dev`** in the team's shared Workshop guide | 26/11/2026 | 26/11/2026 | https://github.com/thienluhoan/fcj-workshop-template |
+| Fri | **Scripting Product Demo (28–29/11) & Updating Report Site:** <br> - Prepare the step-by-step demonstration script and sample menu/inventory data to **present and record the SecureTable product Demo for the team on 28–29/11/2026** <br> - Sync Proposal, Workshop chapters (`5.1` - `5.10`), Blogs, Events, and Worklogs on my GitHub Pages site | 27/11/2026 | 27/11/2026 | https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html |
 
 ### Week 11 Achievements
 
-* Understood **Amazon GuardDuty** and **AWS Security Hub** capabilities while making justified cost-aware security trade-offs for a sub-$10/month Serverless architecture.
-* Confirmed full alignment between the production deployment and the designed architecture across all 5 evaluated **AWS Well-Architected** pillars.
-* Structured bilingual Step-by-Step Workshop documentation and expanded technical blog coverage into Generative AI security with **Amazon Bedrock Guardrails**.
+* Deployed **SecureTable**'s live web interface on **Amazon CloudFront + Private S3 Bucket (OAC)** over HTTPS.
+* Verified seamless end-to-end integration between my Frontend portal and the API Gateway, Cognito, Lambda, and DynamoDB services built by my teammates.
+* Finalized the demo walkthrough script and test dataset for **recording the team's product Demo on 28–29/11/2026**.

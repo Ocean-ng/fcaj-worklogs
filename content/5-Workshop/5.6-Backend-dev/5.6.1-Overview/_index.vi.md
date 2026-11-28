@@ -112,7 +112,7 @@ API Gateway xác minh ID Token từ Cognito, sau đó Lambda Reception kiểm tr
 | Kiểm tra tại Lambda | Session còn hạn, đúng bàn và bill mở | `sub`, `cognito:groups` và quyền nghiệp vụ |
 | Phạm vi | Menu, đặt món, xem món của bill | Theo nhóm nhân viên |
 
-Với REST API và Cognito User Pool Authorizer của SecureTable, các Method Staff sử dụng **ID Token** và để trống **Authorization Scopes**. Nếu cấu hình scopes bắt buộc, API Gateway sẽ yêu cầu access token có scopes tương ứng — không đúng với cách frontend hiện tại đang sử dụng.
+Với REST API và Cognito User Pool Authorizer của SecureTable, các Method Staff sử dụng **ID Token** và để trống **Authorization Scopes**. Nếu cấu hình scopes bắt buộc, API Gateway sẽ yêu cầu access token có scopes tương ứng - không đúng với cách frontend hiện tại đang sử dụng.
 
 ## 5. Quy ước dữ liệu và lỗi
 

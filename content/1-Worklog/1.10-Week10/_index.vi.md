@@ -8,23 +8,22 @@ pre: " <b> 1.10. </b> "
 
 ### Mục tiêu tuần 10
 
-* Tăng cường bảo vệ tầng biên cho giao diện Web và API của **SecureTable** bằng tường lửa ứng dụng **AWS WAF** tích hợp trên **Amazon CloudFront**.
-* Thiết lập hệ thống giám sát vận hành tập trung với **Amazon CloudWatch** (Lambda Logs, API Gateway Metrics, CloudWatch Alarms gửi cảnh báo qua SNS).
-* Theo dõi và kiểm toán hoạt động API cấp tài khoản AWS bằng **AWS CloudTrail**, phân biệt rõ với Audit Logs nghiệp vụ trong DynamoDB.
-* Viết và chia sẻ các bài Blog kỹ thuật về **Shared Responsibility Model**, **Bảo mật S3** và **IAM & CloudTrail** lên nhóm cộng đồng **AWS Study Group VN**.
+* Nghiên cứu hệ thống và tổng hợp tài liệu chính thức của AWS về **Shared Responsibility Model**, **Bảo mật lưu trữ Amazon S3**, **Quản lý định danh IAM & AWS CloudTrail** để viết bài chia sẻ kiến thức lên cộng đồng **AWS Study Group VN**.
+* Nâng cấp toàn diện giao diện và hiệu ứng chuyển động (UI/UX & Animations) cho Frontend **SecureTable** theo phong cách nhà hàng hiện đại, tối giản và mượt mà.
+* Rà soát lại toàn bộ mã nguồn `frontend/`, sửa lỗi hiển thị hình ảnh và đồng bộ chặt chẽ logic gọi API khớp với đặc tả Backend của nhóm.
 
 ### Các công việc thực hiện trong tuần
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 |------|-----------|-------------|----------------|---------------|
-| 2 | **Tích hợp tường lửa ứng dụng AWS WAF trên CloudFront:** <br> - Tìm hiểu cấu trúc Web ACL, AWS Managed Rules (chống SQLi, XSS, Bad Inputs) và Rate-based Rules trên AWS WAF <br> - Thử nghiệm cấu hình lọc các request web bất thường và đánh giá cơ chế tính phí trong CloudFront Free Plan vs WAF độc lập | 16/11/2026 | 16/11/2026 | https://000026.awsstudygroup.com/ |
-| 3 | **Thiết lập giám sát với Amazon CloudWatch Logs & Metrics:** <br> - Rà soát CloudWatch Log Groups của tất cả các hàm Lambda trong SecureTable và đặt thời gian lưu trữ hợp lý (Log Retention) để tránh lãng phí dung lượng <br> - Theo dõi các chỉ số `Errors`, `Duration`, `Throttles` của Lambda và `4XXError`, `5XXError`, `Latency` của API Gateway | 17/11/2026 | 17/11/2026 | https://000018.awsstudygroup.com/ |
-| 4 | **Cấu hình CloudWatch Alarms & Tổng hợp bài viết S3 Security:** <br> - Tạo CloudWatch Standard Alarms kích hoạt thông báo qua Amazon SNS khi tỷ lệ lỗi Lambda hoặc lỗi 5XX API vượt ngưỡng <br> - Đọc sâu tài liệu Shared Responsibility Model & S3 Security và đăng bài chia sẻ lên nhóm **AWS Study Group VN** | 18/11/2026 | 18/11/2026 | https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html |
-| 5 | **Kiểm toán hoạt động tài khoản với AWS CloudTrail:** <br> - Kiểm tra lịch sử Management Events trong 90 ngày qua trên **AWS CloudTrail Event History** tại Region `ap-southeast-1` <br> - Phân biệt phạm vi của CloudTrail (kiểm toán thao tác hạ tầng AWS) với bảng Audit Logs trong DynamoDB (truy vết nghiệp vụ nhà hàng) và đăng bài Blog về IAM & CloudTrail | 19/11/2026 | 19/11/2026 | https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html |
-| 6 | **Kiểm thử kịch bản lỗi & Cảnh báo tự động:** <br> - Giả lập các request sai định dạng payload và timeout để kiểm tra khả năng xử lý lỗi an toàn của Lambda và xác nhận cảnh báo CloudWatch Alarm hoạt động chính xác | 20/11/2026 | 20/11/2026 | https://000032.awsstudygroup.com/ |
+| 2 | **Nghiên cứu sâu Shared Responsibility Model & IAM Security:** <br> - Đọc tài liệu AWS Well-Architected Security Pillar, bảo vệ Root User bằng MFA, sử dụng thông tin xác thực tạm thời (IAM Role / Federation) và nguyên tắc Least Privilege | 16/11/2026 | 16/11/2026 | https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html <br> https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html |
+| 3 | **Nghiên cứu Bảo mật Amazon S3 & AWS CloudTrail:** <br> - Tìm hiểu chi tiết cơ chế mặc định trên S3 (4 cài đặt Block Public Access, mã hóa SSE-S3, S3 Versioning và lưu ý chi phí lưu nhiều phiên bản) cùng phạm vi tra cứu 90 ngày của CloudTrail Event History <br> - Biên soạn checklist bảo mật để đăng bài chia sẻ lên nhóm học tập | 17/11/2026 | 17/11/2026 | https://aws.amazon.com/compliance/shared-responsibility-model/ <br> https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html |
+| 4 | **Đăng 3 bài chia sẻ lên AWS Study Group VN & Nâng cấp UI Frontend:** <br> - Đăng tải 3 bài viết tổng hợp kiến thức bảo mật AWS lên cộng đồng **AWS Study Group VN** <br> - Thiết kế lại bố cục giao diện và hiệu ứng chuyển động mượt mà, tối giản cho trang khách hàng của **SecureTable** (song ngữ Việt - Anh), sửa lỗi hiển thị hình ảnh món ăn và đóng gói thư mục `frontend/` | 18/11/2026 | 18/11/2026 | https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html |
+| 5 | **Đồng bộ lại Logic Frontend khớp đặc tả API Backend:** <br> - Rà soát kỹ từng đường dẫn API, tham số gửi đi và kiểm tra phân quyền của 5 vai trò trên giao diện để khớp 100% với đặc tả `securetable-api.md` của bạn làm Backend | 19/11/2026 | 19/11/2026 | https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html |
+| 6 | **Kiểm tra cấu hình `.gitignore` & Đưa mã nguồn `frontend/` lên Git:** <br> - Kiểm tra quy tắc loại trừ `node_modules/` và `dist/` trong `.gitignore`, đóng gói bản build thử nghiệm và đẩy phần code `frontend/` lên kho mã nguồn chung của nhóm mà không gây xung đột | 20/11/2026 | 20/11/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Kết quả đạt được trong tuần 10
 
-* Nâng cao năng lực phòng thủ lớp ứng dụng cho **SecureTable** bằng **AWS WAF** kết hợp **Amazon CloudFront HTTPS**.
-* Hoàn thiện trụ cột **Operational Excellence** với hệ thống logging, đo lường metrics và cảnh báo sự cố tự động qua **Amazon CloudWatch & SNS**.
-* Hiểu sâu cơ chế truy vết kép: dùng **AWS CloudTrail** cho tầng quản trị tài khoản AWS và **DynamoDB Audit Logs** cho tầng nghiệp vụ ứng dụng, đồng thời hoàn thành chuỗi bài Blog chia sẻ kiến thức trên **AWS Study Group VN**.
+* Hệ thống hóa vững chắc kiến thức cốt lõi về **AWS Shared Responsibility Model**, **S3 Data Protection**, **IAM Least Privilege** và **CloudTrail**, hoàn thành 3 bài chia sẻ được duyệt trên nhóm **AWS Study Group VN**.
+* Hoàn thiện giao diện **SecureTable** có tính thẩm mỹ cao, chuyển động mượt mà, song ngữ `VI / EN` rõ ràng và hiển thị đầy đủ hình ảnh món ăn, không gian quán.
+* Đảm bảo toàn bộ logic xử lý ở tầng giao diện khớp chặt chẽ với đặc tả API và phân quyền của Backend.

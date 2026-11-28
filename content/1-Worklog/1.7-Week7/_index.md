@@ -8,23 +8,22 @@ pre: " <b> 1.7. </b> "
 
 ### Week 7 Objectives
 
-* Build staff authentication and role-based access control (RBAC) for **SecureTable** using **Amazon Cognito User Pools** (`Reception`, `Kitchen`, `Inventory`, `Admin` groups).
-* Design a temporary **Guest Session Token** mechanism for table QR ordering without requiring customer registration, strictly bound to active (`OPEN`) bills.
-* Configure **Amazon API Gateway (REST API)** with a **Cognito Authorizer** protecting internal staff routes while separating guest endpoints.
-* Author scoped **AWS IAM Execution Roles** following the **Principle of Least Privilege** for each AWS Lambda function.
+* Build the customer-facing **Guest Portal** for **SecureTable**: restaurant landing view, 4-category visual menu, and QR table ordering cart.
+* Implement client-side **Guest Session Token** handling bound to active (`OPEN`) bills without requiring customers to register an account.
+* Integrate the Staff login screen with **Amazon Cognito User Pools** (supporting password + MFA sign-in flows and decoding JWT group claims for role-based navigation).
 
 ### Tasks Implemented This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 |------|-----------|-------------|----------------|---------------|
-| Mon | **Setting Up Amazon Cognito User Pool for Staff:** <br> - Create a Cognito User Pool in `ap-southeast-1`, enforcing password policies and email verification <br> - Configure Cognito User Groups for the 4 staff roles (`Reception`, `Kitchen`, `Inventory`, `Admin`) and register the web App Client | 26/10/2026 | 26/10/2026 | https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html |
-| Tue | **Authoring Least-Privilege IAM Execution Roles:** <br> - Separate IAM Execution Roles per Lambda domain instead of sharing a single wildcard (`*`) role <br> - Scope IAM policies strictly to required actions (`dynamodb:GetItem`, `dynamodb:PutItem`, `dynamodb:TransactWriteItems`) and specific DynamoDB table ARNs | 27/10/2026 | 27/10/2026 | https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html |
-| Wed | **Configuring API Gateway & Cognito Authorizer:** <br> - Structure REST API routes (`/v1/guest/*` and `/v1/staff/*`) on Amazon API Gateway <br> - Attach a **Cognito User Pool Authorizer** enforcing JWT verification on `/v1/staff/*`, paired with group-level RBAC validation inside Lambda handlers | 28/10/2026 | 28/10/2026 | https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html |
-| Thu | **Implementing Scoped Guest Session Security:** <br> - Build the `POST /v1/guest/sessions` flow: issue a Guest Session Token only when the target table is `OCCUPIED` and linked to an `OPEN` bill in DynamoDB <br> - Ensure closing a bill immediately invalidates the guest session to mitigate remote static QR abuse | 29/10/2026 | 29/10/2026 | https://000022.awsstudygroup.com/ |
-| Fri | **CORS, Throttling & Authorization Testing:** <br> - Restrict CORS headers to the SecureTable CloudFront origin and configure stage-level Rate/Burst Throttling on API Gateway <br> - Test authorization edge cases in Postman: missing token (`401`), unauthorized staff role (`403`), and expired/closed bill guest sessions | 30/10/2026 | 30/10/2026 | https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html |
+| Mon | **Building Guest Home & Categorized Menu Views:** <br> - Develop the restaurant showcase home view highlighting dining ambiance and signature dishes <br> - Build the `#/menu` screen organized into 4 categories (Appetizers, Main Courses, Beverages, Desserts) displaying dish photos, prices, and real-time availability | 26/10/2026 | 26/10/2026 | https://aws.amazon.com/serverless/ |
+| Tue | **Developing QR Ordering Cart & Guest Session Handling:** <br> - Build item quantity selectors and order submission UI wired to `POST /v1/guest/sessions` upon scanning a table QR code <br> - Display clear user prompts whenever a table has no active `OPEN` bill or after bill settlement | 27/10/2026 | 27/10/2026 | https://000022.awsstudygroup.com/ |
+| Wed | **Studying Amazon Cognito Authentication for SPAs:** <br> - Review **Amazon Cognito User Pool** documentation for public Single-Page Application clients (no client secret) and inspect JWT token claims (`id_token`, `access_token`) | 28/10/2026 | 28/10/2026 | https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html |
+| Thu | **Implementing Staff Login UI & JWT Role Routing:** <br> - Build the `#/staff` sign-in interface integrated with the team's Cognito User Pool, including TOTP MFA verification steps <br> - Parse `cognito:groups` claims to route signed-in staff directly to their authorized workspace | 29/10/2026 | 29/10/2026 | https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html |
+| Fri | **Testing Session Isolation & Token Expiration:** <br> - Verify clean separation between Staff Cognito JWT storage and Guest Session Tokens in the browser <br> - Implement automatic session cleanup and redirect upon token expiry or `401 Unauthorized` responses | 30/10/2026 | 30/10/2026 | https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html |
 
 ### Week 7 Achievements
 
-* Implemented dual-path access control for **SecureTable**: **Amazon Cognito JWT + RBAC** for restaurant staff and **bill-bound Guest Sessions** for table diners.
-* Enforced **Least-Privilege IAM Execution Roles** using short-lived role credentials with zero hardcoded keys in source code.
-* Hardened **Amazon API Gateway** endpoints with Cognito Authorizers, strict CORS origins, and request throttling.
+* Delivered an intuitive, account-free QR menu browsing and table ordering interface for restaurant guests.
+* Integrated Staff authentication with **Amazon Cognito**, automatically tailoring UI workspaces according to user group claims.
+* Ensured clean client-side handling of short-lived tokens (Cognito JWTs and bill-scoped Guest Session Tokens) for API Gateway requests.

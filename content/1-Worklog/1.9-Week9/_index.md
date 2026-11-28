@@ -8,22 +8,22 @@ pre: " <b> 1.9. </b> "
 
 ### Week 9 Objectives
 
-* Build automated revenue reporting and scheduled backup pipelines for **SecureTable** using **Amazon EventBridge Scheduler**, **AWS Lambda**, and **Amazon SNS**.
-* Configure **DynamoDB Point-in-Time Recovery (PITR)**, weekly **DynamoDB Export to S3**, and long-term storage cost optimization using **S3 Lifecycle Policies** (transitioning archives to S3 Glacier Flexible Retrieval).
-* Attend the in-person **AWS Cloud Mastery** technical sharing session at the AWS Vietnam office to refine system architecture practices.
+* Implement a centralized API communication layer (`apiClient.js`) in the **SecureTable** Frontend aligned with the team's **Amazon API Gateway** contract.
+* Add **Idempotency-Key** request headers for order submissions and handle `401 / 403 / 304` HTTP responses cleanly across UI screens.
+* Study the team's scheduled reporting and backup workflow (`EventBridge Scheduler + SNS + DynamoDB Export to S3`) and attend the **AWS Cloud Mastery** event.
 
 ### Tasks Implemented This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 |------|-----------|-------------|----------------|---------------|
-| Mon | **Configuring Amazon EventBridge Scheduler:** <br> - Study Serverless scheduling with EventBridge Scheduler (timezone-aware `Asia/Ho_Chi_Minh` schedules, retry policies, and DLQs) <br> - Author a dedicated IAM Role permitting Scheduler to invoke only `Report Lambda` and `Backup Lambda` | 09/11/2026 | 09/11/2026 | https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html |
-| Tue | **Developing `Report Lambda` & Amazon SNS Notifications:** <br> - Implement `Report Lambda` aggregating closed bills, daily/weekly revenue, and ingredient usage from DynamoDB <br> - Create an Amazon SNS Topic, confirm Admin email subscription, and verify automated summary email delivery | 10/11/2026 | 10/11/2026 | https://docs.aws.amazon.com/sns/latest/dg/welcome.html |
-| Wed | **Enabling DynamoDB PITR & `Backup Lambda` (Export to S3):** <br> - Enable **Point-in-Time Recovery (PITR)** on critical SecureTable DynamoDB tables <br> - Implement `Backup Lambda` invoking `ExportTableToPointInTime` to export weekly table snapshots to a private S3 Backup Bucket | 11/11/2026 | 11/11/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery.html |
-| Thu | **Backup Storage Cost Optimization with S3 Lifecycle:** <br> - Configure **S3 Lifecycle Rules** on the S3 Backup Bucket to transition aging exports to **S3 Glacier Flexible Retrieval** and expire obsolete archives <br> - Document asynchronous export behavior and realistic recovery time expectations | 12/11/2026 | 12/11/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html |
-| Fri | **Automation Verification & AWS Cloud Mastery Event (14/11):** <br> - Verify End-to-End EventBridge Scheduler execution for both reporting and backup workflows <br> - Attend **AWS Cloud Mastery** (Saturday morning, 14/11/2026 at Level 26 Bitexco) to exchange practical Serverless architecture insights | 13/11/2026 | 14/11/2026 | https://aws.amazon.com/blogs/compute/introducing-amazon-eventbridge-scheduler/ |
+| Mon | **Building Centralized `apiClient.js` for API Gateway:** <br> - Write shared HTTP client helpers automatically attaching Staff Cognito Bearer JWTs or Guest Session Tokens to outgoing requests | 09/11/2026 | 09/11/2026 | https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html |
+| Tue | **Adding `Idempotency-Key` & Kitchen Polling Optimization:** <br> - Generate unique `Idempotency-Key` headers per order submission to prevent duplicate orders on flaky mobile connections <br> - Support `ETag` (`304 Not Modified`) handling on the Kitchen queue view to reduce redundant payload transfers | 10/11/2026 | 10/11/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html |
+| Wed | **Synchronizing UI Controls with Backend RBAC Matrix:** <br> - Align every UI action against backend role permissions (`ADMIN`, `RECEPTION`, `KITCHEN`, `INVENTORY`) <br> - Handle `403 Forbidden` responses gracefully with clear bilingual feedback | 11/11/2026 | 11/11/2026 | https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html |
+| Thu | **Studying Project Reporting & Backup Automation Flows:** <br> - Review **Amazon EventBridge Scheduler**, **Amazon SNS**, and **DynamoDB PITR / Export to S3** documentation to understand how scheduled Admin reports and weekly backups operate | 12/11/2026 | 12/11/2026 | https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html |
+| Fri | **UI State Testing & Attending AWS Cloud Mastery (14/11):** <br> - Test loading, empty, and network-error states across all Frontend views <br> - Attend the in-person **AWS Cloud Mastery** sharing session (Saturday morning, 14/11/2026 at Level 26 Bitexco) with teammates | 13/11/2026 | 14/11/2026 | https://000022.awsstudygroup.com/ |
 
 ### Week 9 Achievements
 
-* Delivered a decoupled automation pipeline handling scheduled management reports via **Amazon SNS** and weekly **DynamoDB Exports to S3** via **EventBridge Scheduler**.
-* Strengthened **Reliability** and **Cost Optimization** pillars by combining **DynamoDB PITR**, **Export to S3**, and **S3 Lifecycle** tiering.
-* Gained actionable architectural feedback from mentors and peers at the **AWS Cloud Mastery** event.
+* Delivered a reliable Frontend API integration layer enforcing authentication headers and duplicate-order protection via `Idempotency-Key`.
+* Gained end-to-end understanding of **SecureTable**'s online request flows and background automation pipelines.
+* Gathered practical architectural and presentation advice at the **AWS Cloud Mastery** event at the AWS Vietnam office.

@@ -8,22 +8,22 @@ pre: " <b> 1.9. </b> "
 
 ### Mục tiêu tuần 9
 
-* Xây dựng phân hệ tự động hóa lập lịch báo cáo doanh thu và sao lưu dữ liệu cho **SecureTable** bằng **Amazon EventBridge Scheduler**, **AWS Lambda** và **Amazon SNS**.
-* Cấu hình khôi phục theo thời điểm (**DynamoDB Point-in-Time Recovery - PITR**), xuất dữ liệu định kỳ (**DynamoDB Export to S3**) và tối ưu hóa chi phí lưu trữ dài hạn bằng **S3 Lifecycle Policy** (chuyển sang S3 Glacier Flexible Retrieval).
-* Tham gia sự kiện kỹ thuật **AWS Cloud Mastery** tại văn phòng AWS Việt Nam để rà soát kiến trúc và học hỏi kinh nghiệm thực chiến.
+* Xây dựng tầng kết nối API tập trung (`apiClient.js`) trên Frontend của **SecureTable** để giao tiếp với **Amazon API Gateway** theo đúng hợp đồng phân quyền của nhóm.
+* Xử lý đính kèm khóa chống gửi trùng (**Idempotency-Key**) khi đặt món và xử lý mã phản hồi `401 / 403 / 304` mượt mà trên giao diện.
+* Tìm hiểu luồng tự động hóa báo cáo và sao lưu dữ liệu (`EventBridge Scheduler + SNS + DynamoDB Export to S3`) trong kiến trúc chung của nhóm và tham dự sự kiện **AWS Cloud Mastery**.
 
 ### Các công việc thực hiện trong tuần
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 |------|-----------|-------------|----------------|---------------|
-| 2 | **Tìm hiểu & Thiết lập Amazon EventBridge Scheduler:** <br> - Nghiên cứu cơ chế lập lịch Serverless với EventBridge Scheduler (hỗ trợ múi giờ `Asia/Ho_Chi_Minh`, chính sách Retry và Dead-Letter Queue) <br> - Tạo IAM Execution Role riêng chỉ cho phép Scheduler kích hoạt đúng hàm `Report Lambda` và `Backup Lambda` | 09/11/2026 | 09/11/2026 | https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html |
-| 3 | **Phát triển `Report Lambda` & Gửi thông báo qua Amazon SNS:** <br> - Viết hàm `Report Lambda` tổng hợp số lượng hóa đơn, doanh thu ngày/tuần và lượng nguyên liệu tiêu hao từ DynamoDB <br> - Tạo Amazon SNS Topic, xác thực Email nhận thông báo của Admin và kiểm thử gửi báo cáo tự động | 10/11/2026 | 10/11/2026 | https://docs.aws.amazon.com/sns/latest/dg/welcome.html |
-| 4 | **Triển khai DynamoDB PITR & `Backup Lambda` (Export to S3):** <br> - Bật tính năng **Point-in-Time Recovery (PITR)** trên các bảng dữ liệu quan trọng của SecureTable <br> - Phát triển `Backup Lambda` gọi API `ExportTableToPointInTime` để xuất bản sao dữ liệu hàng tuần ra S3 Backup Bucket riêng tư | 11/11/2026 | 11/11/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery.html |
-| 5 | **Tối ưu chi phí lưu trữ bản sao lưu với S3 Lifecycle:** <br> - Thiết lập **S3 Lifecycle Rule** trên S3 Backup Bucket để tự động chuyển các bản xuất dữ liệu cũ sang lớp **S3 Glacier Flexible Retrieval** và hết hạn bản sao quá hạn lưu trữ <br> - Kiểm tra tính bất đồng bộ của quá trình Export và ghi chú rõ giới hạn thời gian khôi phục | 12/11/2026 | 12/11/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html |
-| 6 | **Kiểm thử luồng Automation & Tham dự AWS Cloud Mastery (14/11):** <br> - Kiểm thử End-to-End luồng EventBridge Scheduler kích hoạt báo cáo/backup và kiểm tra log thực thi <br> - Tham dự buổi chia sẻ trực tiếp **AWS Cloud Mastery** (Sáng Thứ Bảy 14/11/2026 tại Tầng 26 Bitexco) để trao đổi kinh nghiệm tối ưu kiến trúc Serverless | 13/11/2026 | 14/11/2026 | https://aws.amazon.com/blogs/compute/introducing-amazon-eventbridge-scheduler/ |
+| 2 | **Xây dựng module `apiClient.js` kết nối API Gateway:** <br> - Viết hàm gọi API dùng chung tự động đính kèm Bearer JWT Token (cho Staff) hoặc Guest Session Token (cho khách tại bàn) vào HTTP Header | 09/11/2026 | 09/11/2026 | https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html |
+| 3 | **Tích hợp `Idempotency-Key` & Tối ưu tải màn hình Bếp:** <br> - Sinh mã `Idempotency-Key` duy nhất cho mỗi lượt bấm gửi đơn món để tránh tạo đơn trùng khi mạng chập chờn <br> - Hỗ trợ kiểm tra `ETag` (`304 Not Modified`) cho màn hình hàng đợi Bếp để giảm dung lượng dữ liệu tải lại | 10/11/2026 | 10/11/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html |
+| 4 | **Đồng bộ ma trận quyền RBAC giữa Frontend và Backend:** <br> - Rà soát từng nút chức năng trên UI khớp với bộ phân quyền Backend (`ADMIN`, `RECEPTION`, `KITCHEN`, `INVENTORY`) <br> - Xử lý bắt lỗi `403 Forbidden` và hiển thị thông báo thân thiện khi tài khoản thao tác vượt quá quyền được cấp | 11/11/2026 | 11/11/2026 | https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html |
+| 5 | **Tìm hiểu luồng Automation Báo cáo & Backup của dự án:** <br> - Đọc tài liệu về **Amazon EventBridge Scheduler**, **Amazon SNS** và **DynamoDB PITR / Export to S3** để nắm rõ cách hệ thống tự động gửi email báo cáo cho Admin và sao lưu dữ liệu hàng tuần | 12/11/2026 | 12/11/2026 | https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html |
+| 6 | **Kiểm thử luồng gọi API & Tham dự AWS Cloud Mastery (14/11):** <br> - Kiểm thử các trạng thái tải dữ liệu (Loading, Empty State, Error) trên toàn bộ màn hình Frontend <br> - Tham dự buổi chia sẻ trực tiếp **AWS Cloud Mastery** (Sáng Thứ Bảy 14/11/2026 tại Tầng 26 Bitexco) cùng nhóm | 13/11/2026 | 14/11/2026 | https://000022.awsstudygroup.com/ |
 
 ### Kết quả đạt được trong tuần 9
 
-* Vận hành thành công luồng tự động hóa hoàn toàn tách biệt với luồng đặt món chính: tự động tổng hợp báo cáo gửi qua **Amazon SNS** và tự động xuất bản sao lưu sang **Amazon S3** theo lịch **EventBridge Scheduler**.
-* Đáp ứng tiêu chí **Reliability** và **Cost Optimization** của Well-Architected nhờ kết hợp **DynamoDB PITR**, **Export to S3** và chính sách vòng đời dữ liệu **S3 Lifecycle**.
-* Đúc kết thêm nhiều kinh nghiệm quý báu về bảo mật và vận hành hệ thống thực tế thông qua sự kiện **AWS Cloud Mastery**.
+* Hoàn thành tầng giao tiếp API chuẩn hóa trên Frontend, đảm bảo mọi yêu cầu gửi lên **Amazon API Gateway** đều mang đúng thông tin xác thực và chống trùng lặp đơn hàng.
+* Hiểu rõ bức tranh tổng thể của toàn bộ dự án **SecureTable** (cả phần luồng gọi món trực tuyến lẫn luồng tự động hóa ngầm phía sau).
+* Học hỏi thêm nhiều kinh nghiệm rà soát kiến trúc và chuẩn bị dự án thực tế qua buổi giao lưu **AWS Cloud Mastery** tại văn phòng AWS Việt Nam.

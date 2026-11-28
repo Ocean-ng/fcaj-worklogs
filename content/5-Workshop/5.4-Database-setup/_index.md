@@ -29,24 +29,24 @@ Repeat the steps above to create the remaining SecureTable tables. The following
 
 | DynamoDB Table | Partition key | Sort key |
 |---|---|---|
-| `SecureTable-Tables` | `table_id` | — |
-| `SecureTable-Bills` | `bill_id` | — |
-| `SecureTable-Orders` | `order_id` | — |
-| `SecureTable-OrderItems` | `item_id` | — |
-| `SecureTable-MenuItems` | `dish_id` | — |
-| `SecureTable-Ingredients` | `ingredient_id` | — |
-| `SecureTable-InventoryReceipts` | `receipt_id` | — |
+| `SecureTable-Tables` | `table_id` | - |
+| `SecureTable-Bills` | `bill_id` | - |
+| `SecureTable-Orders` | `order_id` | - |
+| `SecureTable-OrderItems` | `item_id` | - |
+| `SecureTable-MenuItems` | `dish_id` | - |
+| `SecureTable-Ingredients` | `ingredient_id` | - |
+| `SecureTable-InventoryReceipts` | `receipt_id` | - |
 | `SecureTable-InventoryCorrections` | `receipt_id` | `correction_id` |
-| `SecureTable-ReceiptCorrectionState` | `receipt_id` | — |
-| `SecureTable-InventoryMovements` | `movement_id` | — |
-| `SecureTable-InventoryCounts` | `count_id` | — |
-| `SecureTable-FinanceLedger` | `entry_id` | — |
-| `SecureTable-AuditLogs` | `audit_id` | — |
-| `SecureTable-GuestSessions` | `session_hash` | — |
+| `SecureTable-ReceiptCorrectionState` | `receipt_id` | - |
+| `SecureTable-InventoryMovements` | `movement_id` | - |
+| `SecureTable-InventoryCounts` | `count_id` | - |
+| `SecureTable-FinanceLedger` | `entry_id` | - |
+| `SecureTable-AuditLogs` | `audit_id` | - |
+| `SecureTable-GuestSessions` | `session_hash` | - |
 | `SecureTable-Idempotency` | `scope` | `key` |
 | `SecureTable-PendingByIngredient` | `ingredient_id` | `item_id` |
-| `SecureTable-NotificationOutbox` | `event_id` | — |
-| `SecureTable-ReportDispatch` | `report_key` | — |
+| `SecureTable-NotificationOutbox` | `event_id` | - |
+| `SecureTable-ReportDispatch` | `report_key` | - |
 
 All keys listed above use the **String** data type. The system also uses `SecureTable-ReportDispatch` to track report delivery status and `SecureTable-NotificationOutbox` for notification events. These supporting tables must be created with the keys expected by their corresponding Lambda functions before those features are enabled.
 

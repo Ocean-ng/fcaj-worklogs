@@ -8,23 +8,22 @@ pre: " <b> 1.10. </b> "
 
 ### Week 10 Objectives
 
-* Strengthen edge and web application protection for **SecureTable** using **AWS WAF** integrated with **Amazon CloudFront**.
-* Establish centralized operational monitoring using **Amazon CloudWatch** (Lambda Logs, API Gateway Metrics, and CloudWatch Alarms notifying via SNS).
-* Audit AWS account-level management API activity with **AWS CloudTrail**, clearly distinguishing infrastructure logs from DynamoDB business Audit Logs.
-* Author and publish technical blogs on the **Shared Responsibility Model**, **Amazon S3 Security**, and **IAM & CloudTrail** to the **AWS Study Group VN** community.
+* Study and synthesize official AWS documentation on the **Shared Responsibility Model**, **Amazon S3 Data Security**, and **IAM & AWS CloudTrail** into knowledge-sharing posts for the **AWS Study Group VN** community.
+* Redesign and polish the **SecureTable** Frontend UI and animations into a clean, modern bilingual (`VI / EN`) restaurant experience.
+* Review the entire `frontend/` codebase, fix image rendering issues, and synchronize UI business logic 100% with the team's Backend API specification.
 
 ### Tasks Implemented This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 |------|-----------|-------------|----------------|---------------|
-| Mon | **Edge Protection with AWS WAF on CloudFront:** <br> - Study Web ACLs, AWS Managed Rule Groups (SQLi, XSS, Bad Inputs), and Rate-based Rules in AWS WAF <br> - Test abnormal web request filtering and evaluate CloudFront Free Plan WAF inclusion vs. standalone WAF pricing | 16/11/2026 | 16/11/2026 | https://000026.awsstudygroup.com/ |
-| Tue | **Observability with Amazon CloudWatch Logs & Metrics:** <br> - Configure explicit Log Retention policies across all SecureTable Lambda Log Groups to optimize storage costs <br> - Monitor Lambda `Errors`, `Duration`, `Throttles` and API Gateway `4XXError`, `5XXError`, and `Latency` metrics | 17/11/2026 | 17/11/2026 | https://000018.awsstudygroup.com/ |
-| Wed | **CloudWatch Alarms & S3 Security Knowledge Sharing:** <br> - Configure CloudWatch Standard Alarms publishing email alerts via Amazon SNS whenever Lambda error counts or API 5XX thresholds breach <br> - Synthesize Shared Responsibility Model & S3 data protection findings and publish to **AWS Study Group VN** | 18/11/2026 | 18/11/2026 | https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html |
-| Thu | **Account Activity Auditing with AWS CloudTrail:** <br> - Inspect 90-day Management Events in **AWS CloudTrail Event History** in `ap-southeast-1` <br> - Differentiate CloudTrail (AWS control-plane auditing) from DynamoDB Audit Logs (application business traceability) and publish IAM & CloudTrail blog posts | 19/11/2026 | 19/11/2026 | https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html |
-| Fri | **Error Handling & Alerting Validation:** <br> - Simulate malformed request payloads and error conditions to verify graceful Lambda exception handling and confirm CloudWatch Alarm -> SNS notification delivery | 20/11/2026 | 20/11/2026 | https://000032.awsstudygroup.com/ |
+| Mon | **Deep-Dive into Shared Responsibility & IAM Security:** <br> - Study the AWS Well-Architected Security Pillar, Root user MFA protection, temporary credentials (IAM Roles / Federation), and Least-Privilege policy scoping | 16/11/2026 | 16/11/2026 | https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html <br> https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html |
+| Tue | **Studying Amazon S3 Security & AWS CloudTrail Scope:** <br> - Review S3 default protections (4 Block Public Access settings, SSE-S3 encryption at rest, S3 Versioning storage cost trade-offs) and 90-day CloudTrail Event History coverage <br> - Draft practical checklists for community knowledge sharing | 17/11/2026 | 17/11/2026 | https://aws.amazon.com/compliance/shared-responsibility-model/ <br> https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html |
+| Wed | **Publishing 3 Posts on AWS Study Group VN & UI Redesign:** <br> - Publish 3 AWS Cloud Security posts to the **AWS Study Group VN** Facebook group <br> - Upgrade **SecureTable** customer UI layout and smooth transitions (`VI / EN`), fix dish/gallery image paths, and organize the `frontend/` directory | 18/11/2026 | 18/11/2026 | https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html |
+| Thu | **Synchronizing Frontend Logic with Backend API Spec:** <br> - Audit every API endpoint call, request payload, and 5-role permission boundary in the UI to match the Backend `securetable-api.md` contract | 19/11/2026 | 19/11/2026 | https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html |
+| Fri | **Repository Hygiene & Pushing `frontend/` to Team Git:** <br> - Verify `.gitignore` rules (`node_modules/`, `dist/`), validate local production builds, and push `frontend/` cleanly to the shared team repository without merge conflicts | 20/11/2026 | 20/11/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Week 10 Achievements
 
-* Hardened **SecureTable**'s web perimeter using **AWS WAF** paired with **Amazon CloudFront HTTPS**.
-* Satisfied **Operational Excellence** requirements with structured logging, real-time metrics, and automated **CloudWatch + SNS** alerting.
-* Established dual-layer audit visibility across **AWS CloudTrail** and **DynamoDB Audit Logs**, while publishing technical knowledge-sharing blogs to **AWS Study Group VN**.
+* Consolidated core **AWS Shared Responsibility**, **S3 Security**, **IAM**, and **CloudTrail** concepts into 3 approved posts on **AWS Study Group VN**.
+* Delivered a polished, responsive, bilingual (`VI / EN`) **SecureTable** Frontend with smooth animations and complete visual assets.
+* Verified 100% alignment between Frontend UI workflows and Backend API/RBAC specifications.

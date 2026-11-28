@@ -8,22 +8,22 @@ pre: " <b> 1.6. </b> "
 
 ### Mục tiêu tuần 6
 
-* Thiết lập hạ tầng lưu trữ và phân phối giao diện Web tĩnh cho hệ thống **SecureTable** bằng **Amazon S3** và **Amazon CloudFront** tại Region `ap-southeast-1`.
-* Áp dụng cơ chế **Origin Access Control (OAC)** để giữ S3 Bucket ở chế độ riêng tư tuyệt đối (Block Public Access), chỉ cho phép truy cập nội dung qua CloudFront với giao thức mã hóa HTTPS.
-* Tìm hiểu sâu về kết nối mạng riêng tư trên AWS thông qua **VPC Endpoints** (Gateway Endpoint và Interface Endpoint / AWS PrivateLink) để hạn chế lưu lượng đi qua Internet công cộng.
+* Khởi tạo cấu trúc mã nguồn Frontend (`React + Vite`) cho dự án **SecureTable**, định hình bố cục giao diện tối giản, dễ thao tác trên cả điện thoại (cho khách quét QR) và máy tính bảng/laptop (cho nhân viên).
+* Xây dựng hệ thống chuyển đổi song ngữ **Tiếng Việt - Tiếng Anh (`VI / EN`)** và bộ định tuyến trang cho cổng khách hàng và cổng nội bộ nhân viên.
+* Nghiên cứu cách triển khai website tĩnh an toàn lên **Amazon S3 Bucket riêng tư** phân phối qua **Amazon CloudFront** với **Origin Access Control (OAC)** và **CloudFront Free Plan**.
 
 ### Các công việc thực hiện trong tuần
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 |------|-----------|-------------|----------------|---------------|
-| 2 | **Khởi tạo S3 Bucket lưu trữ Frontend tĩnh:** <br> - Tạo S3 Bucket tại `ap-southeast-1` cho các tệp HTML/CSS/JS của giao diện Guest và Staff trong dự án SecureTable <br> - Giữ nguyên cấu hình **Block all public access** và kiểm tra mã hóa mặc định **SSE-S3** | 19/10/2026 | 19/10/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html |
-| 3 | **Triển khai Amazon CloudFront với Origin Access Control (OAC):** <br> - Khởi tạo CloudFront Distribution kết nối tới S3 Origin thông qua **Origin Access Control (SigV4)** <br> - Cập nhật S3 Bucket Policy chỉ cấp quyền `s3:GetObject` cho Service Principal `cloudfront.amazonaws.com` kèm điều kiện `AWS:SourceArn` | 20/10/2026 | 20/10/2026 | https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html |
-| 4 | **Cấu hình HTTPS, Caching & Định tuyến SPA:** <br> - Thiết lập Viewer Protocol Policy thành `Redirect HTTP to HTTPS` với chuẩn TLS 1.2+ <br> - Cấu hình Default Root Object (`index.html`), Custom Error Responses và kiểm thử truy cập giao diện Web qua tên miền CloudFront | 21/10/2026 | 21/10/2026 | https://000058.awsstudygroup.com/ |
-| 5 | **Nghiên cứu kết nối riêng tư với VPC Endpoints:** <br> - Tìm hiểu sự khác nhau giữa **Gateway VPC Endpoint** (miễn phí cho S3 và DynamoDB qua Route Table) và **Interface VPC Endpoint** (dùng AWS PrivateLink & ENI) <br> - Thực hành cấu hình VPC Endpoint Policy giới hạn quyền truy cập vào đúng S3 Bucket/DynamoDB Table chỉ định | 22/10/2026 | 22/10/2026 | https://000008.awsstudygroup.com/ |
-| 6 | **Kiểm thử bảo mật S3 Origin & Dọn dẹp tài nguyên lab:** <br> - Kiểm chứng truy cập trực tiếp vào Object URL của S3 bị từ chối (`403 Access Denied`) trong khi truy cập qua CloudFront HTTPS hoạt động bình thường (`200 OK`) <br> - Dọn dẹp các VPC Endpoint thực hành để tránh phát sinh chi phí theo giờ | 23/10/2026 | 23/10/2026 | https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html |
+| 2 | **Thiết kế Sitemap & Wireframe giao diện SecureTable:** <br> - Phác thảo bố cục màn hình cho khách hàng (Trang chủ giới thiệu quán, Thực đơn phân nhóm, Giỏ gọi món tại bàn) và cổng nhân viên POS <br> - Lựa chọn tông màu ấm áp, trực quan để khách dễ đọc thực đơn trên màn hình di động khi quét mã QR | 19/10/2026 | 19/10/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | **Khởi tạo dự án Frontend React + Vite & Định tuyến:** <br> - Khởi tạo cấu trúc thư mục `frontend/` (`src/components`, `src/pages`, `src/services`, `public/`) <br> - Thiết lập bộ định tuyến tách biệt giao diện khách (`#/`, `#/menu`) và cổng đăng nhập nhân viên (`#/staff`) để tiện triển khai dạng SPA trên S3/CloudFront | 20/10/2026 | 20/10/2026 | https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.SimpleDistribution.html |
+| 4 | **Xây dựng bộ từ điển Song ngữ Việt - Anh (`i18n`):** <br> - Thiết kế module chuyển đổi ngôn ngữ tức thời `VI / EN` cho toàn bộ nhãn nút bấm, trạng thái bàn, trạng thái món ăn và thông báo lỗi trên giao diện | 21/10/2026 | 21/10/2026 | https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/web-applications.html |
+| 5 | **Nghiên cứu lưu trữ Frontend trên S3 + CloudFront (OAC):** <br> - Đọc tài liệu AWS về cách host SPA mà **không bật S3 Static Website Hosting công khai**: giữ nguyên **Block all public access** trên S3 và cấp quyền đọc cho CloudFront thông qua **Origin Access Control (SigV4)** | 22/10/2026 | 22/10/2026 | https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html |
+| 6 | **Tìm hiểu CloudFront Free Plan & Hợp đồng biến môi trường:** <br> - Tìm hiểu phạm vi tính năng miễn phí của **CloudFront Free Plan** (kèm AWS WAF cơ bản) <br> - Thống nhất với bạn làm Backend/Infra danh sách biến cấu hình `VITE_*` (`VITE_API_GATEWAY_URL`, `VITE_COGNITO_USER_POOL_ID`, `VITE_COGNITO_CLIENT_ID`) trong `.env.example` | 23/10/2026 | 23/10/2026 | https://000058.awsstudygroup.com/ |
 
 ### Kết quả đạt được trong tuần 6
 
-* Đưa thành công tầng giao diện Web của **SecureTable** lên nền tảng **Amazon S3 + Amazon CloudFront** với tốc độ tải nhanh và truyền tải an toàn qua HTTPS.
-* Thực thi nghiêm ngặt tiêu chí bảo mật của Security Pillar: khóa hoàn toàn truy cập trực tiếp vào S3 Bucket nhờ **Block Public Access** kết hợp **CloudFront OAC**.
-* Nắm vững kiến trúc kết nối riêng tư bằng **VPC Gateway/Interface Endpoints** giúp bảo vệ lưu lượng nội bộ tới S3 và DynamoDB mà không cần đi ra Internet.
+* Dựng xong bộ khung dự án Frontend (`React + Vite`) gọn nhẹ, hỗ trợ đầy đủ 2 ngôn ngữ Tiếng Việt và Tiếng Anh.
+* Thống nhất chuẩn biến môi trường kết nối AWS với các thành viên phụ trách Backend và Hạ tầng trong nhóm, tránh xung đột mã nguồn trên Git.
+* Nắm vững quy trình bảo mật S3 Origin bằng **Origin Access Control (OAC)** và cấu hình `Default root object: index.html` trên CloudFront để chuẩn bị đưa giao diện lên AWS.

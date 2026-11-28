@@ -30,24 +30,24 @@ Thực hiện tương tự bước trên cho các bảng của SecureTable. Dư�
 
 | DynamoDB Table | Partition key | Sort key |
 |---|---|---|
-| `SecureTable-Tables` | `table_id` | — |
-| `SecureTable-Bills` | `bill_id` | — |
-| `SecureTable-Orders` | `order_id` | — |
-| `SecureTable-OrderItems` | `item_id` | — |
-| `SecureTable-MenuItems` | `dish_id` | — |
-| `SecureTable-Ingredients` | `ingredient_id` | — |
-| `SecureTable-InventoryReceipts` | `receipt_id` | — |
+| `SecureTable-Tables` | `table_id` | - |
+| `SecureTable-Bills` | `bill_id` | - |
+| `SecureTable-Orders` | `order_id` | - |
+| `SecureTable-OrderItems` | `item_id` | - |
+| `SecureTable-MenuItems` | `dish_id` | - |
+| `SecureTable-Ingredients` | `ingredient_id` | - |
+| `SecureTable-InventoryReceipts` | `receipt_id` | - |
 | `SecureTable-InventoryCorrections` | `receipt_id` | `correction_id` |
-| `SecureTable-ReceiptCorrectionState` | `receipt_id` | — |
-| `SecureTable-InventoryMovements` | `movement_id` | — |
-| `SecureTable-InventoryCounts` | `count_id` | — |
-| `SecureTable-FinanceLedger` | `entry_id` | — |
-| `SecureTable-AuditLogs` | `audit_id` | — |
-| `SecureTable-GuestSessions` | `session_hash` | — |
+| `SecureTable-ReceiptCorrectionState` | `receipt_id` | - |
+| `SecureTable-InventoryMovements` | `movement_id` | - |
+| `SecureTable-InventoryCounts` | `count_id` | - |
+| `SecureTable-FinanceLedger` | `entry_id` | - |
+| `SecureTable-AuditLogs` | `audit_id` | - |
+| `SecureTable-GuestSessions` | `session_hash` | - |
 | `SecureTable-Idempotency` | `scope` | `key` |
 | `SecureTable-PendingByIngredient` | `ingredient_id` | `item_id` |
-| `SecureTable-NotificationOutbox` | `event_id` | — |
-| `SecureTable-ReportDispatch` | `report_key` | — |
+| `SecureTable-NotificationOutbox` | `event_id` | - |
+| `SecureTable-ReportDispatch` | `report_key` | - |
 
 Tất cả các khóa trên sử dụng kiểu **String**. Hệ thống còn sử dụng `SecureTable-ReportDispatch` để ghi nhận trạng thái gửi báo cáo và `SecureTable-NotificationOutbox` cho các sự kiện thông báo. Hai bảng phụ này phải được tạo theo khóa mà mã nguồn Lambda tương ứng sử dụng trước khi kích hoạt chức năng đó.
 
